@@ -1,0 +1,196 @@
+Q) Is java purely object oriented or not?
+
+No, Java will not consider as purely object oriented programming language because it does not support many OOPS concepts like multiple inheritance, operator overloading and more ever we depends upon primitive datatypes which are non-objects.
+
+
+Q) Write a java program to display the range of byte datatype?
+
+byte : -128 to 127
+
+ex:
+---
+class  Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println(Byte.MIN_VALUE);
+		System.out.println(Byte.MAX_VALUE);
+	}	
+}
+
+
+
+Q) Write a java program to display the range of int datatype?
+
+int : -2147483648 to 2147483647
+
+ex:
+
+class  Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println(Integer.MIN_VALUE);
+		System.out.println(Integer.MAX_VALUE);
+	}	
+}
+
+Types of variables 
+===================
+A name which is given to a memory location is called variable.
+
+Purpose of variable is used to store the data.
+
+In java, we have two types of variables.
+
+1) Primitive variables 
+-------------------
+	It is used to represent primitive values.
+
+2) Reference variables 
+--------------------
+	It is used to represent object.
+	ex:
+		Student s=new Student();
+			|
+		reference variable 
+
+Based on the position and execute these variables are divided into three types.
+
+1) Instance variables / Non-static variables 
+
+2) Static variables / Global variables 
+
+3) Local variables / Temperory variables / Automatic variables 
+
+
+1) Instance variables
+----------------------
+A value of a variable which is varied(changes) from object to object is called instance variable.
+
+Instance variable will be created at the time of object creation and it will destroy at the time of object destruction.Hence scope of instance variable is same as scope of an object.
+
+Instance variable will store in heap area as a part of an object.
+
+Instance variable must and should declare immediately after the class but not inside methods, blocks and constructors.
+
+Instance variable can access directly from instance area but we can't access directly from static area.
+
+To access instance variable from static area we need to create object reference.
+
+ex:1
+----
+class  Test
+{
+	//instance variable
+	int i=10;	
+
+	public static void main(String[] args)
+	{
+		System.out.println(i); // C.T.E 
+	}	
+}
+
+ex:2
+-----
+class  Test
+{
+	//instance variable
+	int i=10;	
+
+	public static void main(String[] args)
+	{
+		Test t=new Test();
+		System.out.println(t.i); //10
+	}	
+}
+
+Note:
+-----
+If we won't initialize any value to instance variable then JVM will initialized default values.
+
+ex:3
+----
+class  Test
+{
+	//instance variable
+	boolean b;	
+
+	public static void main(String[] args)
+	{
+		Test t=new Test();
+		System.out.println(t.b);// false
+	}	
+}	
+
+ex:4
+----
+class  Test
+{
+	public static void main(String[] args)
+	{
+		//calling
+		Test t=new Test();
+		t.m1();
+	}	
+	//non-static method 
+	public void m1()
+	{
+		System.out.println("Instance-Method");
+	}
+	
+}
+
+ex:5
+-----
+class  Test
+{
+	//instance variable
+	int i=10;
+
+	public static void main(String[] args)
+	{
+		Test t1=new Test();
+		Test t2=new Test();
+		
+		System.out.println(t1.i); //10
+		System.out.println(t2.i); //10 
+
+		t1.i=20;
+		t2.i=30;
+
+		System.out.println(t1.i); //20
+		System.out.println(t2.i); //30 
+	}		
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

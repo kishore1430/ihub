@@ -1,0 +1,530 @@
+Singleton class
+================
+A class which allows us to create only one object is called singleton class.
+
+It is one of the design pattern which allows us to create only one instance of a class.
+
+We have following list of Singleton classes.
+ex:
+	LocalDate 
+	LocalTime 
+	Calendar 
+
+Using a class if we call any method and that method returns same class object is called singleton class.
+
+	LocalDate d=LocalDate.now();
+	LocalTime t=LocalTime.now();
+	Calendar c=Calendar.getInstance();
+		
+To create a singleton class we required private constructor and factory method.	
+
+ex:
+---
+class Singleton
+{
+	static Singleton singleton=null;
+
+	//constructor
+	private Singleton()
+	{
+		
+	}
+	public static Singleton getInstance()
+	{
+		if(singleton == null)
+		{
+			singleton=new Singleton();
+		}
+
+		return singleton;
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Singleton s1=Singleton.getInstance();
+		System.out.println(s1.hashCode());
+
+		Singleton s2=Singleton.getInstance();
+		System.out.println(s2.hashCode());
+	}
+}
+
+this keyword
+============
+A "this" keyword is a java keyword which is used to refer current class object reference.
+
+We can utilize this keyword in following ways.
+
+i) To refer current class variables 
+
+ii) To refer current class methods 
+
+iii) To refer current class constructors 
+
+i) To refer current class variables 
+-------------------------------------
+class A
+{
+	int i=10;
+	int j=20;
+
+	A(int i,int j)
+	{
+		System.out.println(i+" "+j); //  100  200
+		System.out.println(this.i+" "+this.j); //10  20
+	}
+
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		A a=new A(100,200);	
+	}
+}
+
+ii) To refer current class methods 
+----------------------------------
+class A
+{
+	public void m1()
+	{
+		System.out.println("M1-Method");
+		this.m2();
+	}
+	public void m2()
+	{
+		System.out.println("M2-Method");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		A a=new A();
+		a.m1();
+	}
+}
+
+iii) To refer current class constructors 
+---------------------------------------
+class A
+{
+	A()
+	{
+		System.out.println("0-arg const");
+	}
+	A(int i)
+	{
+		this();
+		System.out.println("int-arg const");
+	}
+	A(double d)
+	{
+		this(10);
+		System.out.println("double-arg const");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		A a=new A(10.5d);
+	}
+}
+
+super keyword
+==============
+A "super" keyword is a java keyword which is used to refer super class object reference.
+
+We can utilize super keyword in following ways.
+
+i) To refer super class variables 
+
+ii) To refer super class methods 
+
+iii) To refer super class constructors 
+
+i) To refer super class variables 
+----------------------------------
+class A
+{
+	int i=10;
+	int j=20;
+}
+class B extends A
+{
+	int i=100;
+	int j=200;
+	B(int i,int j)
+	{
+		System.out.println(super.i+" "+super.j); // 10 20 
+		System.out.println(this.i+" "+this.j); // 100 200
+		System.out.println(i+" "+j); // 1000 2000
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		B b=new B(1000,2000);
+	}
+}
+
+ii) To refer super class methods 
+----------------------------------
+class A
+{
+	public void m1()
+	{
+		System.out.println("M1-Method");
+	}
+}
+class B extends A
+{
+	public void m2()
+	{
+		super.m1();
+		System.out.println("M2-Method");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		B b=new B();
+		b.m2();
+	}
+}
+
+iii) To refer super class constructors 
+----------------------------------------
+class A
+{
+	A()
+	{
+		System.out.println("A-constructor");
+	}
+}
+class B extends A
+{
+	B()
+	{
+		super();
+		System.out.println("B-constructor");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		B b=new B();
+	}
+}
+
+API
+====
+API stands for Application Programming interface.
+
+API is a collection of packages.
+
+It is a base for the programmer to develop software applications.
+
+We have three types of API's.
+
+1) Predefined API 
+----------------
+	Built-in API is called predefined API.	
+	ex:
+		https://docs.oracle.com/javase/8/docs/api/
+
+2) Userdefined API 
+-----------------
+	API which is created by the user based on the application requirements.
+
+3) Third party API 
+-----------------
+	API which is given by third party vendors.
+	ex:
+		JAVAZOOM API 
+		iText API 
+		and etc.
+
+
+Package 
+=========
+Package is a collection of classes , interfaces, enums and annotations.
+
+Here enum is a special class and Anntation is a special interface.
+
+In general, a package is a collection of classes and interfaces.
+
+Package is also known as folder or a directory.
+
+We have two types packages in java.
+
+1) Predefined packages
+-------------------
+	Built-In packages are called predefined packages.
+	ex:
+		java.lang (Default package)
+		java.io
+		java.util
+		java.util.stream 
+		java.sql
+		javax.servlet 
+		and etc.
+
+2) Userdefined packages 
+------------------------
+Packages which are created by the user based on the application requirements are called userdefined packages.
+
+syntax:
+	package  <package_name>;
+
+ex:
+---
+package com.ihub.www;
+import java.util.Calendar;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Calendar c=Calendar.getInstance();
+
+		//convert time to 24 hours
+		int h=c.get(Calendar.HOUR_OF_DAY);
+
+		if(h<12)
+			System.out.println("Good Morning");
+		else if(h<16)
+			System.out.println("Good Afternoon");
+		else if(h<20)
+			System.out.println("Good Evening");
+		else
+			System.out.println("Good Night");
+	}
+}
+
+We can compile above program by using below command.
+ex:
+		current directory 
+			|
+	javac   -d  	.   Test.java
+		|
+		destination folder 
+
+We can run above program by using below command.
+ex:
+	java    com.ihub.www.Test 
+			|      |
+		package name   classname 
+
+
+
+Inner classes
+==============
+Sometimes we will declare a class inside another class such concept is called inner class.
+
+ex:
+	class Outer_class
+	{
+		class Inner_class
+		{
+			-
+			- //code to be execute 
+			-
+		}
+	}
+
+Inner classes introduced as a part of event handling to remove GUI bugs.
+
+But because of powerful features and benefits of inner classes. Programmers started to use inner classes in regular programming.
+
+According java 8 version, it is not possible to declare static members in inner class.
+
+
+Accessing inner class data from static area of outer class
+-----------------------------------------------------------
+class Outer 
+{
+	class Inner 
+	{
+		public void m1()
+		{
+			System.out.println("Inner-M1 Method");
+		}
+	}
+
+	public static void main(String[] args)
+	{
+		Outer.Inner i=new Outer().new Inner();
+		i.m1();
+	}
+}
+Note:
+-----
+If we compile above program then we will get two .class files i.e 
+Outer.class and Outer$Inner.class.
+
+Accessing inner class data from non-static area of outer class
+-----------------------------------------------------------
+class Outer 
+{
+	class Inner 
+	{
+		public void m1()
+		{
+			System.out.println("Inner-M1 Method");
+		}
+	}
+
+	public void m2()
+	{
+		Inner i=new Inner();
+		i.m1();
+	}
+
+	public static void main(String[] args)
+	{
+		Outer o=new Outer();
+		o.m2();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

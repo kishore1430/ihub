@@ -1,0 +1,293 @@
+
+Interview Questions
+=======================
+
+Q)Difference between function component vs class component?
+
+function component			class component
+------------------			----------------
+It is also known as stateless 		It is a statefull component.
+component.
+
+In a function component we will use	In a class component we will use 
+return keyword.				render() method.
+
+It supports hooks.			It does not support hooks.
+
+Constructor is not used.		Constructor is used.
+
+
+
+
+
+
+Q)Difference between real dom vs virtual dom ?
+
+Real dom 				virtual dom 
+-----------				--------------
+It updates slow.			It updates faster.
+
+Can directly updates HTML.		Can't directly updates HTML.
+
+Creates a new dom if element updates.	Update the jsx if element updates.
+
+DOM manipulation is very expensive.	DOM manipulation is very easy.
+
+Too much of memory wastage.		No memory wastage.
+
+
+
+
+
+
+Q)Difference between props and state ?
+
+props						state
+----------					---------
+Props are read-only.				States are updatable.
+
+Props are immutable.				State is mutable.
+
+
+Props allow us to pass data from one 		State holds information 
+component to other components as an argument.   about the components.
+
+
+Props can be accessed by the child component.	State cannot be accessed by 									child components because it is 
+						private.
+
+Stateless component can have Props.		Statefull components can have state.
+
+
+
+
+
+
+Phases of components in ReactJS
+================================
+There are four Phases of components in ReactJS.
+
+1)Mounting
+
+2)Updating
+
+3)Error Handling
+
+4)Unmounting
+
+
+1)Mounting
+-----------
+Mounting is a process of creating an element and inserting it in a DOM tree.
+
+
+2)Updating
+-------------
+Updating is a process of changing state or props of a component and update changes to nodes already existing in the DOM.
+
+3)Error Handling
+----------------
+Error Handling used when there is a error during rendering ,in lifecycle
+method or in the constructor of any child component.
+
+
+4)Unmounting 
+---------------
+Unmounting is a process of removing elements from the DOM tree.
+In general it will clear the reserved memory.
+
+
+
+Q)Explain life cycle methods of mounting ?
+
+ Mounting phase contains four methods.
+ 1) constructor()
+ 2) getDerivedStateFromProps()
+ 3) render()
+ 4) componentDidMount() 
+
+
+Q)Explain life cycle methods of unmounting?
+
+ Unmounting phase contains one method.
+
+ 1) componentWillUnmount()
+
+
+
+Q)Explain life cycle methods of updating?
+
+  updating phase contains five methods.
+  1) getDerivedStateFromProps()
+  2) shouldComponentUpdate()
+  3) render()
+  4) getSnapshotBeforeUpdate()
+  4) ComponentDidUpdate() 	
+
+
+
+Diagram: react6.1
+
+
+In react , all life cycle methods we can declare inside class component.
+
+App.js
+------
+import React, { Component } from 'react'
+
+export default class App extends Component {
+
+  constructor()
+  {
+    console.log('constructor');
+     super();
+
+      this.state={
+        name:"Alan"
+      }
+  }
+
+  static getDerivedStateFromProps(props,state)
+  {
+    console.log('getDerivedStateFromProps')
+  }
+
+  render() {
+    console.log('render');
+    return (
+      <>
+        <h1>Name : {this.state.name}</h1>
+      </>
+    )
+  }
+
+  componentDidMount()
+  {
+    console.log('componentDidMount')
+  }
+}
+
+
+
+
+
+
+Java Interview Questions
+=========================
+
+
+Q) Write a java program to display 10 fibonacci numbers ?
+
+    0 1 1 2 3 5 8 13 21 34 
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int n=10;
+
+		int a=0,b=1,c;
+		System.out.print(a+" "+b+" ");
+
+		for(int i=2;i<n;i++)
+		{
+			c=a+b;
+			System.out.print(c+" ");
+			a=b;
+			b=c;
+		}
+	}
+}
+
+approach2
+-------------
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int n=10;
+
+		int[] fibonaccie=new int[n];
+
+		fibonaccie[0]=0;
+		fibonaccie[1]=1;
+		System.out.print(fibonaccie[0]+" "+fibonaccie[1]+" ");
+		
+		for(int i=2;i<fibonaccie.length;i++)
+		{
+			fibonaccie[i]=fibonaccie[i-1]+fibonaccie[i-2];
+			System.out.print(fibonaccie[i]+" ");
+		}
+
+	}
+}
+
+Q) Write a java program to insert given word in a given index?
+
+input:
+	str= "niyazsirjava"
+	index=8
+	word="for"
+
+output:
+	niyazsirforjava
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str= "niyazsirjava";
+		int index = 8;
+		String word="for";
+
+		str=str.substring(0,index) + word + str.substring(index);
+
+		System.out.println(str);
+	}
+}
+
+
+Q) Write a java program to display perfect square from 1 to 100?
+
+output:
+	1 4 9 16 25 36 49 64 81 100
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		for(int i=1;i<=10;i++)
+		{
+			int square=i*i;
+			System.out.print(square+" ");
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

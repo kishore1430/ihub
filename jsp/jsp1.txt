@@ -1,0 +1,311 @@
+JSP
+====
+JSP is a dynamic web resource program which is used used to web applications.
+
+JSP is used for presentation layer or view.
+
+
+Limitations with Servlets
+=========================
+> To work with servlet strong java knowledge is required.
+
+> It is not suitable for non-java programmers.
+
+> It does not given any implicit object.
+  (Object which can be used directly without any configuration).
+
+> Configuration of each servlet program in web.xml file is mandatory.
+
+> Handling exceptions are mandatory.
+
+> We can't maintain HTML code and java code seperately.
+
+
+To overcome above limitations we need to use JSP.
+
+
+Advantages of JSP
+=================
+> To work with JSP strong java knowledge is not required.
+
+> It is suitable for java and non-java programmers.
+
+> It supports tag based language.
+
+> It allows us to work with custom tags and third party supplied tags.
+
+> It gives 9 implicit objects.
+
+> Configuration of each jsp program in web.xml file is optional.
+
+> Handling exceptions are optional.
+
+> We can maintain HTML code and Java Code seperately.
+
+> It gives all the features which are present in Servlets.
+
+
+First application development having JSP program as web resource program
+=======================================================================
+
+Deployment Directory structure
+------------------------------
+JspApp1
+|
+|---Java Resources
+	|
+	|---src
+|
+|---Web Content
+	|
+	|---ABC.jsp
+	|
+	|---WEB-INF
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+ABC.jsp
+--------
+
+<center>
+	<h1>
+			<%
+				java.util.Date d=new java.util.Date();
+				out.println(d);
+			%>
+	</h1>
+</center>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>ABC.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+------------
+	http://localhost:2525/JspApp1/
+
+
+Note:
+-----
+	In order to see the output in JSP we need to replace ecj.4.4.2 jar 
+	inside Tomcat/lib folder.
+
+	download link:
+	---------------
+	http://www.java2s.com/example/jar/e/download-ecj442jar-file.html#google_vignette
+
+
+Configuration of JSP program in web.xml file
+=============================================
+
+Deployment Directory structure
+------------------------------
+JspApp1
+|
+|---Java Resources
+	|
+	|---src
+|
+|---Web Content
+	|
+	|---ABC.jsp
+	|
+	|---WEB-INF
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+ABC.jsp
+--------
+
+<center>
+	<h1>
+			<%
+				java.util.Date d=new java.util.Date();
+				out.println(d);
+			%>
+	</h1>
+</center>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>ABC</servlet-name>
+  	<jsp-file>/ABC.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ABC</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
+
+Request url
+------------
+	http://localhost:2525/JspApp1/test 
+	http://localhost:2525/JspApp1/ABC.jsp 
+
+
+
+How can we access web application accessible through url pattern / It means how can we hide web application accessible through file name
+===============================================================================================
+We can access web application accessible through url pattern if we place ABC.jsp file inside 
+WEB-INF folder.
+
+
+Deployment Directory structure
+------------------------------
+JspApp1
+|
+|---Java Resources
+	|
+	|---src
+|
+|---Web Content
+	|
+	|
+	|---WEB-INF
+		|
+		|----ABC.jsp
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+ABC.jsp
+--------
+
+<center>
+	<h1>
+			<%
+				java.util.Date d=new java.util.Date();
+				out.println(d);
+			%>
+	</h1>
+</center>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>ABC</servlet-name>
+  	<jsp-file>/WEB-INF/ABC.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ABC</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
+
+
+Request url
+------------
+	http://localhost:2525/JspApp1/test   ---> valid 
+	http://localhost:2525/JspApp1/ABC.jsp ---> 404 Error 
+
+
+Interview Question 
+==================
+
+Q) Write a java program to display the string which are present in odd position?
+
+Input:
+	this is java class for students
+
+output:
+	
+	is  class students 
+
+ex:
+
+package com.ihub.www;
+
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		String str="this is java class for students";
+		
+		String[] sarr=str.split(" ");
+		
+		for(int i=0;i<sarr.length;i++)
+		{
+			if(i%2!=0)
+			{
+				System.out.print(sarr[i]+" ");
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

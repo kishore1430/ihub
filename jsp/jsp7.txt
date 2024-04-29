@@ -1,0 +1,337 @@
+Maven
+=====
+Maven is a project building management tool.
+
+Every maven project contains POM.xml file.
+
+POM stands for Project Object Model.
+
+Maven project contains dependencies, goals, descriptors and etc.
+
+Steps to develop Maven project
+------------------------------
+
+step1:
+-----
+	Launch eclipse IDE by choosing workspace location.
+
+step2:
+-----
+	Create a dynamic web project.
+	ex:
+		File --> new --> dynamic web project --> 
+		project Name : MavenProj 
+		Dynamic Web module version : 3.0   --> Next --> Next --> 
+		select web.xml file --> finish.
+
+step3:
+-----
+	Convert dynamic web project to Maven project.
+	ex:
+		right click to project --> configure --> convert to maven project -->
+
+		Group Id : com.ihub.www
+		Artifact Id : MavenProj
+		Name: MavenProj
+		Description : Demostration on Maven project --> finish.
+		
+
+step4:
+-----
+	Create a "ABC.jsp" file in side "Web Content" Folder
+	ex:
+		right click to Web content --> new --> file --> ABC.jsp --> finish.
+
+ABC.jsp
+-------
+<center>
+	<h1>
+		
+		Date and  Time : <br>
+		
+		<%
+		
+			java.util.Date date=new java.util.Date();
+			out.println(date);
+		%>
+	
+	</h1>
+</center>
+
+
+step5:
+------
+	Add servlet-api maven dependency in pom.xml file.
+
+pom.xml
+-------
+-
+-
+  <description>Demostration on Maven project</description>
+  
+  <dependencies>
+  			<dependency>
+    			<groupId>javax.servlet</groupId>
+    			<artifactId>servlet-api</artifactId>
+    			<version>2.5</version>
+    			<scope>provided</scope>
+			</dependency>
+  </dependencies>
+  
+  <build>
+-
+-
+-
+
+step6:
+-----
+	Set the welcome file in web.xml file.
+
+web.xml
+------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+ 
+ 	<welcome-file-list>
+ 		<welcome-file>ABC.jsp</welcome-file>
+ 	</welcome-file-list>
+ 
+</web-app>
+
+step7:
+-----
+	Run the maven project.
+	ex:
+		right click to project --> run as --> run on server.
+
+step8:
+-----
+	Test the application by using below request url.
+	ex:
+		http://localhost:2525/
+
+
+How to convert Maven project or Dynamic project to war file
+===========================================================
+step1:
+------
+	Make sure Dynamic or Maven project is ready in eclipse IDE.
+
+
+step2:
+----
+	convert Dynamic or Maven project to war file .
+	ex:
+		Right click to MavenProj --> export --> war file -->
+		Destination : Desktop(choose) --> open --> finish.
+
+
+
+
+
+
+GIT/GITHUB
+================
+
+Q) Difference between GIT vs GITHUB ?
+
+
+GIT						GITHUB
+--------					---------
+It is distributed version control system	It is a web-based hosting 
+to track changes of each file in a project.	service for git.
+
+It contains local repository.			It contains remote repository.
+
+It is command line tool.			It is GUI.
+
+It is locally installed.			It is hosted on web.
+
+
+
+
+Q)Types of stages of Git?
+
+We have three stages in git.
+
+Working Directory : 
+----------------------------
+	the file exists, but is not part of git's version control.
+
+staging area: 
+--------------------
+	the file has been added to git's version control but changes 
+	have not been committed
+
+Repository: 
+------------
+	the change has been committed 
+
+Diagram: git
+
+
+
+Remote repository github
+==========================
+	https://github.com/NiyazulHasan/practice
+
+
+
+Q)Write a git command to initialized empty repository?
+
+	git init
+
+
+Q)Write a git command to check the status? 
+
+	git status 
+
+Q)Write a git command to move from master branch to main branch?
+
+	git branch --move master main
+
+
+Q)Write a git command to check the branch?
+
+	git branch 
+
+Q) Write a git command to add the data from working directory to staging area.
+
+	git add . 
+
+Q)Write a git command to commit the changes?
+
+	git commit -m "comment here"
+
+
+Q)Write a git command to add remote repository?
+
+	git remote add origin https://github.com/NiyazulHasan/practice
+
+
+Q)Write a git command to check the remote repository
+
+	git remote -v 
+
+
+Q)Write a git command to push the code to remote origin?
+	
+	git push -f origin main 
+
+
+Q)Write a git command to clone the project?
+
+	git clone <url>
+
+Q)Write a git command to pull request?
+
+	git pull <url>
+
+
+
+Note:
+-------
+
+Classroom Commands
+==================
+git init 
+git brach --move master main
+git add .
+git commit -m "my war file"
+git remote add origin   url 
+git push -f origin main 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

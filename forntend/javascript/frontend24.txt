@@ -1,0 +1,588 @@
+addEventListener()
+==================
+It is used to add event handler to an element.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<h1>Click AnyWhere</h1>
+
+		<script type="text/javascript">
+
+				addEventListener('click',function(){
+					alert("You have clicked");
+				})
+				
+		</script>
+</body>
+</html>
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<h1>Click AnyWhere</h1>
+
+		<script type="text/javascript">
+
+				addEventListener('click',f1);
+				
+				function f1()
+				{
+					alert("Yahoo! you have clicked");
+				}
+
+		</script>
+</body>
+</html>
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<h1 id="hover">Mouse Over Here </h1>
+		<br>
+		<div id="result"></div>
+
+		<script type="text/javascript">
+
+				var y=document.getElementById('hover');
+
+				y.addEventListener('mouseover',f1);
+
+				function f1()
+				{
+					document.getElementById('result').innerHTML="Mouse is over";
+				}
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<h1 id="hover">Mouse Over and Out here </h1>
+		<br>
+		<div id="result"></div>
+
+		<script type="text/javascript">
+
+				var y=document.getElementById('hover');
+
+				y.addEventListener('mouseout',f1);
+
+				function f1()
+				{
+					document.getElementById('result').innerHTML="Mouse is out";
+				}
+
+		</script>
+</body>
+</html>
+
+Javascript program to convert Feet to Inches using addEventListener()
+=====================================================================
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+		<center>
+			Convertion Application 
+		</center>
+		<hr/>
+		<table align="center">
+				<tr>
+					<td>Feet</td>
+					<td>&nbsp;</td>
+					<td>Inches</td>
+				</tr>
+				<tr>
+					<td><input type="text" id="feet"/></td>
+					<td><big>=</big></td>
+					<td><input type="text" id="inches"/></td>
+				</tr>
+		</table>
+
+		<script>
+				var feet=document.getElementById('feet');
+				var inches=document.getElementById('inches');
+
+				feet.addEventListener('input',function(){
+					var f=this.value;
+					var i=f*12;
+					inches.value=i;
+				})
+
+				inches.addEventListener('input',function(){
+					var i=this.value;
+					var f=i/12;
+					
+					if(!Number.isInteger(f))
+					{
+						f=f.toFixed(2);
+					}
+
+					feet.value=f;
+
+
+				})
+		</script>
+</body>
+</html>
+
+removeEventListener()
+====================
+It is used to remove event handler from element.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+
+		<h1 id="hover"> Mouse Over Here </h1>
+
+		<button onclick="f2()"> stop </button>
+
+		<div id="result"></div>
+
+		<script>
+			var y=document.getElementById('hover');
+
+			y.addEventListener('mouseover',f1);
+
+			function f1()
+			{
+				document.getElementById('result').innerHTML+="<p>Mouse is over</p>";
+			}
+
+			function f2()
+			{
+				y.removeEventListener('mouseover',f1);
+				document.getElementById('result').innerHTML+="<p>Mouse Event Stop!</p>";
+
+			}
+		</script>
+
+</body>
+</html>
+
+JavaScript Date 
+===============
+In javascript, Date is an object which is used to display date and time.
+
+Using Date object we can display timer on the web page.
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+
+		<script>
+			var date=new Date();
+			document.writeln(date);
+		</script>
+
+</body>
+</html>
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+
+		<script>
+			var date=new Date();
+			var d=date.getDate();
+			var m=date.getMonth()+1;
+			var y=date.getFullYear();
+			document.writeln(d+"/"+m+"/"+y);
+		</script>
+
+</body>
+</html>
+
+ex:3
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+
+		<script>
+			var date=new Date();
+			var h=date.getHours();
+			var m=date.getMinutes();
+			var s=date.getSeconds();
+			document.writeln(h+":"+m+":"+s);
+		</script>
+
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+	<style>
+		
+		body
+		{
+			height:100vh;
+			background-image: linear-gradient(yellow,red);
+			display:flex;
+			justify-content: center;
+			align-items: center;
+		}
+		span
+		{
+			width:120px;
+			height:30px;
+			box-shadow: 2px 2px 16px 6px #FFF;
+			font-size:30px;
+			font-weight: bold;
+			color:white;
+		}
+
+	</style>
+</head>
+<body>
+
+		<span id="result"> </span>
+
+		<script>
+
+			window.onload=function(){getTime();}
+
+			function getTime()
+			{
+				var date=new Date();
+				var h=date.getHours();
+				var m=date.getMinutes();
+				var s=date.getSeconds();
+				m=check(m);
+				s=check(s);
+				document.getElementById("result").innerHTML=h+":"+m+":"+s;	
+
+				setInterval(getTime,1000);
+			}
+
+			function check(i)
+			{
+				if(i<10)
+				{
+					i = "0"+i;
+				}
+
+				return i;
+			}
+			
+		</script>
+		
+</body>
+</html>
+
+Interview Question
+==================
+Q) What is the difference between innerText vs innerHTML? 
+
+innerText
+---------
+A innerText property is used to add simple text using javascript dynamically.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+
+		<button onclick="f1()"> click Me </button>
+		
+		<div id="result"></div>
+
+		<script>
+			function f1()
+			{
+				document.getElementById('result').innerText="<p>You have simple Text</p>";
+			}
+		</script>
+		
+</body>
+</html>
+
+
+innerHTML
+---------
+A innerHTML property is used to add HTML text using javascript dynamically.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage</title>
+</head>
+<body>
+
+		<button onclick="f1()"> click Me </button>
+		
+		<div id="result"></div>
+
+		<script>
+			function f1()
+			{
+				document.getElementById('result').innerHTML="<p style='color:red'>You have simple Text</p>";
+			}
+		</script>
+		
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

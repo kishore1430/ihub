@@ -1,0 +1,932 @@
+CSS z-index property
+====================
+The z-index property specifies the stack order of an element.
+
+An element with greater stack order is always in front of an element with a lower stack order.
+
+Note: z-index only works on positioned elements.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				width:200px;
+				height:200px;
+				border:2px solid black;
+				background-color:#FFF;
+				position:absolute;
+				top:0;
+				left:0;
+				z-index:1;
+			}
+		</style>
+	</head>
+	<body> 
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<img src="images/rock.png"/>
+			
+			
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				width:200px;
+				height:200px;
+				border:2px solid black;
+				background-color:#FFF;
+				position:absolute;
+				top:0;
+				left:0;
+				z-index:-1;
+			}
+		</style>
+	</head>
+	<body> 
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<img src="images/rock.png"/>
+			
+			
+	</body>
+</html>
+
+CSS opacity property 
+=====================
+The opacity property sets the opacity level for an element.
+
+The opacity-level describes the transparency-level, where 1 is not transparent at all, 0.5 is 50% see-through, and 0 is completely transparent.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				margin:50px auto;
+				background-color:red;
+				width:200px;
+				height:200px;
+				opacity:1;
+			}
+		</style>
+	</head>
+	<body> 
+			<div>
+			
+			</div>
+			
+			
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				margin:50px auto;
+				background-color:red;
+				width:200px;
+				height:200px;
+				opacity:0.5;
+			}
+		</style>
+	</head>
+	<body> 
+			<div>
+			
+			</div>
+			
+			
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				margin:50px auto;
+				background-color:red;
+				width:200px;
+				height:200px;
+				opacity:0.1;
+			}
+		</style>
+	</head>
+	<body> 
+			<div>
+			
+			</div>
+			
+			
+	</body>
+</html>
+
+
+CSS  Gradients
+=====================
+CSS gradients let you display smooth transitions between two or more specified colors.
+
+CSS defines three types of gradients:
+
+1)Linear Gradients (goes down/up/left/right/diagonally)
+
+2)Conic Gradients (rotated around a center point)
+
+3)Radial Gradients (defined by their center)
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				height:100vh;
+				background:linear-gradient(yellow,red);
+			}
+		</style>
+	</head>
+	<body> 
+			
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				height:100vh;
+				background:linear-gradient(to left,yellow,red);
+			}
+		</style>
+	</head>
+	<body> 
+			
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				height:100vh;
+				background-image:conic-gradient(yellow,red);
+			}
+		</style>
+	</head>
+	<body> 
+			
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				height:100vh;
+				background-image:radial-gradient(yellow,red);
+			}
+		</style>
+	</head>
+	<body> 
+			
+	</body>
+</html>
+
+CSS flexbox 
+=============
+It is a one-dimensional layout methods for laying out our items in rows and columns.
+
+CSS flexbox is a better way to align items into a container.
+
+Flexbox= flexible + box.
+
+To create a flexbox model, we need to define a "flex container".
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:flex;
+				flex-direction:row;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				border:2px solid black;
+			}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item">Item1</div>
+				<div class="item">Item2</div>
+				<div class="item">Item3</div>
+				<div class="item">Item4</div>
+				<div class="item">Item5</div>
+				<div class="item">Item6</div>
+			</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:flex;
+				flex-direction:row-reverse;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				border:2px solid black;
+			}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item">Item1</div>
+				<div class="item">Item2</div>
+				<div class="item">Item3</div>
+				<div class="item">Item4</div>
+				<div class="item">Item5</div>
+				<div class="item">Item6</div>
+			</div>	
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:flex;
+				flex-direction:column;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				border:2px solid black;
+			}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item">Item1</div>
+				<div class="item">Item2</div>
+				<div class="item">Item3</div>
+				<div class="item">Item4</div>
+				<div class="item">Item5</div>
+				<div class="item">Item6</div>
+			</div>	
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:flex;
+				flex-direction:column-reverse;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				border:2px solid black;
+			}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item">Item1</div>
+				<div class="item">Item2</div>
+				<div class="item">Item3</div>
+				<div class="item">Item4</div>
+				<div class="item">Item5</div>
+				<div class="item">Item6</div>
+			</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:flex;
+				flex-direction:row;
+				flex-wrap:no-wrap;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				border:2px solid black;
+			}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item">Item1</div>
+				<div class="item">Item2</div>
+				<div class="item">Item3</div>
+				<div class="item">Item4</div>
+				<div class="item">Item5</div>
+				<div class="item">Item6</div>
+			</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:flex;
+				flex-direction:row;
+				flex-wrap:wrap;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				border:2px solid black;
+			}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item">Item1</div>
+				<div class="item">Item2</div>
+				<div class="item">Item3</div>
+				<div class="item">Item4</div>
+				<div class="item">Item5</div>
+				<div class="item">Item6</div>
+			</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:flex;
+				flex-flow:row  wrap;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				border:2px solid black;
+			}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item">Item1</div>
+				<div class="item">Item2</div>
+				<div class="item">Item3</div>
+				<div class="item">Item4</div>
+				<div class="item">Item5</div>
+				<div class="item">Item6</div>
+			</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:flex;
+				flex-flow:row  wrap;
+				justify-content:center;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				border:2px solid black;
+			}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item">Item1</div>
+				<div class="item">Item2</div>
+				<div class="item">Item3</div>
+				<div class="item">Item4</div>
+				<div class="item">Item5</div>
+				<div class="item">Item6</div>
+			</div>	
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:flex;
+				flex-flow:row  wrap;
+				justify-content:center;
+				align-items:center;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				border:2px solid black;
+			}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item">Item1</div>
+				<div class="item">Item2</div>
+				<div class="item">Item3</div>
+				<div class="item">Item4</div>
+				<div class="item">Item5</div>
+				<div class="item">Item6</div>
+			</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:flex;
+				flex-flow:row  wrap;
+				align-content:center;
+			}
+			.container .item
+			{
+				width:150px;
+				height:150px;
+				border:2px solid black;
+			}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item">Item1</div>
+				<div class="item">Item2</div>
+				<div class="item">Item3</div>
+				<div class="item">Item4</div>
+				<div class="item">Item5</div>
+				<div class="item">Item6</div>
+			</div>	
+	</body>
+</html>
+
+
+CSS Grid layout
+===============
+The CSS grid layout module offers a grid-based layout system with rows and columns.
+
+Grid layout makes easier to design web pages without having a use of floats and positioning tag.
+
+A grid layout consists of a parent element , with one or more child elements.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:grid;
+			}
+			.item1{background-color:#EE5A24;}
+			.item2{background-color:#12CBC4;}
+			.item3{background-color:#C4E538;}
+			.item4{background-color:#B53471;}
+			.item5{background-color:#0652DD;}
+			.item6{background-color:#6F1E51;}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item1">Item1</div>
+				<div class="item2">Item2</div>
+				<div class="item3">Item3</div>
+				<div class="item4">Item4</div>
+				<div class="item5">Item5</div>
+				<div class="item6">Item6</div>
+			</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:grid;
+				grid-template-rows:150px 150px;
+				grid-template-columns:150px 150px 150px;
+			}
+			.item1{background-color:#EE5A24;}
+			.item2{background-color:#12CBC4;}
+			.item3{background-color:#C4E538;}
+			.item4{background-color:#B53471;}
+			.item5{background-color:#0652DD;}
+			.item6{background-color:#6F1E51;}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item1">Item1</div>
+				<div class="item2">Item2</div>
+				<div class="item3">Item3</div>
+				<div class="item4">Item4</div>
+				<div class="item5">Item5</div>
+				<div class="item6">Item6</div>
+			</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:grid;
+				grid-template-rows:150px 150px;
+				grid-template-columns:150px 150px 1fr;
+			}
+			.item1{background-color:#EE5A24;}
+			.item2{background-color:#12CBC4;}
+			.item3{background-color:#C4E538;}
+			.item4{background-color:#B53471;}
+			.item5{background-color:#0652DD;}
+			.item6{background-color:#6F1E51;}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item1">Item1</div>
+				<div class="item2">Item2</div>
+				<div class="item3">Item3</div>
+				<div class="item4">Item4</div>
+				<div class="item5">Item5</div>
+				<div class="item6">Item6</div>
+			</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:grid;
+				grid-template-rows:repeat(2,150px);
+				grid-template-columns:repeat(3,1fr);
+			}
+			.item1{background-color:#EE5A24;}
+			.item2{background-color:#12CBC4;}
+			.item3{background-color:#C4E538;}
+			.item4{background-color:#B53471;}
+			.item5{background-color:#0652DD;}
+			.item6{background-color:#6F1E51;}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item1">Item1</div>
+				<div class="item2">Item2</div>
+				<div class="item3">Item3</div>
+				<div class="item4">Item4</div>
+				<div class="item5">Item5</div>
+				<div class="item6">Item6</div>
+			</div>	
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:grid;
+				grid-template-rows:repeat(2,150px);
+				grid-template-columns:repeat(3,1fr);
+				grid-row-gap:10px;
+				grid-column-gap:10px;
+			}
+			.item1{background-color:#EE5A24;}
+			.item2{background-color:#12CBC4;}
+			.item3{background-color:#C4E538;}
+			.item4{background-color:#B53471;}
+			.item5{background-color:#0652DD;}
+			.item6{background-color:#6F1E51;}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item1">Item1</div>
+				<div class="item2">Item2</div>
+				<div class="item3">Item3</div>
+				<div class="item4">Item4</div>
+				<div class="item5">Item5</div>
+				<div class="item6">Item6</div>
+			</div>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.container
+			{
+				width:100%;
+				height:400px;
+				border:2px solid black;
+				display:grid;
+				grid-template-rows:repeat(2,150px);
+				grid-template-columns:repeat(3,1fr);
+				grid-gap:20px;
+			}
+			.item1{background-color:#EE5A24;}
+			.item2{background-color:#12CBC4;}
+			.item3{background-color:#C4E538;}
+			.item4{background-color:#B53471;}
+			.item5{background-color:#0652DD;}
+			.item6{background-color:#6F1E51;}
+			
+		</style>
+	</head>
+	<body> 
+			<div class="container">
+				<div class="item1">Item1</div>
+				<div class="item2">Item2</div>
+				<div class="item3">Item3</div>
+				<div class="item4">Item4</div>
+				<div class="item5">Item5</div>
+				<div class="item6">Item6</div>
+			</div>	
+	</body>
+</html>
+
+
+CSS Google Fonts 
+=================
+If we do not want to use any of the standard fonts in HTML, you can use Google Fonts.
+
+Google Fonts are free to use, and have more than 1000 fonts to choose.
+
+
+To use any google fonts we need to use below url.
+ex:
+	https://fonts.google.com/
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+			h1
+			{
+				font-family: 'Ultra', serif;
+			}
+		</style>
+	</head>
+	<body> 
+			<h1>This is Heading Tag</h1>
+	</body>
+</html>
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+		<style>
+			
+			h1
+			{
+				font-family: 'Ultra', serif;
+			}
+		</style>
+	</head>
+	<body> 
+			<h1>This is Heading Tag</h1>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+

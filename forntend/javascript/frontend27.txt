@@ -1,0 +1,512 @@
+Javascript OOPS
+================
+OOPS stands for Object Oriented Programming System/Structured.
+
+A technology said to be object oriented if it supports following features.
+
+ex:
+	class
+	object 
+	abstraction 
+	encapsulation 
+	inheritance 
+	polymorphism
+
+Javascript is not a object oriented programming language. It is a object based programming language because it supports objects like Arrays, Strings, RegEx, Date and etc.
+
+class
+=====
+A class is a template of an object.
+
+In Javascript, class will not consider as an object.
+
+To declare a class we need to use class keyword following by any perticular name.
+
+According to naming convention in javascript , A class name must starts with uppercase letter.
+
+ex:
+	class   Example
+	{
+		
+	}
+
+
+constructor
+============
+A constructor is a special function which is used to initialize or create an object.
+
+A constructor will be execute when memory is allocated.
+
+To declare a constructor we need to use constructor keyword.
+
+A class can have only one constructor. 
+
+ex:
+	class Example
+	{
+		constructor()
+		{
+			-		
+		}
+	}
+
+
+object
+=======
+Object is an entity have states and behaviours(properties and functions).
+
+Using new operator we can create an object.
+
+ex:
+	var e = new Example();
+
+
+ex:1
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					class Example
+					{
+						constructor()
+						{
+							document.writeln("constructor");
+						}
+					}
+					var e=new Example();
+		</script>
+</body>
+</html>
+
+o/p:
+     constructor 
+
+
+ex:2
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					class Example
+					{
+						constructor()
+						{
+							document.writeln("constructor <br>");
+						}
+					}
+					var e1=new Example();
+					var e2=new Example();
+		</script>
+</body>
+</html>
+
+ex:3
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					class Example
+					{
+						constructor(id,name,sal)
+						{
+							document.writeln("Employee Id :"+id+"<br>");
+							document.writeln("Employee Name :"+name+"<br>");
+							document.writeln("Employee Salary :"+sal+"<br>");
+						}
+					}
+					var e=new Example(101,"Alan",1000.0);
+		</script>
+</body>
+</html>
+
+
+Abstraction
+===========
+Hiding the internal implementation and highlighting the set of services is called abstraction.
+or 
+The process of hiding the data and showing the services is called abstraction.
+ex:
+
+	The best example of abstraction is GUI ATM machine, Coffee Machine , Mobile Phone and etc.
+
+Encapsulation
+=============
+The process of encapsulating or grouping properties and it's associate functions is called encapsulation.
+
+The main object of encapsulation is to protect the data.
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				class Example
+				{
+					setId(id)
+					{
+						this.id=id;
+					}
+					setName(name)
+					{
+						this.name=name;
+					}
+					setFee(fee)
+					{
+						this.fee=fee;
+					}
+					getId()
+					{
+						return this.id;
+					}
+					getName()
+					{
+						return this.name;
+					}
+					getFee()
+					{
+						return this.fee;
+					}
+				}
+				var e=new Example();
+
+				e.setId(101);
+				e.setName("Alan");
+				e.setFee(25000);
+
+				document.writeln("Employee Id :"+e.getId()+"<br>");
+				document.writeln("Employee Name :"+e.getName()+"<br>");
+				document.writeln("Employee Fee :"+e.getFee()+"<br>");
+
+		</script>
+</body>
+</html>
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				class Example
+				{
+					constructor(id,name,fee)
+					{
+						this.id=id;
+						this.name=name;
+						this.fee=fee;
+					}
+
+					getId()
+					{
+						return this.id;
+					}
+					getName()
+					{
+						return this.name;
+					}
+					getFee()
+					{
+						return this.fee;
+					}
+				}
+				var e=new Example(102,"Jack",25000);
+
+				document.writeln("Employee Id :"+e.getId()+"<br>");
+				document.writeln("Employee Name :"+e.getName()+"<br>");
+				document.writeln("Employee Fee :"+e.getFee()+"<br>");
+
+		</script>
+</body>
+</html>
+
+
+Inheritance
+============
+Inheritance is a mechanism where one class will inherit the properties of another class.
+or
+Inheritance is a mechanism where we will derive a class in the present of existing class.
+
+By using extends keyword we can implements inheritance.
+
+The main objective of inheritance is to provide reusability.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				class A 
+				{
+					f1()
+					{
+						document.writeln("A-f1 function <br>");
+					}	
+				}
+				class B extends A 
+				{
+					f2()
+					{
+						document.writeln("B-f2 function <br>");
+					}	
+				}
+				var a=new A();
+				a.f1();
+
+				var b=new B();
+				b.f1();
+				b.f2();
+		</script>
+</body>
+</html>
+
+Polymorphism
+=============
+Poly means many and morphism means forms.
+
+The ability to represent in different forms is called polymorphism.
+
+The main objective of polymorphism is to provide flexibility.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				class A 
+				{
+					f1()
+					{
+						document.writeln("A-f1-function <br>");
+					}	
+				}
+				class B extends A 
+				{
+					f1()
+					{
+						document.writeln("B-f1-function <br>");
+					}		
+				}
+
+				var a=new A();
+				a.f1();
+
+				var b=new B();
+				b.f1();
+		</script>
+</body>
+</html>
+
+
+SEGURO interview Question
+=========================
+
+Q) Write a java program to identify and print all elements in an array that are greater then both 
+their immediate predecessors and successors, considering the first and last elements as 
+having only one neighbour.
+
+For example 
+
+input:
+	 1 3 20 4 75 0 90
+
+Output:
+	20  75  90
+
+ex:
+
+class Test 
+{
+	public static void main(String[] args)
+	{
+		int[] arr={1,3,20,4,75,0,90};
+
+		//first element
+		if(arr[0]>arr[1])
+		{
+			System.out.print(arr[0]+" ");
+		}
+		//middle elements
+		for(int i=1;i<arr.length-1;i++)
+		{
+			if(arr[i]>arr[i-1] && arr[i]>arr[i+1])
+			{
+				System.out.print(arr[i]+" ");
+			}
+		}
+		//last elements
+		if(arr[arr.length-1]>arr[arr.length-2])
+		{
+			System.out.print(arr[arr.length-1]+" ");
+		}
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

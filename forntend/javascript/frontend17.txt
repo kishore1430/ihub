@@ -1,0 +1,738 @@
+Types of javascript
+===================
+We have two types of javascript.
+
+1) Internal javascript 
+
+2) External javscript  
+
+
+1) Internal javascript 
+----------------------
+In internal javascript we will declare html code and javascript code in .html file.
+
+advantages:
+
+> There is no confusion of multiple files.
+
+> We can understand html code and javascript easily.
+
+disadvantages:
+
+> If code is increases then it will increase the complexity.
+
+
+
+2) External javscript 
+----------------------
+In external javascript we will maintain html code in .html file and javscript code in .js file.
+
+Javascript file we can't execute directly on browser we need to attach with .html file.
+
+advantages:
+
+> We can maintain html code and javascript code seperately.
+
+> If code is increases then it will not increase the complexity.
+
+disadvantages:
+
+> There is a confusion of multiple files.
+
+
+Javascript variables
+====================
+A name which is given to a memory location is called variable.
+
+Purpose of variable is used to store the data.
+
+We have same rules for variables as we have rules for identifiers.
+
+Rule1:
+----
+	Variable must and should starts with alphabet,underscore or dollar symbol but not 
+	with digits.
+	ex:
+		var empId;
+		var _empName;
+		var $alary;
+		var a1234; 
+		var 1abcd; // invalid
+
+Rule2:
+-----
+	Every identifier is a case sensitive.
+	ex:
+		int  number;
+		int  NUMBEB;
+		int  NumBer;
+
+We have two types of variables.
+
+1) Local variables
+
+2) Global variables 
+
+1) Local variables
+-------------------
+If we declare any variable inside functions or blocks is called local variables.
+
+Local variables we can access within the function.
+
+ex:1
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				function f1()
+				{
+					//local variable
+					var i=10;
+					document.writeln(i);		
+				}
+
+				f1();
+		</script>
+</body>
+</html>
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				function f1()
+				{
+					//local variable
+					var i=10;
+					document.writeln(i);		
+				}
+				function f2()
+				{
+					document.writeln(i);
+				}
+
+				f1();
+				f2();
+		</script>
+</body>
+</html>
+
+
+2) Global variables
+--------------------
+If we declare a variable outside the function or block is called global variable.
+
+Global variable we can access with in the function and outside the function.
+
+1)
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				//global variable
+				var i=100;
+
+				function f1()
+				{
+					document.writeln(i);			
+				}
+				
+				f1();
+		</script>
+</body>
+</html>
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				//global variable
+				var i=100;
+
+				function f1()
+				{
+					document.writeln(i);			
+				}
+				function f2()
+				{
+					document.writeln(i);
+				}
+				
+				f1();
+				f2();
+		</script>
+</body>
+</html>
+
+
+Javascript Datatypes
+=====================
+Javascript is a dynamically typed language so we don't need to define datatype at the time of variable declaration.
+
+To declare a variable we will use var keyword.
+
+Javascript internally uses javascript engine to determine perticular datatype based on the value.
+
+We have two types of datatypes.
+
+1) Primitive datatypes
+
+2) Non-primitive datatypes
+1) Primitive datatypes
+------------------------
+We have following list of primitive datatypes.
+
+ex:
+	datatype 	description
+	---------	----------
+	number		It is used to represent numbers
+	boolean		It is used to represent boolean values
+	String 		It is used to represent Strings
+	null		It is used to represent null
+	undefined 	It is used to represent undefined 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i=10;
+				document.writeln(i+"<br>");
+
+				var j=10.5;
+				document.writeln(j+"<br>");
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i=true;
+				document.writeln(i+"<br>");
+
+				var j=false;
+				document.writeln(j+"<br>");
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i="hi";
+				document.writeln(i+"<br>");
+
+				var j='hello';
+				document.writeln(j+"<br>");
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i=null;
+				document.writeln(i+"<br>");
+
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i;
+				document.writeln(i+"<br>"); //undefined 
+
+
+		</script>
+</body>
+</html>
+
+2)Non-Primitive datatypes
+-------------------------
+We have following list of non-primitive datatypes.
+ex:
+	datatype	description
+	---------	------------
+	Object 		It is used to represent instance through which we can access members.
+			
+	Array		It is used to represent similar elements.
+
+	RegEx 		IT is used to represent regular expression. 
+
+
+Javascript operators
+======================
+Operator is a symbol which is used to perform some operations on operands.
+ex:
+	c = a + b;
+
+	Here a,b and c are operands 
+	Here = and + are operators.
+
+It can perform arithmetic operation, logical operation, relational operation and etc.
+
+We have following list of operators present in javascript.
+
+1) Assignment operators 
+
+2) conditional operators 
+
+3) logical operators
+
+4) bitwise operators
+
+5) arithmetic operators 
+
+6) special operators 
+
+1) Assignment operators 
+-----------------------
+We have following list of assignment operators.
+
+ex:
+	symbol		operator
+	------		--------
+	=		equals to 
+	+=		addition and equals to 
+	-=		subtraction and equals to 
+	*=		multiplication and equals to 
+	/=		division and equals to 
+	%=		modules and equals to 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+				var i=10;
+
+				i/=2;
+
+				document.writeln(i);
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+				var i=10;
+
+				i/=20;
+
+				document.writeln(i);//0.5
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+				var i=10;
+
+				i%=2;
+
+				document.writeln(i);//0
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+				var i=10;
+
+				i%=20;
+
+				document.writeln(i);//10
+
+		</script>
+</body>
+</html>
+
+
+2) conditional operators 
+------------------------
+We have following list of conditional operators.
+
+ex:
+	symbol		operator
+	------		---------
+	>		greater then 
+	>=		greater then equals to 
+	<		less then 
+	<=		less then equals to 
+	==		equals to 
+	!= 		not equals to 
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+				document.writeln((5>2)+"<br>");//true 
+
+				document.writeln((5>=20)+"<br>");//false 
+
+				document.writeln((5<2)+"<br>");//false 
+
+				document.writeln((5<=20)+"<br>");//true 
+
+				
+
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+				document.writeln((10 == 10)+"<br>");//true 
+
+				document.writeln((10 == 20 )+"<br>");//false 
+
+				document.writeln((10 != 20)+"<br>");//true 
+
+				document.writeln((10 != 10)+"<br>");//false
+
+
+
+		</script>
+</body>
+</html>
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+				document.writeln((5<4<3)+"<br>");//true 
+
+
+
+
+		</script>
+</body>
+</html>
+
+
+Q) What is the difference between == and === ?
+
+==
+-----
+It is used to check values are same or not.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+				document.writeln((1 == true)+"<br>");//true 
+
+				document.writeln((0 == false)+"<br>");//true
+
+				document.writeln(("1" == true)+"<br>");//true 
+
+				document.writeln(("0" == false)+"<br>");//true  
+
+
+
+
+		</script>
+</body>
+</html>
+
+=== 
+-----
+It is used to check datatypes and values are same or not.
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+				document.writeln((1 === true)+"<br>");//false 
+
+				document.writeln((0 === false)+"<br>");//false
+
+				document.writeln(("1" === true)+"<br>");//false 
+
+				document.writeln(("0" === false)+"<br>");//false  
+
+				document.writeln((1 === 1)+"<br>");//true
+
+
+		</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,91 @@
+Interface
+==========
+Interface is a collection of zero or more abstract methods.
+
+Abstract methods are incomplete methods because they ends with semicolon and do not have any body.
+ex:
+	public abstract void m1();
+
+It is not possible to create object for interfaces.
+
+To implement abstract methods of an interface we will use implementation class.
+
+It is possible to create object for implementation class because it contains method with body.
+
+Interface contains only constants i.e public static final.
+
+By default every abstract method is a public and abstract.
+
+syntax:
+-------
+	interface <interface_name>
+	{
+		-
+		- //constants 
+		- //abstract methods 
+		-
+	}
+
+Diagram: class25.1
+
+Note:
+-----
+If we know Service Requirement Specification then we need to use interface.
+
+ex:1
+----
+interface A 
+{
+	//abstract method
+	public abstract void m1();
+}
+class B implements A 
+{
+	public void m1()
+	{
+		System.out.println("M1-Method");
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		A a=new B();
+		a.m1();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,309 @@
+Custom Hooks
+=============
+Hooks which are created by the user based on the application requirement are called custom hooks.
+
+ex:
+	myHook()
+	customHook()
+	reactHook()
+	vamsiHook()
+	and etc.
+
+React project structure 
+-----------------------
+myapp13
+|
+|-----node_modules
+|
+|-----public
+|	|
+	|---index.html 
+	|---manifest.json
+	|---fevicon.ico
+|
+|-----src
+	|
+	|---index.js
+	|---index.css
+	|
+	|---App.js
+	|---App.css
+	|---App.test.js
+
+	|
+	|---CustomHook.js
+|
+|
+|-----package.json 
+|-----README.md
+
+step1:
+-----
+	Create a react project or application.
+	ex:
+		Reactprojects> npx  create-react-app myapp13
+
+step2:
+-----
+	Open the VSC code Editor.
+	ex:
+		Reactprojects>  code . 
+
+step3:
+-----
+	Switch to the project.
+	ex:
+		Reactprojects> cd  myapp13
+
+
+step4:
+-----
+	Run the react application or project.
+	ex:
+		Reactprojects/myapp13> npm start 
+
+step5:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step6:
+-----
+	Create a CustomHook.js file inside "src" folder.
+
+
+CustomHook.js
+-------------
+import {useState} from 'react';
+
+export default function CustomHook()
+{
+
+    const [count,setCount]=useState(0);
+
+    const handleClick=()=>
+    {
+        setCount(count+1);
+    }
+
+    return (
+           {
+            count,
+            handleClick
+           } 
+    )
+}
+
+step7:
+-----
+	Now change the code inside src/App.js file.
+
+App.js
+-------
+import customHook from "./CustomHook";
+
+export default function App()
+{
+  const data=customHook();
+
+  return(
+      <>
+        <h1> Count : {data.count}</h1>
+        <button onClick={data.handleClick}> Increment </button>
+      </>
+  )
+}
+
+
+Boostrap in ReactJS
+===================
+A Single Page Application (SPA) gaining popularity over the last few years, so many front-end frameworks have introduced such as Angular, Vue, Ember, etc. As a result, jQuery is not a necessary requirement for building web apps. 
+
+Currently, React is mostly used JavaScript library for building web applications, and Bootstrap become the most popular CSS framework. 
+
+React project structure 
+-----------------------
+myapp14
+|
+|-----node_modules
+|
+|-----public
+|	|
+	|---index.html 
+	|---manifest.json
+	|---fevicon.ico
+|
+|-----src
+	|
+	|---index.js
+	|---index.css
+	|
+	|---App.js
+	|---App.css
+	|---App.test.js
+
+|
+|
+|-----package.json 
+|-----README.md
+
+step1:
+-----
+	Create a react application or project.
+	ex:
+		Reactprojects> npx create-react-app myapp14
+
+step2:
+------
+	Open the VSC code editor.
+	ex:	
+		Reactprojects> code . 
+
+step3:
+------
+	Switch to the project.
+	ex:
+		Reactprojects> cd myapp14
+
+step4:
+-----
+	Install bootstrap library inside "myapp14" project.
+	ex:
+		Reactprojects/myapp14> npm install bootstrap
+
+step5:
+-----
+	Goto package.json file to verify bootstrap is installed or not.
+
+
+step6:
+-----
+	import bootstrap inside "index.js" file.
+
+index.js
+--------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+step7:
+-----
+	Now add bootstrap code inside parent component i.e App.js.
+
+App.js
+-----
+export default function App()
+{
+    return(
+      <div className="container mt-5">
+        <button className="btn btn-primary"> clickMe </button>
+      </div>
+    )
+}
+
+step8:
+-----
+	Run the react application or project.
+	ex:
+		Reactprojects/myapp14> npm start 
+
+step9:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

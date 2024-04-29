@@ -1,0 +1,381 @@
+To see the output in PL/SQL we need to use below command.
+ex:
+	set serveroutput on 
+
+
+In PL/SQL procedure DML operations are allowed.
+
+ex:
+	create or replace procedure delete_record(L_sno IN student.sno%TYPE)
+	is
+	begin
+	delete from student where sno=L_sno;
+	DBMS_OUTPUT.PUT_LINE('Record Deleted');
+	END;
+	/
+
+	To execute the procedure we need to use below command.
+	ex:
+		exec  delete_record(102);
+
+ex:
+	create or replace procedure update_record(L_sno IN student.sno%TYPE)
+	is
+	begin
+	update student set sname='gogo' where sno=L_sno;
+	DBMS_OUTPUT.PUT_LINE('Record updated');
+	END;
+	/
+
+	To execute the procedure we need to use below command.
+	ex:
+		exec  update_record(101);
+
+
+PL/SQL Functions
+===============
+It is a named PLSQL block which must and should returns a value.
+
+syntax:
+--------
+	create or replace function <function_name>
+	return datatype
+	begin
+	-
+	-
+	-
+	end;
+	/
+
+
+Q) Write a function to accept two numbers and return sum?
+
+create or replace function f1(A number,B number)
+return number
+is
+C number;
+begin
+C:=A+B;
+return C;
+END;
+/
+
+We can call the function by using below command.
+ex:
+	select   f1(10,20) from dual;
+
+
+Q) Write a function to accept one salary then find out 10% of TDS?
+
+create or replace function f2(sal number)
+return number
+is
+tax number;
+begin
+tax:=sal*10/100;
+return tax;
+END;
+/
+
+To call the function we need to use below command.
+ex:
+	select  f2(10000) from dual;
+	select eid,ename,esal,f2(esal) as TAX from emp;
+
+Note:
+-----
+	DML operations are not allowed in functions.
+
+Q) What is the difference between procedures and functions?
+
+procedures					functions
+------------					------------
+Procedure may or may not returns a value.	Functions always returns a value.
+
+DML operations are allowed.			DML operations are not allowed.
+
+Can't be invoked by using select statement.	Can be invoked by using select statement.
+
+
+
+Q) Write a query to see the list of procedures present in database?
+
+	select object_name from user_objects where object_type='PROCEDURE';
+
+Q) Write a query to see the list of functions present in database?
+
+	select object_name from user_objects where object_type='FUNCTION';
+
+
+
+Q) Write a query to see the source code of a procedure?
+
+	select text from user_source where name='P1';
+
+
+Q) Write a query to see the source code of a function ?
+
+	select text from user_source where name='F1';
+
+
+
+Q) Write a query to drop the procedure?
+	
+	drop procedure p1;
+	
+
+Q) Write a query to drop the function ?
+	
+	drop function f1;
+
+
+PL/SQL packages
+===============
+A package is a collection of logical related sub programs.
+
+Here logical related sub programs means PL/SQL procedures and functions.
+
+In general, a package is a collection of procedures and functions.
+
+Package creation involved in two steps.
+
+1) package specification 
+------------------------
+	Package specification contains declaration of logical related sub programs.
+
+2) package body 
+----------------
+	It contains definition of logical related sub programs.
+
+ex:1
+-----
+package specification 
+------------------
+create or replace package pkg1 
+is
+procedure sum(A IN number, B IN number);
+end pkg1;
+/
+
+package body
+-----------
+create or replace package body pkg1
+is
+procedure sum(A IN number, B IN number)
+is
+C number;
+begin
+C:=A+B;
+DBMS_OUTPUT.PUT_LINE(C);
+END;
+end pkg1;
+/
+
+We can call the procedure by using below command.
+ex:
+	exec  pkg1.sum(10,20);
+
+
+ex:2
+-----
+package specification
+--------------------
+create or replace package pkg2
+is
+function ret_sum(A number,B number)
+return number;
+end pkg2;
+/
+
+
+package body
+-------------
+create or replace package body pkg2
+is
+function ret_sum(A number,B number)
+return number
+is
+C number;
+begin
+C:=A+B;
+return C;
+END;
+end pkg2;
+/
+
+To execute the function we need to use below command.
+ex:
+	select  pkg2.ret_sum(20,30) from dual;
+
+Q) Write a query to see the list of packages present in database?
+
+	select object_name from user_objects where object_type='PACKAGE';
+
+
+Q) Write a query to see the source code of a package?
+
+	select text from user_source where name='PKG1';
+
+
+Q) Write a query to drop the package?
+
+	drop package pkg1;
+
+PL/SQL Triggers
+===============
+Trigger is a PL/SQL block which execute based on the event.
+
+Triggers events are insert,update and delete.
+
+Triggers timings are before, after and insteadof.
+
+syntax:
+-----
+	Create or replace trigger <trigger_name> <timing> <event> on <object_name>
+	begin
+	-
+	-
+	end;
+	/
+
+ex:
+---
+	Create or replace trigger trg1 after insert on student
+	begin
+	DBMS_OUTPUT.PUT_LINE('Thank you for inserting');
+	END;
+	/
+
+	 insert into student values(102,'ravi','delhi'); // trigger will occur 
+
+
+	Triggers can be created on multiple events.
+	ex:
+	create or replace trigger trg2 before insert or update or delete on student
+	begin
+	IF inserting then 
+	DBMS_OUTPUT.PUT_LINE('Thanks for inserting');
+	ELSIF updating then 
+	DBMS_OUTPUT.PUT_LINE('Thanks for updating');
+	ELSE
+	DBMS_OUTPUT.PUT_LINE('Thanks for deleting');
+	END IF;
+	END;
+	/
+
+	insert into student values(103,'ramana','vizag');
+
+	update student set sname='jojo' where sno=103;
+
+	delete from student where sno=103;
+
+
+Triggers are divided into two types.
+
+1) Statement level trigger 
+-------------------------
+By default every trigger is a statement level trigger.
+
+Statement level trigger will execute only for one time irrespective of number of records effected in a database table.
+
+ex:
+	create or replace trigger trg3 before delete on student
+	begin
+	DBMS_OUTPUT.PUT_LINE('Deleted!!!');
+	END;
+	/
+
+	delete from student; // trigger will execute only for one time 
+
+
+
+2) Row level trigger 
+---------------------
+Row level trigger will execute irrespective of number of records effected in a database table.
+
+To create row level trigger we need to use "FOR EACH ROW" clause.
+
+ex:
+	create or replace trigger trg4 before delete on student FOR EACH ROW
+	begin
+	DBMS_OUTPUT.PUT_LINE('Deleted!!!');
+	END;
+	/
+
+	delete from student; 
+
+
+
+Q) Write a query to see the list of triggers present in database?
+
+	select object_name from user_objects where object_type='TRIGGER';
+
+
+Q) Write a query to see the source code of a package?
+
+	select text from user_source where name='TRG1';
+
+
+Q) Write a query to drop the package?
+
+	drop trigger trg1;
+
+
+Assignment program
+==================
+Q) WRite a java program to display pascal triangle?
+
+	1
+       1 1
+      1 2 1
+     1 3 3 1
+    1 4 6 4 1 
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		for(int i=0;i<5;i++)
+		{
+			//space 
+			for(int j=1;j<5-i;j++)
+			{
+				System.out.print(" ");
+			}
+			//elements
+			int number=1;
+			for(int k=0;k<=i;k++)
+			{
+				System.out.print(number+" ");
+
+				number = number * (i-k)/(k+1);
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,195 @@
+2) CANVAS
+==========
+A <canvas> tag is used to drow the vector graphics via javascript.
+
+A <canvas> tag is a container tag.
+
+A <canvas> tag contains various methods to display lines, circle, rectangle, polygon, graphic images and etc.
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<canvas id="myId" style="border:2px solid black;width:400px;height:400px;">
+					
+			</canvas>
+			
+			<script>
+				var context=document.getElementById('myId');
+				var c=context.getContext("2d");
+				c.moveTo(0,0);
+				c.lineTo(400,200);
+				c.stroke();
+			</script>
+	</body>
+</html>
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<canvas id="myId" style="border:2px solid black;width:400px;height:400px;">
+					
+			</canvas>
+			
+			<script>
+				var context=document.getElementById('myId');
+				var c=context.getContext("2d");
+				c.beginPath();
+				c.arc(100,100,30,0,2*Math.PI);
+				c.stroke();
+			</script>
+	</body>
+</html>
+
+ex:3
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<canvas id="myId" style="border:2px solid black;width:400px;height:400px;">
+					
+			</canvas>
+			
+			<script>
+				var context=document.getElementById('myId');
+				var c=context.getContext("2d");
+				c.font = "30px Arial";
+				c.fillText("Hello World", 30, 50);
+			</script>
+	</body>
+</html>
+
+Q) What is the difference between HTML and HTML5?
+
+HTML						HTML5
+---------					--------
+To represent HTML document we will use 		To represent HTML5 document we will use  
+<!DCOTYPE>.					<!DOCTYPE html>.
+
+It is inflexible for the programmer.		It is flexible for the programmer.
+
+HTML is bit slow.				HTML5 is faster because it is leight weight.
+
+It is less mobile friendly.			It is more mobile friendly.
+
+It does not allow to execute javascript.	It allows us to execute javascript with the 
+						help of JS web worker API.
+
+Vector graphics is possible by using 		Vector graphics is possible by using 
+technologies like silver leight, VML, 		internal technologies like SVG and CANVAS.
+adobe flash and etc.
+
+We can't play audio and video without using	We can play audio and video using <audio>
+flash player.					and <video> tag without using flash player.
+
+Can't handle inaccurate syntax.			Can handle inaccurate syntax.
+
+Shapes like circle, rectangle, polygon 		Shapes like circle , rectangle , polygon
+and etc are not easy to draw.			and etc are easy to draw.
+
+
+Q) What is the difference between div and span tag ?
+
+div					span
+-----					-----
+It is a block element.			It is a inline element.
+
+It is used to wrap the sections.	It is used to wrap small portion of a text.
+
+It is used to create CSS based layouts. It is used to stylize the text.
+
+
+How HTML document will execute in a browser window
+==================================================
+Diagram: frontend7.1
+
+HTML parse will parse the data from HTML document and give it DOM.
+
+DOM stands for Document Object Model.
+
+DOM will convert our HTML document to Tree Node Structure.
+
+Later tree node structure will execute in a browser window.
+
+
+CSS3
+====
+CSS stands for Cascading Styles Sheet.
+
+CSS is used to apply the styles on elements.
+
+The latest version of CSS3 was introduced in 2001.
+
+The main objective of CSS3 are
+
+1) To set the positioning of an element. 
+
+2) To apply the styles on elements to describe how an elements should look like.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

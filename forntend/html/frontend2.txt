@@ -1,0 +1,356 @@
+Meta tag in HTML
+=================
+A meta tag is used to declare metadata of a document.
+
+Here metadata means data of a data.
+
+Metadata is used by web browser , search engine and other web resources.
+
+To declare metadata we need to use <meta> tag.
+
+A <meta> tag must declare inside <head> tag.
+
+A <meta> tag is used to declare following things.
+
+1) Description 
+
+2) Keywords 
+
+3) Author 
+
+4) view port 
+
+5) Refresh 
+
+6) Copyright 
+
+and etc.
+
+UTF-8 
+======
+UTF stands for Unicode Transformation Format.
+
+It is a encoding method which describes what character set a website is written with.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  title  -->
+		<title>MyPage</title>
+
+		<!-- metadata -->
+		<meta charset="UTF-8">
+		<meta name="description" content="This is html classes by niyaz sir">
+		<meta name="keywords" content="Best Training Institute">
+		<meta name="author" content="Niyaz Sir">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="refresh" content="05"> 
+		<meta name="copyright" content="copy right by niyaz sir">
+		
+		
+	</head>
+	<body>
+		This is HTML Meta Tag for students
+	</body>
+</html>
+
+Basic HTML tags
+===============
+
+Heading tags
+=============
+A heading tags are used to display the text in bold and size of text is depends upon number of heading tags.
+
+We have six heading tags i.e h1 to h6.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  title  -->
+		<title>MyPage</title>
+		
+	</head>
+	<body>
+		<h1>This is heading1 tag</h1>
+		<h2>This is heading2 tag</h2>
+		<h3>This is heading3 tag</h3>
+		<h4>This is heading4 tag</h4>
+		<h5>This is heading5 tag</h5>
+		<h6>This is heading6 tag</h6>
+	</body>
+</html>
+
+Paragraph tag
+==============
+A <p> tag is used to declare the paragraph.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  title  -->
+		<title>MyPage</title>
+		
+	</head>
+	<body>
+		<p>
+			Established in 2000 we have earned a reputation for increasing efficiency, productivity and profitability for our clients through the provision of custom-made software to support, assist with and automate their business activities.
+		</p>
+	</body>
+</html>
+
+
+bold tag
+========
+A <b> tag is used to display the text in bold style without importance.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  title  -->
+		<title>MyPage</title>
+		
+	</head>
+	<body>
+		<b>This is bold tag</b>
+	</body>
+</html>
+
+<strong> tag
+=============
+It is used to display the text in bold style with importance.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  title  -->
+		<title>MyPage</title>
+		
+	</head>
+	<body>
+		<strong>This is strong tag</strong>
+	</body>
+</html>
+
+italic tag
+=========
+A <i> tag is used to display the text in italic style without force.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  title  -->
+		<title>MyPage</title>
+		
+	</head>
+	<body>
+		<i> This is italic style </i>
+	</body>
+</html>
+
+emphasize tag 
+===============
+A <em> tag is used to display the text in italic style with force.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  title  -->
+		<title>MyPage</title>
+		
+	</head>
+	<body>
+		<em> This is italic style </em>
+	</body>
+</html>
+
+center tag
+==========
+A <center> tag is used to display the text in center.
+
+HTML5 does not support <center> tag.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  title  -->
+		<title>MyPage</title>
+	</head>
+	<body>
+		<center>This is center tag </center>
+	</body>
+</html>
+
+underline tag
+=============
+A <u> tag is used to display the text in underline.
+
+HTML5 does not support <u> tag.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  title  -->
+		<title>MyPage</title>
+		
+	</head>
+	<body>
+		<u>This is underline tag </u>
+	</body>
+</html>
+
+
+font tag
+========
+A font tag is used to display the text in color, to change the size of a text and font family.
+
+HTML5 does not support <font> tag.
+
+ex:
+	
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  title  -->
+		<title>MyPage</title>
+		
+	</head>
+	<body>
+		<font color="red" size="30" face="cursive">
+			This is font tag
+		</font>
+	</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  title  -->
+		<title>MyPage</title>
+		
+	</head>
+	<body>
+		<font color="red" size="30" face="monospace">
+			This is font tag
+		</font>
+	</body>
+</html>
+
+Horizontal line 
+================
+A <hr> tag is used to declare horizontal line.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  title  -->
+		<title>MyPage</title>
+		
+	</head>
+	<body>
+		<h1>This is heading tag </h1>
+		<hr/>
+		<p>Thisi s paragraph tag </p>
+	</body>
+</html>
+
+marquee tag 
+==============
+It is used to scroll the text horizontally.
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  title  -->
+		<title>MyPage</title>
+		
+	</head>
+	<body>
+		<marquee>This is html classes for java students</marquee>
+	</body>
+</html>
+
+
+Nested Tags in HTML
+==================
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  title  -->
+		<title>MyPage</title>
+		
+	</head>
+	<body>
+		<center>
+			<h1>
+				<font color="blue">
+					This is HTML class
+				</font>
+			</h1>
+		</center>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

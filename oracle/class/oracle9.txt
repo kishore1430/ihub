@@ -1,0 +1,306 @@
+Joins
+======
+
+select * from emp,dept; // 6 * 4 = 24 records 
+
+select eid,ename,esal,dname,dloc from emp,dept; // 6*4 = 24 records 
+
+select eid,ename,esal,deptno,dname,dloc from emp,dept; // column ambiguously defined
+
+To overcome above limitation we need to use table_name.column_name.
+ex:
+	select emp.eid,emp.ename,emp.esal,dept.deptno,dept.dname,dept.dloc from emp , dept ;
+
+
+Table Alias
+-----------
+A userdefined heading given to a table is called table alias.
+
+Using table alias length of the query will reduce mean while performance will be maintained.
+
+Table alias are temperory.
+
+ex:
+	select e.eid,e.ename,e.esal,d.deptno,d.dname,d.dloc from emp e, dept d;//6*4=24 records 
+
+
+Defintion
+========
+Joins are used to retrieve the data from one or more then one table.
+
+We have following list of joins.
+
+1) Equi Join 
+
+2) Non-Equi Join 
+
+3) Self Join 
+
+4) Cartisian Product 
+
+5) Inner Join 
+
+6) Outer Join 
+
+
+1) Equi Join 
+-------------
+If two tables are joined based on common column is called equi join.
+
+ex:
+	select e.eid,e.ename,e.esal,d.dname,d.dloc from emp e,dept d
+	where(e.deptno=d.deptno); // 6 records display 
+
+2) Non-Equi Join 
+------------------
+If two tables are joined without using any join condition is called non-equi join.
+
+ex:
+	select e.eid,e.ename,e.esal,d.dname,d.dloc from emp e,dept d
+	where esal>25000; // 3 * 4 = 12 records 
+
+
+3) Self Join
+-----------
+A table which join to itself is called self join.
+
+In self join we need to create two table alias for same table.
+
+ex:
+	select e1.eid,e1.ename,e1.esal,e2.job,e2.comm from emp e1,emp e2
+	where(e1.deptno=e2.deptno); //6 + 6 = 12 records 
+
+4) Cartisian Product 
+------------------
+It will return all possible combinations.
+
+If two tables are joined without using any condition is called cartisian product.
+
+ex:
+	select e.eid,e.ename,e.esal,d.dname,d.dloc from emp e,dept d; // 6 * 4 = 24 records 
+
+5) Inner Join 
+----------------
+It is similar to Equi join.
+
+It is given by ANSI people.
+
+ANSI stands for American National Standards Institute.
+
+ex:
+	select e.eid,e.ename,e.esal,d.dname,d.dloc from emp e INNER JOIN dept d
+	ON(e.deptno=d.deptno); // 6 records display 
+
+	or
+
+	select e.eid,e.ename,e.esal,d.dname,d.dloc from emp e JOIN dept d
+	ON(e.deptno=d.deptno); 
+
+6) Outer Join
+--------------
+It is a extension of equi join.
+
+It will return matching as well as not matching records.
+
+A '+' symbol denoted as outer join operator.
+
+We have following list of outer joins.
+
+i) Right Outer Join 
+-------------------
+	SQL
+	---
+		select e.eid,e.ename,e.esal,e.deptno,d.deptno,d.dname,d.dloc from emp e,dept d
+		where(e.deptno(+)=d.deptno);
+		
+	ANSI 
+	---
+		select e.eid,e.ename,e.esal,e.deptno,d.deptno,d.dname,d.dloc from emp e 
+		RIGHT OUTER JOIN dept d
+		ON(e.deptno=d.deptno);
+
+ii) Left Outer Join 
+------------------
+	SQL
+	---
+		select e.eid,e.ename,e.esal,e.deptno,d.deptno,d.dname,d.dloc from emp e,dept d
+		where(e.deptno=d.deptno(+));
+		
+	ANSI 
+	---
+		select e.eid,e.ename,e.esal,e.deptno,d.deptno,d.dname,d.dloc from emp e 
+		LEFT OUTER JOIN dept d
+		ON(e.deptno=d.deptno);
+	
+
+iii) Full Outer Join 
+--------------------
+	ANSI 
+	----
+		select e.eid,e.ename,e.esal,e.deptno,d.deptno,d.dname,d.dloc from emp e 
+		FULL OUTER JOIN dept d
+		ON(e.deptno=d.deptno);
+
+
+Views
+======
+View is a logical representation or virtual representation of a data from one or more then on table.
+
+A table which is used to create a view is called base table or above table.
+
+View does not consumes the memory.
+
+View will get the data when we execute select command.
+
+We have following list of views.
+
+1) Simple view 
+
+2) Complex view 
+
+3) with Readonly view 
+
+4) With check option view 
+
+5) Materialized view 
+
+
+1) Simple view 
+---------------
+If a view is created by using one base table is called simple view.
+
+ex:
+	create view v1 as select * from emp;
+
+	create view v1 as select eid,ename,esal from emp;
+
+	create view v1 as select * from emp where deptno=10;
+
+	create view v1 as select * from emp where esal>25000;
+
+	create view v1 as select * from emp where ename like 'A%';
+
+Note:
+-----
+	DML operations are allowed in simple view.
+	ex:
+		select * from v1;
+
+		delete from v1;
+
+		select * from v1;
+		select * from emp;
+
+
+2) Complex view 
+----------------
+If a view is created by using more then one base table is called complex view.
+
+ex:
+	create view v2 as select e.eid,e.ename,e.esal,d.dname,d.dloc from emp e, dept d
+	where (e.deptno=d.deptno);
+
+Note:
+----
+	DML operations are not allowed in complex view.
+	ex:
+		select * from v2;
+		delete from v2; //cannot delete from view
+
+
+3) with Read only view 
+----------------------
+If a view is created by using one base table where DML operations are not required then we need to use with read only view.
+
+ex:
+	create view v3 as select * from emp with read only;
+
+	select * from v3;
+
+	delete from v3; //cannot delete from view
+
+
+4) With check option view 
+------------------------
+If view is created by using one base table where DML operations are allowed only if our condition is true.
+
+ex:
+	create view v4 as select * from emp where deptno=30 with check option;
+
+	select * from v4;
+
+	insert into v4 values(207,'Jack',36000,30,'Salesman',500);
+
+	insert into v4 values(207,'Jack',36000,50,'Salesman',500);// view WITH CHECK OPTION
+
+
+5) Materialized view 
+---------------------
+Materialized view is also known snapshot.
+
+To create a materialized view a table must have primary key or unique key.
+
+ex:
+	alter table emp ADD primary key(eid);
+
+	create materialized view v5 as select * from emp;
+
+	select * from v5;
+
+	delete from emp where eid=207; // 1 record deleted 
+
+	select * from emp; // 6 records 
+
+	select * from v5; // 7 records 
+
+In order to refresh the materialized view we need to use below code.
+	ex:
+		exec 	DBMS_SNAPSHOT.REFRESH('v5');
+
+		select * from v5; // 6 records 
+
+
+Q) Write a query to see the list of views present in database?
+
+
+	select view_name from user_views;
+
+
+Q) Write a query drop the views?
+
+	drop view v1;
+	drop view v2;
+	drop view v3;
+	drop view v4;
+	drop materialized view v5;
+
+
+Assignment
+==========
+
+Q) Write a query to change the password in oracale ?
+
+Q) Write a query to change username in oracle ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

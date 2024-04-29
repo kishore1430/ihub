@@ -1,0 +1,272 @@
+RestController
+==============
+RestController is used for creating restful web services by using @RestController annotation.
+
+It is a class level annotation and it allows the class to handle the request made by clients.
+
+The main difference between @Controller and @RestController is , A @RestController annotation is a combination of two annotations i.e @Controller and @ResponseBody.
+
+We have following list of HTTP methods along with Rest Annotation.
+
+ex:
+
+	HTTP Method 			Rest Annotation
+	------------			----------------
+	GET				@GetMapping 
+	POST				@PostMapping
+	PUT				@PutMapping
+	DELETE				@DeleteMapping 
+	and etc.	
+
+
+Spring Boot application using @RestController
+----------------------------------------------
+FourthSB
+|
+|---src/main/java
+|	|
+	|---com.ihub.www (base pkg)
+		|
+		|---FourthSBApplication.java
+	|
+	|---com.ihub.www.controller
+		|
+		|---HomeController.java
+	
+|---src/main/resources
+	|
+	|---application.properties
+|
+|
+|---pom.xml
+
+
+step1:
+-----
+	Create a spring boot starter project i.e FourthSB.
+	ex:
+		starter : spring web 
+
+step2:
+-----
+	Create a com.ihub.www.controller package inside "src/main/java" folder.
+	ex:
+		right click to src/main/java --> new --> package --> 
+		Name : com.ihub.www --> Finish.
+step3:
+-----
+	Create a HomeController.java file inside "com.ihub.www.controller" package.
+	ex:
+		right click to "com.ihub.www.controller" package --> new -->class -->
+		Name : HomeController --> Finish.
+
+HomeController.java
+-------------------
+package com.ihub.www.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HomeController 
+{
+	@GetMapping("/home")
+	public String home()
+	{
+		return "I Like Spring Boot RestController";
+	}
+}
+
+
+
+step4:
+------
+	Configure server port number in application.properties file.
+	ex:
+
+		application.properties
+		---------------------
+		server.port=9090
+
+step5:
+------
+	Run the spring boot application.
+	ex:
+		right click to project --> run as --> spring boot application.
+
+step6:
+-----
+	Test the application by using below request url.
+	ex:
+		http://localhost:9090/home
+
+
+Monolethic Architecture vs Micro Service Architecture 
+======================================================
+Monoleth means composed all in one piece.
+
+In monolethic architecture , we will develop individually services and at the end of application development we will package all the services into a single war file and deploying in the server.At last we will have only one instance of an application.
+
+ex:
+	Let's take an example of E-commerce application where we will have customer options like
+	customer service , payment service, addtocart service,shipping service and etc.Where our 
+	customer can access application through internet.When we launch the application all the 	services converts to monolethic application.
+
+	Diagram: sb4.1
+
+Advantages:
+
+1) It simple to develop 
+
+2) It simple to deploy
+
+3) It simple to test 
+
+4) It simple to scale
+
+Disadvantages:
+
+1) Large and Complex application
+
+2) Blocks continues development
+
+3) Unscalable
+
+4) Inflexible 
+
+5) Unreliable 
+
+
+Microservice Architecture
+--------------------------
+Microservices are the small services that work together
+
+The microservice defines an approach to the architecture that divides an application into 
+a pool of loosely coupled services that implements business requirements. 
+
+In Microservice architecture,Each service is self contained and implements a single bussiness 
+capability.
+
+The microservice architectural style is an approach to develop a single application
+as a suite of small services.It is next to Service-Oriented Architecture (SOA). 
+
+Each microservice runs its process and communicates with lightweight mechanisms.
+
+These services are built around business capabilities and independently developed by 
+fully automated deployment machinery.
+
+
+Advantages:
+
+1)Independent Development
+------------------------
+	Each microservice can be developed independently.
+	A single development team can build test and deploy the service.
+	
+2)Independent Deployment
+------------------------
+	we can update the service without redeploying the entire application.
+	Bug release is more managable and less risky.
+
+3)Fault Tolerance
+------------------
+	If service goes down ,It won't take entire application down with it.
+
+4)Mixed Technology Stack
+---------------------
+	It is used to pick best technology which best suitable for our application.	
+
+5)Granular Scaling
+-----------------
+	In Granular scaling ,services can scaled independently.Instead of entire application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

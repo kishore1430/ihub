@@ -1,0 +1,170 @@
+HTML5
+=====
+HTML stands for Hypertext Markup Language.
+
+It is widely used language on web to develop web pages and web applications.
+
+HTML was developed by Burners Lee in late 1991.
+
+HTML is a tag based language.
+
+HTML is a case insensitive language.
+
+HTML tag contains opening tag and closing tag.
+ex:
+	<html>  --> opening tag 
+
+	</html> --> closing tag 
+
+HTML tags may contains attributes.
+ex:
+	<body  bgcolor="red">
+
+Each attribute contains attribute name and attribute value.
+
+A tag can have multiple attributes but each attribute must be seperate with space.
+
+ex:
+	<body  bgcolor="value" background="value">
+
+All HTML documents we need to save with ".html" or ".htm" extension.
+
+All html documents will execute on browser window.
+ex:
+	Chrome 
+	Firefox
+	Edge
+	Opera 
+	Chromium
+	and etc.
+
+
+A simple HTML program is known as document.
+
+HTML is used to develop client side components.
+
+HTML2.0 was released in the year of 1995.
+
+HTML4.0 was released in the year of 1999.
+
+HTML5 which is a extension of HTML4 was released in 2012.
+
+The main objective of HTML5 is used to developed leight weight components.
+
+HTML5 is also known as Advanced Hypertext Markup language.
+
+Note:
+----
+	We can't create custom tags in html.
+
+
+HTML5 skeleton 
+==============
+<!DOCTYPE html>
+<html>
+	<head>
+		-
+		-  head related tags 
+		-	
+	</head>
+	<body>
+		-
+		- body related tags 
+		-
+	</body>
+</html>
+
+Note:
+-----
+A <!DOCTYPE> represent a HTML document.
+A <!DOCTYPE html> represent a HTML5 document.
+
+<html> tag
+----------
+It is a root tag for entire HTML document.
+
+<head> tag
+--------
+A <head> tag is used to declare following things.
+ex:
+	Title of a web page
+	Favicon 
+	metadata 
+	styles 
+	scripts 
+
+
+<body> tag
+----------
+A <body> is used to declare actual content of a web page.
+ex:
+	<img> tag 
+	<form> tag 
+	<table> tag 
+	and etc.	
+
+
+ex:1
+----
+<!DOCYTPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		Welcome to HTML classes
+	</body>
+</html>
+
+ex:2
+---
+<!DOCYTPE html>
+<html>
+	<head>
+		<title>IHUBTALENT</title>
+		<link rel="icon" href="logo.png">
+	</head>
+	<body>
+		Welcome to HTML classes
+	</body>
+</html>
+
+ex:3
+----
+<!DOCYTPE html>
+<html>
+	<head>
+		<title>IHUBTALENT</title>
+		<link rel="icon" href="logo.png">
+	</head>
+	<body bgcolor="cyan">
+		Welcome to HTML classes
+	</body>
+</html>
+
+ex:4
+----
+<!DOCYTPE html>
+<html>
+	<head>
+		<title>IHUBTALENT</title>
+		<link rel="icon" href="logo.png">
+	</head>
+	<body background="logo.png">
+		Welcome to HTML classes
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

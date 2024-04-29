@@ -1,0 +1,125 @@
+ReactJS
+=======
+It is a declarative, efficient and flexible Javascript library used to develop frontend applications and user interfaces i.e UI.
+
+It is an open source, component based javascript frontend library responsible only for view layer of the application.
+
+It is developed by Jordon Walke who was a software engineer at Facebook.
+
+It is initially given by Facebook and later it is used in their own products like Instagram and whatsapp.
+
+It is release to public in the month of May , 2013.
+
+The official website for reactjs i.e https://react.dev 
+
+The latest version of reactjs is V18.2.2.
+
+The main objective of reactjs is used to develop reusable components.
+
+A component is a building block of react application.
+
+
+Advantages
+==========
+1) It is easy to learn and easy to use.
+
+2) It is used to create reusable components.
+
+3) It supports virtual DOM.
+
+4) It supports one way data binding.
+
+5) Good documentation and community support.
+
+6) It supported by all major browsers.
+
+
+
+Q) What is the difference between Angular and React ?
+
+Angular						React 
+----------					---------
+It is a product of Google.			It is a product of Facebook.
+
+It is introduced in Oct ,2015.			It is introduced in May ,2013.
+
+It is a javascript framework used to 		It is a frontend javascript library responsible	
+develop web and mobile applications.		only for view layer of the application.
+
+It uses real/traditional DOM			It uses virtual DOM.
+
+It supports two way data binding.		It supports one way data binding.
+
+It is used to develop rich featured 		It is used to develop single page application(SPA)
+applications.
+
+Typescript language is used.			JSX language is used.
+
+Jasmine and Karma is used as a testing 		Jest and Enzyme is used as a testing framework.
+frameworks.
+
+The default port number is 4200.		The default port number is 3000.
+
+Angular used by Nike, Mc'Donalds,		React used by  facebook, whatsapp, instagram,	
+Google  and etc.				skype, airbnb and etc.
+
+
+Pre-Requisition to Learn ReactJS
+================================
+1) Basics of HTML,CSS,JS and Bootstrap.
+
+2) Idea on JSX.
+
+3) Hands on npm commands.
+
+4) Knowledge on ES6 standards	
+
+
+How ReactJS works Internally
+============================
+Diagram: react1.1
+
+ReactJS internally uses virtual DOM.
+
+Virtual DOM is also a Tree Node Structure.
+
+Virtual DOM will find a effective way to make the changes in traditional/real DOM.Hence react applications will execute fastly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

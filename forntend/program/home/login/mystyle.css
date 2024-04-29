@@ -1,0 +1,103 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background: url(back.jpg) no-repeat;
+background-size: cover ;
+background-position: center;
+}
+.wrapper{
+    background: transparent;
+    border: 2px snow;
+    backdrop-filter: blur(5px);
+    width: 400px;
+    color:#fff;
+    padding:20px 35px;
+    border-radius: 20px;
+    text-align:center;
+}
+.wrapper h1{
+   font-size: 500%;
+}
+.kis{
+    width: 100%;
+    height: 50px;
+    margin:10px 0;
+}
+.kis input {
+    width: 100%;
+    height:100%;
+    font-size: 100%;
+    background-color: transparent;
+    border: none;
+    outline:none;
+    border: 2px solid whitesmoke;
+    border-radius: 50px;
+    padding:20px 40px 20px 40px;
+}
+.kis input::placeholder{
+    color:white;
+}
+.poo{
+    width: 100%;
+    height: 50px;
+    margin:10px 0;
+}
+.poo input {
+    width: 100%;
+    height:100%;
+    font-size: 100%;
+    background-color: transparent;
+    border: none;
+    outline:none;
+    border: 2px solid whitesmoke;
+    border-radius: 50px;
+    padding:20px 40px 20px 40px;
+}
+.poo input::placeholder{
+    color:white;
+}
+.wrapper  .hari{
+    margin: 10px 15px 10px;
+}
+.wrapper  .hari a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.wrapper  .hari a:hover{
+    text-decoration: underline;
+}
+.wrapper .link a{
+    color:#fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+.wrapper .link a:hover{
+    text-decoration: underline;
+}
+.wrapper button{
+    width: 80%;
+    height:40px;
+    border-radius: 25px;
+    background: transparent; 
+    border-color: #fff;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 10px;
+}
+.wrapper button a{
+    color: #fff;
+}
+.wrapper  .link{
+  font-size: 15px;
+  margin: 15px;
+}

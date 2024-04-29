@@ -1,0 +1,560 @@
+Method overriding
+=================
+Having same method name with same parameters in two different classes is called method overriding.
+
+Methods which are present in parent class are called overridden  methods.
+
+Methods which are present in child class are called overriding methods.
+
+ex:
+
+class Parent 
+{
+	//overridden methods 
+	public void property()
+	{
+		System.out.println("Cash+Gold+Land");
+	}
+	public void marry()
+	{
+		System.out.println("subhalakshmi");
+	}
+}
+class Child extends Parent 
+{
+	//overriding methods
+	public void marry()
+	{
+		System.out.println("Rashmika");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Parent p=new Parent();
+		p.property(); // Cash+Gold+Land
+		p.marry(); // Subhalakshmi
+
+		Child c=new Child();
+		c.property(); // Cash+Gold+Land
+		c.marry(); // Rashmika 
+
+
+		Parent p1=new Child();
+		p1.property();//Cash+Gold+Land
+		p1.marry(); // Rashmika 
+
+	}
+}
+
+If we declare any method as final then overriding of that method is not possible.
+
+ex:
+
+class Parent 
+{
+	//overridden methods 
+	public void property()
+	{
+		System.out.println("Cash+Gold+Land");
+	}
+	public final void marry()
+	{
+		System.out.println("subhalakshmi");
+	}
+}
+class Child extends Parent 
+{
+	//overriding methods
+	public void marry()
+	{
+		System.out.println("Rashmika");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Parent p=new Parent();
+		p.property(); // Cash+Gold+Land
+		p.marry(); // Subhalakshmi
+
+		Child c=new Child();
+		c.property(); // Cash+Gold+Land
+		c.marry(); // Rashmika 
+
+
+		Parent p1=new Child();
+		p1.property();//Cash+Gold+Land
+		p1.marry(); // Rashmika 
+
+	}
+}
+
+Method Hiding
+==============
+Method hiding is exactly same as method overriding with following differences.
+
+Method overriding				Method Hiding
+-----------------				-------------
+All the methods present in method overriding	All the methods present in method hiding must be 
+must be non-static.				static.
+
+Method resolution will taken care by a		Method  resolution will taken care by a compiler
+JVM based on runtime object.			based on reference.
+
+It is also known as runtime polymorphism, 	It is also known as compile time polymorphism,
+dynamic polymorphism or late binding.		static polymorphism or early binding.
+
+ex:
+---
+class Parent 
+{
+	public static void property()
+	{
+		System.out.println("Cash+Gold+Land");
+	}
+	public static void marry()
+	{
+		System.out.println("subhalakshmi");
+	}
+}
+class Child extends Parent 
+{
+	public static void marry()
+	{
+		System.out.println("Rashmika");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Parent p=new Parent();
+		p.property(); // Cash+Gold+Land
+		p.marry(); // Subhalakshmi
+
+		Child c=new Child();
+		c.property(); // Cash+Gold+Land
+		c.marry(); // Rashmika 
+
+
+		Parent p1=new Child();
+		p1.property();//Cash+Gold+Land
+		p1.marry(); // Subhalakshmi
+
+	}
+}
+
+Q) Can we overload main method in java?
+
+Yes, we can overload main method in java but JVM always execute main method with String[] parameter only.
+
+ex:
+class Test 
+{
+	public static void main(int[] iargs)
+	{		
+		System.out.println("int-arg method");
+	}
+	public static void main(String[] args)
+	{		
+		System.out.println("str-arg method");
+	}
+}
+
+Q) Can we override main method in java?
+
+No, we can't override main method in java because it is static.
+
+
+Polymorphism
+==============
+Polymorphism has taken from Greek word.
+
+Here poly means many and morphism means forms.
+
+The ability to represent in different forms is called polymorphism.
+
+Diagram: class23.1
+
+The main objective of polymorphism is to provide flexibility.
+
+We have two types of polymorphism.
+
+1) Compile time polymorphism / Static polymorhism / Early Binding
+
+2) Runtime polymorphism / Dynamic polymorphism / Late Binding 
+
+1) Compile time polymorphism
+-----------------------------
+A polymorphism which exhibits at compile time is called compile time polymorhism.
+ex:
+	Method overloading 
+	Method Hiding 
+
+2) Runtime polymorphism
+------------------------
+A polymorphism which exhibits at runtime is called runtime polymorhism.
+ex:
+	Method overriding
+
+Summary Diagram: class23.2
+
+
+Constructor
+===========
+Constructor is a special method which is used to initialized an object.
+ex:
+	Test t=new Test();
+
+Having same name as class name is called constructor.
+
+Constructor will execute when we create an object.
+
+Constructor does not allow any return type.
+
+Constructor will accept following modifiers.
+ex:
+	default 
+	public
+	private 
+	protected 
+
+In java , constructors are divided into two types.
+
+1) Userdefined constructor 
+
+2) Default constructor 
+
+1) Userdefined constructor 
+----------------------------
+A constructor which is created by the user based on the application requirement is called userdefined constructor.
+
+It is classified into two types.
+
+i) Zero argument constructor 
+
+ii) Parameterized constructor 
+
+
+i) Zero argument constructor
+----------------------------
+Suppose if we won't initialize any value to userdefined constructor then that constructor is called zero-argument constructor.
+
+ex:1
+----
+class Test 
+{
+	Test()
+	{
+		System.out.println("0-arg const");
+	}
+
+	public static void main(String[] args)
+	{		
+		System.out.println("Main-Method");
+	}
+}
+o/p:
+	Main-Method 
+
+ex:2
+----
+class Test 
+{
+	public Test()
+	{
+		System.out.println("0-arg const");
+	}
+
+	public static void main(String[] args)
+	{		
+		System.out.println("Main-Method");
+		Test t=new Test();
+	}
+}
+o/p:
+	Main-Method 
+	0-arg const
+
+ex:3
+---
+class Test 
+{
+	private Test()
+	{
+		System.out.println("0-arg const");
+	}
+
+	public static void main(String[] args)
+	{		
+		Test t1=new Test();
+		System.out.println("Main-Method");
+		Test t2=new Test();
+	}
+}
+o/p:
+	0-arg const 
+	Main-Method 
+	0-arg const
+
+ex:4
+----
+class Test 
+{
+	protected Test()
+	{
+		System.out.println("0-arg const");
+	}
+
+	public static void main(String[] args)
+	{		
+		Test t1=new Test();
+		System.out.println("Main-Method");
+		Test t2=new Test();
+	}
+}
+o/p:
+	0-arg const 
+	Main-Method 
+	0-arg const
+
+
+ii) Parameterized constructor
+-----------------------------
+Suppose if we are passing atleast one argument to user defined constructor then that constructor is called parameterized constructor.
+
+ex:
+---
+class Employee 
+{
+	private int empId;
+	private String empName;
+	private double empSal;
+
+	public Employee(int empId,String empName,double empSal)
+	{
+		this.empId=empId;
+		this.empName=empName;
+		this.empSal=empSal;
+	}
+	public void getEmployeeDetails()
+	{
+		System.out.println("Employee Id :"+empId);
+		System.out.println("Employee Name :"+empName);
+		System.out.println("Employee Salary :"+empSal);
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Employee e=new Employee(101,"Alan",1000d);
+		e.getEmployeeDetails();
+	}
+}
+
+
+2) Default constructor 
+-----------------------
+It is a compiler generated constructor for every java program where we are not defining atleast zero-argument constructor.
+
+We can see default constructor by using below command.
+
+ex:
+	javap   -c  Test 
+
+Diagram: class23.3
+
+
+
+Constructor overloading
+========================
+Having same constructor name with different parameters in a single class is called constructor overloading.
+
+ex:
+---
+class A 
+{
+	A()
+	{
+		System.out.println("0-arg const");
+	}
+	A(int i)
+	{
+		System.out.println("int-arg const");
+	}
+	A(double d)
+	{
+		System.out.println("double-arg const");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		A a1=new A();		
+		A a2=new A(10);
+		A a3=new A(10.5d);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

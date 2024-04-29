@@ -1,0 +1,539 @@
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>
+		<form name="myform" action="#" method="GET">
+			<input type="text" name="t1" placeholder="enter email" 
+			autocomplete="off" required/> <br>
+			<input type="password" name="t2" placeholder="enter password" required/> <br> 
+			<input type="submit" value="Login"/> <br> 
+		</form>	
+		</center>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>
+		<form name="myform" action="#" method="POST">
+			<input type="text" name="t1" placeholder="enter email" 
+			autocomplete="off" required/> <br>
+			<input type="password" name="t2" placeholder="enter password" required/> <br> 
+			<input type="submit" value="Login"/> <br> 
+		</form>	
+		</center>
+	</body>
+</html>
+
+ex:
+---
+index.html
+----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>
+		<form name="myform" action="a.html" method="POST">
+			<input type="text" name="t1" placeholder="enter email" 
+			autocomplete="off" required/> <br>
+			<input type="password" name="t2" placeholder="enter password" required/> <br> 
+			<input type="submit" value="Login"/> <br> 
+		</form>	
+		</center>
+	</body>
+</html>
+
+
+a.html
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body bgcolor="#FFFF00">
+		<center> This is A.html document </center>		
+	</body>
+</html>
+
+HTML Tables
+===========
+A table is used to represent our data in rows and columns.
+
+A <table> tag is used to declare the table in HTML.
+
+A <tr> tag is used to create a table row.
+
+A <th> tag is used to create a table heading.
+
+A <td> tag is used to create a table data.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<table border="0">
+			<tr>
+				<th>SNO</th>
+				<th>SNAME</th>
+				<th>SADD</th>		
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>USA</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jack</td>
+				<td>UAE</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nelson</td>
+				<td>UK</td>
+			</tr>
+		</table>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<table border="1" width="100%">
+			<tr bgcolor="lavendar">
+				<th>SNO</th>
+				<th>SNAME</th>
+				<th>SADD</th>		
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>USA</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jack</td>
+				<td>UAE</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nelson</td>
+				<td>UK</td>
+			</tr>
+		</table>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<table border="1" cellspacing="10px" cellpadding="10px">
+			<tr bgcolor="lavendar">
+				<th>SNO</th>
+				<th>SNAME</th>
+				<th>SADD</th>		
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>USA</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jack</td>
+				<td>UAE</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nelson</td>
+				<td>UK</td>
+			</tr>
+		</table>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<table border="1" cellspacing="10px" cellpadding="10px">
+			<tr bgcolor="lavendar">
+				<th>SNO</th>
+				<th>SNAME</th>
+				<th>SADD</th>		
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>USA</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jack</td>
+				<td>UAE</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Nelson</td>
+				<td>UK</td>
+			</tr>
+			<tr>
+				<td colspan="3"><center> Thank you </center></td>
+			</tr>
+		</table>	
+	</body>
+</html>
+
+
+Datalist tag
+=============
+A <datalist> tag/element is used to specify list of predefine options for an <input> tag/element.
+
+A <datalist> tag/element provides autocomplete features for an <input> element/tag.
+
+User will see a drop-down list of predefine options for an <input> tag/element.
+
+A <datalist> tag/element  "id" attribute must be same as <input> tag/element
+"list" attribute.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Enter the State : <input type="text" list="states"/>	
+
+		<datalist id="states">
+			<option value="Telangana">
+			<option value="Tamil Nadu">
+			<option value="Bihar">
+			<option value="Maharashtra">
+			<option value="Gujrat">
+			<option value="Goa">	
+		</datalist>
+	</body>
+</html>
+
+
+
+HTML <details> and <summary> tag
+===========================
+A <details> tag/element is used display special content where a user can open and close on demand. 
+
+A <details> tag is used to design interactive widgets where user can
+open and close.
+
+A <details> tag contains <summary> tag.
+
+We can keep any sort of tags inside <details> tags.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<details>
+			<summary>New Offer's</summary>
+			<h1>Congratulations!</h1>
+			<h3>You are a valable customer to get more offers</h3>
+			<h6>We would like to improve our customer relationship</h6>
+			<p>Our feedback is more important to improvice our product</p>
+		</details>
+	</body>
+</html>
+
+
+HTML <small> tag
+=================
+The <small> HTML element represents  small print like copyright and legal text.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<small> &copy; All rights reserved, Designed By:- CompumaxLLC </small>
+	</body>
+</html>
+	
+
+
+HTML <big> tag
+==========
+The <big> tag is used to make the text one size bigger i.e from small to medium, medium to large, large to x-large.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<p> This is <big>first</big> paragraph </p>
+		<h3> This is <big>second</big> paragraph </h3>
+	</body>
+</html>
+
+
+HTML <mark>
+============
+The HTML <mark> tag is used to mark or highlight text that has special interest.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<h1> I am planning to <mark>quit</mark> the job</h1>
+	</body>
+</html>
+
+
+
+HTML <cite> tag
+============
+The <cite> tag defines the title of a creative work i.e movie , songs, Poems and etc.
+
+The text in the <cite> element usually renders in italic.
+
+ex:
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Movie Name : <cite> SALAAR</cite>
+	</body>
+</html>
+
+HTML <bdo> tag
+===========
+BDO stands for Bi-Directional Override. 
+
+The <bdo> tag is used to override the current text direction.
+
+ex:
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<bdo dir="rtl">Hello</bdo>
+	</body>
+</html>
+
+
+
+HTML <sub> tag
+=========
+The <sub> tag defines subscript text. 
+
+Subscript text appears half a character below the normal line, and is sometimes rendered in a smaller font.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<h1>H<sub>2</sub>O</h1>
+	</body>
+</html>
+
+
+HTML <sup> tag
+==============
+The <sup> tag defines superscript text. 
+
+Superscript text appears half a character above the normal line, and is sometimes rendered in a smaller font.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		x<sup>2</sup>+y<sup>2</sup>
+	</body>
+</html>
+
+
+HTML <header> and <nav> tag 
+=============================
+The <header> element represents a container for introductory content or a set of navigational links.
+
+The <nav> tag defines a set of navigation links. 
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<header style="background-color:cyan">
+			<center>
+			<nav>
+				<a href="" style="text-decoration:none">Home</a>  &nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="" style="text-decoration:none">About</a> &nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="" style="text-decoration:none">Service</a> &nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="" style="text-decoration:none">Porfolio</a> &nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="" style="text-decoration:none">Contact</a>	
+			</nav>
+			</center>
+		</header>
+	</body>
+</html>
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

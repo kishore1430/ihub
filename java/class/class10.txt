@@ -1,0 +1,275 @@
+Various ways to display the data 
+================================
+1)
+	System.out.println("Hello World");
+
+2)
+	int i=10;
+	System.out.println(i);
+	System.out.println("The value is ="+i);
+
+3) 
+	int i=10,j=20;
+	System.out.println(i+" "+j);
+	System.out.println(i+" and "+j);
+
+4) 
+	int i=1,j=2,k=3;
+	System.out.println(i+" "+j+" "+k);
+
+
+
+Q) What is the difference between System.out.println() and System.err.println() ?
+
+System.out.println()
+---------------------
+It is used to redirect the output on console.
+ex:
+	
+class Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println("Hello World");
+	}
+}
+
+o/p:
+	javac  Test.java
+	java   Test 
+
+
+System.err.println()
+----------------------
+It will redirect the output on console as well as in a physical file.
+
+ex:
+class Test
+{
+	public static void main(String[] args)
+	{
+		System.err.println("Hello World");
+	}
+}	
+o/p:
+	javac  Test.java
+
+	java   Test 2>abc.txt 
+
+
+Fully Qualified Name
+====================
+Fully qualified name means we can call class or interface along with package name.
+
+Fully qualified name will improve readability of our code.
+
+ex:
+	java.util.Date(C)
+	java.sql.Date(C)
+	java.sql.Statement(I)
+
+ex:
+---
+class Test
+{
+	public static void main(String[] args)
+	{
+		java.util.Date d=new java.util.Date();
+		System.out.println(d); 
+	}
+}
+
+Import statements
+================
+If we use import statement then we should not use fully qualified name.
+
+Using short name also we can achieve.
+
+In java , import statements are divided into three types.
+
+1) Explicit class import 
+
+2) Implicit class import 
+
+3) Static import 
+
+1) Explicit class import 
+------------------------
+This type of import statement is highly recommanded to use because it will improve readability of our code.
+
+ex:
+---
+import  java.time.LocalDate;
+import  java.time.LocalTime;
+class Test
+{
+	public static void main(String[] args)
+	{
+		LocalDate date=LocalDate.now();
+		System.out.println(date); //2024-01-24
+
+		LocalTime time=LocalTime.now();
+		System.out.println(time); //12:11:08	
+	}
+}
+
+2) Implicit class import
+-------------------------
+This type of import statement is not recommanded to use because it will reduce readability of our code.
+
+ex:
+import  java.time.*;
+class Test
+{
+	public static void main(String[] args)
+	{
+		LocalDate date=LocalDate.now();
+		System.out.println(date); //2024-01-24
+
+		LocalTime time=LocalTime.now();
+		System.out.println(time); //12:11:08	
+	}
+}
+
+3) Static import 
+----------------
+Using static import we can call static members(static variables and static methods) directly.
+
+Often use of static import makes our program less readable and complex.
+
+ex:1
+----
+import static java.lang.System.*;
+class Test
+{
+	public static void main(String[] args)
+	{
+		out.println("stmt1");
+		out.println("stmt2");
+		out.println("stmt3");			
+	}
+}
+
+ex:2
+---
+import static java.lang.System.*;
+class Test
+{
+	public static void main(String[] args)
+	{
+		out.println("stmt1");
+		exit(0);
+		out.println("stmt3");			
+	}
+}
+
+
+
+Editplus  editor
+================
+Download link : https://www.editplus.com/download.html
+
+
+
+Java Basic Programs
+===================
+Q) Write a java program to perform sum of two numbers?
+
+
+import java.util.Scanner;
+class Example1
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the First Number :");
+		int a=sc.nextInt();
+		System.out.println("Enter the Second Number :");
+		int b=sc.nextInt();
+
+		//logic
+		int c = a+b;
+		System.out.println("sum of two numbers is ="+c);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

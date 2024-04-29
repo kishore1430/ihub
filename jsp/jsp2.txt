@@ -1,0 +1,270 @@
+JSP life cycle methods
+======================
+We have three life cycle methods in JSP.
+
+1) _jspInit()
+--------------
+	It is used for instantiation event.
+	This method will execute just before JES class object creation.
+	Here JES class stands for Java Equivalent Servlet class.	
+
+2) _jspService()
+------------------
+	It is used for request arrival element.
+	This method will execute when request goes to JSP program.
+
+3) _jspDestory()
+-----------------
+	It is used for destruction event.
+	This method will execute just before JES class object destruction.  
+
+Phases of JSP
+=============
+There are two phases in JSP.
+
+1) Translation phase 
+
+2) Request processing phase 
+
+1) Translation phase 
+--------------------
+In translation phase, our JSP program converts to JES class (ABC_jsp.class and ABC_jsp.java).
+
+2) Request processing phase 
+----------------------------
+Our JES class will executed and result will sent to browser window as dynamic response.
+
+Diagram: jsp2.1
+
+
+Q) How can we enable <load-on-startup> and what happens if we enable <load-on-startup> ?
+
+We can enable <load-on-startup> inside web.xml file.
+
+web.xml
+------
+	<web-app>
+		<servlet>
+			<servlet-name>ABC</servlet-name>
+			<jsp-file>/ABC.jsp</jsp-file>
+			<load-on-startup>1</load-on-startup>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>ABC</servlet-name>
+			<url-pattern>/test</url-pattern>
+		</servlet-mapping>
+	</web-app>
+
+If we enable <load-on-startup> then our container will perform translation phase during the server startup or during the deployment of web application.
+
+In general, our JES class object will be ready before we give the request.
+
+JSP Tags/Elements
+=================
+We have three types of tags in jsp.
+
+1) Scripting Tags 
+-----------------
+	i) Scriptlet tag 
+		ex:
+			<%   code  %> 
+
+	ii) Expression tag
+		ex:
+			<%=  code   %>
+
+		
+	iii) Declaration tag 
+		ex:
+			<%!   code   %> 
+	
+
+2) Directive Tags 
+-------------------
+	i)  page directive tag
+		ex:
+			<%@page  attribute=value %>
+
+	ii) include directive tag 
+		ex:
+			<%@include  attribute=value %>
+
+3) Standard Action Tags
+-----------------------
+	<jsp:include>
+	<jsp:forward>
+	<jsp:useBean>
+	<jsp:setProperty>
+	<jsp:getProperty>
+	and etc.
+
+comments in JSP
+---------------
+ex:
+	<%-- comment here --%>
+
+i) Scriptlet tag
+==================
+It is used to declare java code.
+ 
+syntax:
+	<%   code  %> 
+
+
+Deployment Directory Structure
+-------------------------------
+JspApp2
+|
+|---Java Resources
+|
+|---Web Content
+	|
+	|---form.html
+	|---process.jsp
+	|
+	|---WEB-INF
+		|
+		|----web.xml 
+Note:
+----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+form.html
+---------
+
+<form action="process.jsp">
+	
+	Name : <input type="text" name="t1"/> <br>
+	
+	<input type="submit" value="submit"/>
+
+</form>
+
+process.jsp
+-----------
+
+<center>
+<h1>
+<%
+	String name=request.getParameter("t1");
+	out.println("Welcome ="+name);
+%>
+</h1>
+</center>
+
+web.xml
+------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+----------
+	http://localhost:2525/JspApp2/
+
+
+ii) Expression tag
+====================
+A code written in expression tags returns the the output stream of a response.So we don't need to use out.println() to print the data.
+
+syntax:
+	<%=  code   %>
+
+Note:
+----
+	Expression tag does not allow semicolon.
+
+
+Deployment Directory Structure
+-------------------------------
+JspApp3
+|
+|---Java Resources
+|
+|---Web Content
+	|
+	|---form.html
+	|---process.jsp
+	|
+	|---WEB-INF
+		|
+		|----web.xml 
+Note:
+----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+form.html
+---------
+
+<form action="process.jsp">
+	
+	Name : <input type="text" name="t1"/> <br>
+	
+	<input type="submit" value="submit"/>
+
+</form>
+
+process.jsp
+-----------
+<center>
+<h1>
+<%
+	String name=request.getParameter("t1");
+%>
+<%= "Hey ! Welcome :"+name %>
+</h1>
+</center>
+
+
+web.xml
+------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+
+Request url
+----------
+	http://localhost:2525/JspApp3/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

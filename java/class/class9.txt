@@ -1,0 +1,147 @@
+Main method 
+============
+Our program contains main method or not.
+
+Either it is properly declare or not.
+
+It is not a responsibility of a compiler to check.
+
+It is a liability of a JVM to look for main method.
+
+If JVM won't find main method then it will throw one runtime error called main method not found.
+
+JVM will looks for main method with following signature.
+
+ex:
+	public static void main(String[] args)
+
+If we perform any changes in above signature then JVM will throw one runtime error called main method not found.
+
+We can perform following changes in main method.
+
+1) Order of modifiers is not important.Incase of public static we can take static public also.
+	ex:
+		static public  void main(String[] args)
+
+2) We can declare String[] in following acceptable formats.
+	ex:
+		public static void main(String[] args)
+		public static void main(String   []args)
+		public static void main(String args[])
+
+3) We can replace String[] with var-arg parameter.
+	ex:
+		public static void main(String... args)
+
+4) We can change args with any java valid identifier.
+	ex:
+		public static void main(String[] ihub)
+
+
+5) Main method will accept following modifiers.
+	ex:
+		synchronized
+		strictfp
+		final 
+
+
+Q) Can you please explain main method in java?
+
+public 
+------	
+	JVM wants to call this method from any where.
+
+static 
+------
+	JVM wants to call this method without using any object reference.
+
+void 
+-----
+	Main method does not return any thing to JVM.
+
+main 
+----
+	It is a identifier given to main method.
+
+
+String[] args 
+---------
+	It is a command line arguments.
+
+
+Command Line Arguments
+=====================
+Arguments which are passing through command prompt such type of arguments are called command line arguments.
+
+In command line arguments we need to pass out inputs at runtime command.
+
+ex:
+	javac   Test.java
+
+
+	java   Test 101 raja M 10000.0 
+		     |	 |   |	|_______args[3]
+		     |	 |   |__________args[2]
+		     |	 |______________args[1]
+		     |__________________args[0]
+
+ex:
+---
+class  Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println(args[0]);
+		System.out.println(args[1]);
+		System.out.println(args[2]);
+		System.out.println(args[3]);
+	}
+}	
+
+System.out.println()
+=====================
+It is a output statement in java.
+
+Whenever we want to display any data or userdefined statements then we need to use System.out.println() stmt.
+
+syntax:
+		static variable 
+			|
+		System.out.println();
+		|		|
+	predefined 		predefined method 
+	final class. 
+
+Diagram: class9.1
+
+ex:
+class  Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println("stmt1");
+		System.out.print("stmt2");
+		System.out.printf("stmt3");
+	}
+}
+
+
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

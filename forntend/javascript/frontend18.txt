@@ -1,0 +1,775 @@
+3) logical operators
+====================
+We have following list of logical operators.
+
+ex:
+	symbols		description
+	---------	----------
+	&&		logical AND
+	||		logical OR 
+	!		logical NOT 
+
+logical AND(&&)
+------------------
+T	T	= T
+T	f	= F
+F	T	= F 
+F	F	= F 
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					document.writeln(((5>2) && (6<10))+"<br>"); //true 
+					document.writeln(((5>20) && (6<10))+"<br>"); //false
+					document.writeln(((5>2) && (6<1))+"<br>"); //false
+					document.writeln(((5>20) && (6<1))+"<br>"); //false   
+		</script>
+</body>
+</html>
+
+logical OR (||)
+----------------
+T	T	= T
+T	F	= T
+F	T	= T
+F	F	= F 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					document.writeln(((5>2) || (6<10))+"<br>"); //true 
+					document.writeln(((5>20) || (6<10))+"<br>"); //true
+					document.writeln(((5>2) || (6<1))+"<br>"); //true
+					document.writeln(((5>20) || (6<1))+"<br>"); //false   
+		</script>
+</body>
+</html>
+
+Logical NOT (!)
+----------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var i=!(5>2);
+					document.writeln(i);//false
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var i=!(5>20);
+					document.writeln(i);//true
+		</script>
+</body>
+</html>
+
+4) Bitwise operators
+=======================
+We have following list of bitwise operators.
+
+ex:
+	symbol		description
+	-------		------------
+	&		Bitwise AND
+	|		Bitwise OR 
+	^		Bitwise XOR
+	~		Bitwise NOT
+	>>		Right Shift
+	<<		Left Shift 
+
+Bitwise AND(&)
+-------------
+Bitwise AND operator deals with binary numbers.
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var a=10,b=5;
+					var c=a & b;
+					document.writeln(c); //0
+
+					/*
+						10 - 1010
+						5  - 0101
+						---------
+						&  - 0000	
+					*/
+		</script>
+</body>
+</html>
+
+
+Bitwise OR (|)
+---------------
+Bitwise OR operator deals with binary numbers.
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var a=10,b=5;
+					var c=a | b;
+					document.writeln(c); //15
+
+					/*
+						10 - 1010
+						5  - 0101
+						---------
+						|  - 1111
+					*/
+		</script>
+</body>
+</html>
+
+Bitwise XOR
+--------------
+Bitwise XOR operator deals with binary numbers.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var a=10,b=15;
+					var c=a ^ b;
+					document.writeln(c); //5
+
+					/*
+						10 - 1010
+						15 - 1111
+						---------
+						^  - 0101
+					*/
+		</script>
+</body>
+</html>
+
+
+Bitwise NOT operator(~)
+-----------------------
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var a=~10;
+					document.writeln(a);//-11
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var a=~22;
+					document.writeln(a);//-23
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var a=~(-19);
+					document.writeln(a);//18
+		</script>
+</body>
+</html>
+
+
+Right shift operator(>>)
+--------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var i = 10 >> 3; //10 / 8
+					document.writeln(i);
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var i = 20 >> 6;  //20/64
+					document.writeln(i);//0
+		</script>
+</body>
+</html>
+
+
+Left shift operator (<<)
+-------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var i = 10 << 3;
+					document.writeln(i);//80
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var i = 100 << 4;
+					document.writeln(i);//1600
+		</script>
+</body>
+</html>
+
+
+5)Arithmetic operators
+-----------------------
+We have following list of relational operators.
+
+ex:
+	symbol		description
+	-------		------------
+	%		modules
+	/		division		
+	*		multiplication
+	+		addition
+	-		substraction
+	++		incrementation 
+	--		decrementation 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var i= 10 % 20; 
+
+					document.writeln(i);//10
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var i= 10 / 20; 
+
+					document.writeln(i);//0.5
+		</script>
+</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var i= 10 * 10;
+
+					document.writeln(i);//100
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var i= 5 + 10%2 + 6/2 + 6 * 4 - 3;
+
+					document.writeln(i);//
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var i=10;
+					document.writeln(i++ + ++i);//10+12
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					var i=10;
+					document.writeln(i--  + --i);//10+8
+		</script>
+</body>
+</html>
+
+6) Special operators
+===================
+We have following list of special operators.
+
+ex:
+	symbol		description
+	------		-------------
+	?:		It is used to declare the condition
+
+	new 		IT is used to create an instance
+
+	typeof		It will return type of an object.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					(5>2)?document.writeln("Hello"):document.writeln("Bye");
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+					(!(5>2))?document.writeln("Hello"):document.writeln("Bye");
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var a=10;
+				var b=5;
+
+			(a>b)?document.writeln(a+" is greatest"):document.writeln(b+" is greatest");
+		</script>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				var i=10;
+				document.writeln(typeof(i)+"<br>");//number
+
+				var j=true;
+				document.writeln(typeof(j)+"<br>");//boolean
+
+				var k='hi';
+				document.writeln(typeof(k)+"<br>");//string 
+
+				var l=null;
+				document.writeln(typeof(l)+"<br>");//object
+
+				var m;
+				document.writeln(typeof(m)+"<br>");//undefined
+		</script>
+</body>
+</html>
+
+
+Interview Questions
+===================
+
+
+Q) Difference between null and undefined?
+
+
+In JavaScript, undefined is a type, whereas null is an object.
+
+undefined
+------------
+
+It means a variable declared, but no value has been assigned a value.
+Ex:
+	<script>
+		var x;
+		document.writeln(x); //undefined
+	</script>
+
+null
+-----
+A null in JavaScript is an assignment value.
+Ex:
+	<script>
+		var x=null;
+		document.writeln(x); //null
+	</script>
+
+
+Q) Types of functions in JavaScript?
+
+We have three types of functions.
+
+
+Named Functions
+----------------
+These types of functions contain name at the time of declaration.
+Ex:
+	function f1()
+	{
+	document.writeln(“hello world”);
+	}
+	f1();
+
+2)Anonymous Functions
+---------------------
+These types of functions do not have any name.
+They are declared dynamically at runtime.
+Ex:
+	var f1=function()
+	{
+	document.writeln('hello world');
+	}
+	f1();
+
+3) Arrow functions
+--------------------
+Arrow functions are more secure when compare to other functions.
+
+As per ES6 standards we need to use arrow function.
+
+ex:
+	var f1=()=>
+		{
+			document.writeln("Hello World");
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

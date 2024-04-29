@@ -1,0 +1,254 @@
+Javascript program to hide and show the password in a textfield
+===============================================================
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB TALENT</title>
+
+		<!-- fontawesome icon cdn link -->
+   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+   	<style type="text/css">
+   		.myClass
+   		{
+   			padding-right:25px;
+   		}
+   		#myId
+   		{
+   			position: relative;
+   			right:25px;
+   		}
+   	</style>
+
+	</head>
+	<body>
+			Password: <input type="password" id="t1" class="myClass"/>
+
+	<span class="fa fa-eye" id="myId" onclick="f1()"></span>
+
+			<script>
+				function f1()
+				{
+					var x=document.getElementById('t1');
+					if(x.type=="password")
+					{
+						x.type="text";
+					}
+					else
+					{
+						x.type="password";
+					}
+				}
+			</script>
+	</body>
+</html>
+
+
+JavaScript Regular Expression
+================================
+Regular expressions are patterns used to match character combinations in strings. 
+
+In JavaScript, regular expressions are also objects.
+
+
+JavaScript Form validation using RegularExpression
+-----------------------------------------------------
+
+To generate proper regular expression we can login below url.
+
+ex:
+	https://regex101.com/
+
+
+Task1
+|
+|---index.html
+|
+|---mystyles.css
+|
+|---validation.js 
+
+index.html
+----------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+	
+	<!-- add external CSS -->
+	<link rel="stylesheet" href="mystyles.css">
+
+	<!-- add external javascript -->
+	<script type="text/javascript" src="validation.js"></script>
+
+</head>
+<body>
+		<div>
+		<form action="#" onsubmit="return validate()" method="POST">
+			<label for="username">UserName</label>
+			<input type="text" id="username" name="username" placeholder="Your username"/>
+
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" placeholder="Your password"/>
+
+			<label for="phone">Phone</label>
+			<input type="text" id="phone" name="phone" placeholder="Your phone"/>
+
+			<label for="email">Email</label>
+			<input type="text" id="email" name="email" placeholder="Your email"/>
+
+			<label for="country">Country</label>
+    		<select id="country" name="country">
+      				<option value="">none</option>
+      				<option value="australia">Australia</option>
+      				<option value="canada">Canada</option>
+      				<option value="usa">USA</option>
+    		</select>
+  
+    		<input type="submit" value="Submit">
+
+		</form>
+		</div>
+</body>
+</html>
+
+mystyles.css
+-----------
+*
+{
+	margin:0;
+	padding:0;
+}
+body
+{
+	height:100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+div
+{
+	width:500px;
+	background-color:#f2f2f2;
+	padding:20px;
+	border-radius:5px;
+}
+input[type="text"],input[type="password"],select
+{
+	width:480px;
+	height:30px;
+	margin:8px 0;
+	padding-left:20px;
+}
+input[type="submit"]
+{
+	margin:10px 0;
+	width:500px;
+	background-color:green;
+	padding:10px;
+	border:none;
+	color:white;
+}
+input[type="submit"]:hover
+{
+	background-color:orange;
+}
+
+validation.js
+---------------
+function validate()
+{
+	var name=document.getElementById('username').value;	
+	var pwd=document.getElementById('password').value;
+	var phone=document.getElementById('phone').value;
+	var email=document.getElementById('email').value;
+	var country=document.getElementById('country').value;
+
+
+	var namecheck=/[A-Za-z. ]{6,20}$/;
+    
+    var pwdcheck=/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{10,30}$/;
+
+    var phonecheck=/[789][0-9]{9}$/;
+
+    var emailcheck=/[A-Za-z.]{1,}@[A-Za-z]{2,15}[.][A-Za-z]{3,}$/;
+
+
+     if(!(namecheck.test(name)))
+    {
+        alert("UserName must be 6 characters with no numbers");
+        document.getElementById('name').value="";
+        document.getElementById('name').focus();
+        return false;
+    }
+	
+	if(!(pwdcheck.test(pwd)))
+    {
+      alert("password must have 1 uppercase, 1 special symbol and 1 digit");
+      document.getElementById('pwd').value="";
+      document.getElementById('pwd').focus();
+       return false;
+    }
+
+    if(!(phonecheck.test(phone)))
+    {
+      alert("Phone must start with 7,8,9 series with  10 digits");
+      document.getElementById('phone').value="";
+      document.getElementById('phone').focus();
+       return false;
+    }
+
+    if(!(emailcheck.test(email)))
+    {
+      alert("Please insert valid email");
+      document.getElementById('email').value="";
+      document.getElementById('email').focus();
+       return false;
+    }
+
+    if(country=="")
+    {
+      alert("Please select the country option ");
+      return false;
+    }
+
+	return true;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

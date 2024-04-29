@@ -1,0 +1,863 @@
+Enum
+=====
+Enum concept introduced in 1.5v.
+
+Enum is a group of named constants.
+
+Using enum we can create our own datatype called enumerated datatype.
+
+When compare to old language enum , java enum is more powerful. 
+
+We can declare enum as follow.
+
+syntax:
+-------
+	enum  type_name
+	{
+		value1,value2,...,valueN
+	}
+ex:
+---
+	enum Months
+	{
+		JAN,FEB,MAR
+	}
+
+Internal implementation of enum
+===============================
+Internally every enum implemented as class concept and it is extended with java.lang.Enum class.
+
+Every enum constant is a reference variable of enum type.
+
+ex:
+
+
+enum Months			public final class Months extends java.lang.Enum 
+{				{
+	JAN,FEB,MAR			public static final Months JAN=new Months();
+					public static final Months FEB=new Months();
+}					public static final Months MAR=new Months();
+				}
+
+Declaration and Usage of enum
+==============================
+enum  Months 
+{
+	JAN,FEB,MAR
+}
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Months m=Months.JAN;
+		System.out.println(m); // JAN
+	}
+}
+
+ex:
+--
+enum  Months 
+{
+	JAN,FEB,MAR
+}
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Months m=Months.FEB;
+
+		switch(m)
+		{
+			case JAN: System.out.println("January"); break;
+			case FEB: System.out.println("February"); break;
+			case MAR: System.out.println("March"); break;
+		}
+		
+	}
+}
+
+java.lang.Enum 
+=============
+The power to enum will be inherited from java.lang.Enum class.
+
+A java.lang.Enum class contains following two methods.
+
+1) values() 
+----------
+	It will return list of constants from enum.
+
+2) ordinal() 
+------------
+	It will return ordinal number.
+
+ex:
+enum  Months 
+{
+	JAN,FEB,MAR
+}
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Months[] m=Months.values();
+		
+		//for each loop
+		for(Months m1:m)
+		{
+			System.out.println(m1+"------------"+m1.ordinal());
+		}
+	}
+}
+
+When compare to old language enum, java enum is more powerful because in addition to constants we can declare variables,  methods and constructors.
+
+ex:
+---
+enum Week
+{
+	MON,TUE,WED,THU;
+
+	Week()
+	{
+		System.out.println("constructor");
+	}
+}
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Week w=Week.MON;
+	}
+}
+
+
+ex:
+---
+enum Week
+{
+	MON,TUE,WED,THU;
+
+	static int i=10;
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+	}
+}
+
+Wrapper classes
+===============
+The main objective of wrapper classes are 
+
+1) To wrap primitive types to wrapper objects and vice versa.
+
+2) To defined several utility methods.
+
+ex:
+
+primitive types		wrapper classes
+-----------------	---------------
+byte			Byte
+short			Short
+int			Integer
+long			Long
+float			Float
+double			Double
+boolean			Boolean
+char 			Character 
+
+
+constructor
+-----------
+There are two ways to create object for wapper classes one will take corresponding primitive as an argument and another will take corresponding String as an argument.
+
+ex:
+	
+Wrapper object		constructor
+------------		-----------
+Byte			byte or String 
+Short			short or String 
+Integer			int or String 
+Long			long or String 
+Float			float or String 
+Double			double or String 
+Boolean			boolean or String 
+Character 		char 
+
+ex:
+----
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Integer i1=new Integer(10);
+		System.out.println(i1); //10
+
+		Integer i2=new Integer("20");
+		System.out.println(i2); //20
+	}
+}
+
+ex:
+---
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Boolean b1=new Boolean(true);
+		System.out.println(b1); //true
+
+		Boolean b2=new Boolean("false");
+		System.out.println(b2); //false
+	}
+}
+
+ex:
+---
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Character c=new Character('a');
+		System.out.println(c);
+	}
+}
+
+Utility methods
+================
+
+1) valueOf() 
+----------
+It is similar to constructor.
+It is used to convert primitive type to Wrapper object.
+ex:
+
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Integer i=Integer.valueOf(10);
+		System.out.println(i);
+
+		Long l=Long.valueOf(20);
+		System.out.println(l);
+	}
+}
+
+
+	
+
+2) xxxValue()
+------------
+It will convert wrapper object to primitive type.
+
+ex:
+
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Integer i=new Integer(10);
+
+		byte b=i.byteValue();
+		System.out.println(b);//10
+
+		short s=i.shortValue();
+		System.out.println(s);//10
+	}
+}
+
+
+
+
+3) parseInt() 
+-----------
+It will convert String to primitive type.
+ex:
+class Test 
+{
+	public static void main(String[] args)
+	{
+		String str="100";
+
+		int i=Integer.parseInt(str);
+		System.out.println(i); //100
+
+		long l=Long.parseLong(str);
+		System.out.println(l); //100
+
+		float f=Float.parseFloat(str);
+		System.out.println(f); //100.0
+	}
+}
+
+
+4) toString() 
+------------
+It will convert wrapper object to string type.
+
+ex:
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Integer i=new Integer(10);
+		
+		String str=i.toString();
+		
+		System.out.println(str);//10
+	}
+}
+
+Q) Write a java program to perform sum of two binary numbers?
+
+input:
+	1010
+	0101
+output:
+	1111
+
+ex:
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the first binary number :");
+		String binary1=sc.next();
+
+		System.out.println("Enter the second binary number :");
+		String binary2=sc.next();
+
+		//convert binary to decimal
+		int a=Integer.parseInt(binary1,2);
+		int b=Integer.parseInt(binary2,2);
+		int c=a+b;
+
+		//convert decimal to binary 
+		String result=Integer.toBinaryString(c);
+		System.out.println(result);
+
+	}
+}
+
+
+Types of objects in java
+========================
+We have two types of objects in java.
+
+1) Immutable object 
+
+2) Mutable object 
+
+1) Immutable object 
+------------------
+After object creation if we perform any changes then for every change a new object will be created such type of object is called immutable object.
+ex:
+	String and wrapper classes 
+
+2) Mutable object
+---------------
+After object creation if we perform any changes then all changes will be reflect to single object such type of object is called mutable object.
+ex:
+	StringBuffer and StringBuilder 
+
+String
+======
+It is a collection(set) of characters.
+
+case1:
+------
+Once if we create a String object we can't perform any changes.if we perform any changes then for every change a new object will be created such behaviour is called immutability of an object.
+
+Diagram: class31.1
+
+
+case2:
+----
+Difference between == and .equals() method?
+
+==
+----
+It is a equality operator or comparision operator.
+It is used for reference comparision or address comparision.
+
+ex:
+class Test 
+{
+	public static void main(String[] args)
+	{
+		String s1 = new String("bhaskar");
+
+		String s2 = new String("bhaskar");
+
+		System.out.println(s1==s2);//false 
+	}
+}
+
+
+.equals()
+--------
+It is a predefined methods present in String class.
+It is used for content comparision.
+it is a case sensitive.
+
+ex:
+
+class Test 
+{
+	public static void main(String[] args)
+	{
+		String s1 = new String("bhaskar");
+
+		String s2 = new String("bhaskar");
+
+		System.out.println(s1.equals(s2));//true 
+	}
+}
+
+case3: 
+------
+Once if we create a String object.Two objects will be created one is on heap and another is on 
+SCP(String Constant Pool) area.But 's' always points to heap area.
+
+Diagram: class31.2
+
+
+Object creation in SCP area is always optional.First JVM will check is there any object is created with same content or not.If it is created then JVM simply refers to that object.If it is not created then JVM will create a new object.Hence there is no chance of having duplicate objects in SCP area.
+
+Even though SCP area objects do not have any object reference , garbage collector can't acces them.
+
+SCP area objects will be destroyed automatically whenever JVM shutdowns or terminated.
+
+Diagram: class31.3
+
+Interning of String object
+-------------------------
+With the help of heap object reference if we need corresponding SCP object reference then we need to use intern() method.
+
+Diagram: class31.4
+
+
+String important methods
+========================
+class Test 
+{
+	public static void main(String[] args)
+	{
+		String str="bhaskar";
+
+		System.out.println(str.length());//7
+
+		System.out.println(str.charAt(3));//s
+
+		System.out.println(str.concat("solution"));// bhaskarsolution 
+
+		System.out.println(str.toUpperCase());//BHASKAR
+
+		System.out.println(str.toLowerCase());//bhaskar
+
+		System.out.println(str.replace('a','A'));//bhAskAr
+
+		System.out.println(str.indexOf('a')); // 2 
+
+		System.out.println(str.lastIndexOf('a')); //5
+
+		System.out.println(str.equals("solution")); // false 
+
+		System.out.println(str.equalsIgnoreCase("BHASKAR"));// true 
+	}
+}
+
+Q) Write a java program to accept one string and display it?
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the string :");
+		String str=sc.next();
+
+		System.out.println("welcome :"+str);
+	}
+}
+
+or
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the string :");
+		String str=sc.nextLine();
+
+		System.out.println("welcome :"+str);
+	}
+}
+
+Q) Write a java program to display reverse of a string?
+
+input:
+	hello
+
+output:
+	olleh 
+
+ex:
+
+class Test 
+{
+	public static void main(String[] args)
+	{
+		String str="hello";
+		
+		char[] carr=str.toCharArray(); // h   e   l   l   o
+
+		
+		String rev="";
+
+		//reading reverse
+		for(int i=carr.length-1;i>=0;i--)
+		{
+			rev+=carr[i];
+		}
+
+		System.out.println(rev);
+	}
+}
+
+Q) Write a java program to check given string is palindrome or not?
+
+Input:
+	racar 
+
+Output:
+	It is a palindrome string 
+
+class Test 
+{
+	public static void main(String[] args)
+	{
+		String str="racar";
+		
+		char[] carr=str.toCharArray(); //  r a  c  a  r 
+		
+		String rev="";
+
+		//reading reverse
+		for(int i=carr.length-1;i>=0;i--)
+		{
+			rev+=carr[i];
+		}
+
+		if(str.equals(rev))
+			System.out.println("It is palindrome string");
+		else
+			System.out.println("It is not palindrome string");
+	}
+}
+
+
+Q) Write a java program to display reverse of a sentence?
+
+Input:
+	This is java class
+
+Output:
+	class java is This 
+
+ex:
+class Test 
+{
+	public static void main(String[] args)
+	{
+		String str="This is java class";
+
+		String[] sarr=str.split(" "); // This     is      java    class 
+
+		
+		String rev="";
+
+		//reading reverse
+		for(int i=sarr.length-1;i>=0;i--)
+		{
+			rev+=sarr[i]+" ";
+		}
+		System.out.println(rev);
+		
+	}
+}
+
+Q) Write a java program to display reverse of a word in a given string?
+
+input:
+	This is java class
+
+Output:
+	sihT si avaJ ssalC 
+
+ex:
+class Test 
+{
+	public static void main(String[] args)
+	{
+		String str="This is java class";
+
+		String[] sarr=str.split(" "); // This     is      java    class 
+
+		String rev="";
+
+		//for each loop
+		for(String s:sarr)
+		{
+			char[] carr=s.toCharArray(); // T    h     i     s
+
+			//reading reverse
+			for(int i=carr.length-1;i>=0;i--)
+			{
+				rev+=carr[i];
+			}
+			//add space
+			rev+=" ";
+		}
+		
+		System.out.println(rev);
+	}
+}
+
+Q) Write a java program to display the string starting with uppercase letter?
+
+input:
+	This is Java class For students
+
+Output:
+	This Java For 
+
+ex:
+--
+class Test 
+{
+	public static void main(String[] args)
+	{
+		String str="This is Java class For students";
+
+		String[] sarr=str.split(" "); //This   is   Java    class   For   students
+
+		String result="";
+
+		//for each loop
+		for(String s:sarr)
+		{
+			if(s.charAt(0)>='A' && s.charAt(0)<='Z')
+			{
+				result+=s+" ";		
+			}
+		}
+
+		System.out.println(result);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

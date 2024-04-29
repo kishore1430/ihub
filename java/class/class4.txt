@@ -1,0 +1,365 @@
+Reserved Words 
+==============
+There are some identifiers which are reserved to associate some functionalty or meaning
+such type of identifiers are called reserved words.
+
+Java supports 53 reserved words.
+
+All reserved words we need to declare in a lowercase letters.
+
+In java, reserved words are divided into two types.
+
+Diagram: class4.1
+
+Used keywords with respect to class
+------------------------------------
+import
+package
+class
+enum
+interface
+extends 
+implements 
+
+Used keywords with respect to object
+-------------------------------
+new
+instanceof
+this
+super
+
+Used keywords with respect to datatypes
+------------------------------------
+byte
+short
+int
+long
+float
+double
+boolean
+char 
+
+Used keywords with respect to modifiers
+-----------------------------------
+default
+public
+private 
+protected
+static
+final
+abstract
+synchronized
+strictfp
+transient
+volatile
+native 
+
+Used keywords with respect to returntype
+------------------------
+void 
+
+Used keywords with respect to flow control
+----------------------------------
+if
+else
+switch
+case 
+do
+while
+for
+continue
+break
+
+Used keywords with respect to exception handling
+-------------------------
+try
+catch
+throw
+throws
+finally
+assert 
+
+Java
+======
+
+Version		:	Java 8 
+
+Software	:	JDK 1.8 
+
+Creator		:	James Gosling 
+
+Vendor		:	Oracle Corporation 
+
+Website		:	www.oracle.com/in/java
+
+Opensource	:	open source.
+
+Tutorials 	:	www.greeksforgreeks.com 
+			www.javatpoint.com
+			www.tutorialspoint.com 
+			and etc.
+			
+Download link	:
+
+https://drive.google.com/file/d/16fr2McV_Bex0NYlOdcVfC4k2gwUUNqzq/view?usp=drive_link	
+
+Steps to setup Java Environmental variables
+==========================================
+step1:
+-----
+	Make sure JDK 1.8 install successfully.
+
+step2:
+------
+	Copy "lib" directory from "java_home" folder.	
+	ex:
+		C:\Program Files\Java\jdk1.8.0_181\lib
+
+step3:
+-----
+	Paste "lib" directory in environment variables.
+	ex:
+		Right click to my pc --> properties --> advanced system settings 
+		---> Environmental variables -->  
+
+		User variables --> click to new button -->
+		variable name :  CLASSPATH 
+		variable value : C:\Program Files\Java\jdk1.8.0_181\lib; --> ok.
+
+		System varaibles --> click to new button -->
+		variable name : path 
+		variable value : C:\Program Files\Java\jdk1.8.0_181\bin; 
+
+		--->ok --> ok --> ok.
+
+step4:
+-----
+	Check environmental setup done perfectly or not.
+	ex:
+		cmd> javap  
+		cmd> java  -version 
+
+Steps to develop First application in java
+==========================================
+step1:
+------
+	Make sure JDK 1.8 installed successfully.
+
+step2:
+-----
+	Makre sure environmental setup done perfectly.
+
+step3:
+-----
+	Create a "javaprog" folder in 'E' drive.
+
+step4:
+------	
+	Open the notepad and develop Hello world program.
+	ex:
+		class  Test
+		{
+			public static void main(String[] args)
+			{
+				System.out.println("Hello World");
+			}
+		}
+
+step5:
+-----
+	Save above program with same name as class name inside javaprog folder.
+
+
+step6:
+-----
+	Open the command prompt from javaprog location.
+
+step7:
+------
+	Compile the java program by using below command.
+	ex:
+		javac    Test.java
+				|
+				file name 
+
+step8:
+------
+	Execute the java program by using below command.
+	ex:
+		java     Test 
+			  |
+			class name 	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

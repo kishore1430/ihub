@@ -1,0 +1,359 @@
+Q) What is the difference between JavaScript and Java ?
+
+
+JavaScript					Java
+----------------				---------
+It is a scripting language.			It is a non-scripting language.	
+
+It is a object based programming language.	It is a object oriented programming language.
+
+It is a weakly typed checking language.		It is a strongly typed checking language.
+
+We can't run individually.			We can run invidually.
+
+It requires browser window for execution.	It does not required browser window for execution.
+
+It is a simple language.			It is a complex language.
+
+
+JavaScript History
+===================
+JavaScript originally known as LiveScript.
+
+LiveScript was developed by Netscape Corporation in late 1990's.
+
+LiveScript was developed by using C language syntax's.
+
+In 1995,Brenden Eich the popular scientist of Netscape Corporation renamed LiveScript to JavaScript.
+
+The offical name of javascript is ECMA script.
+
+ECMA stands for Europeon Company Manufacturer Association.
+
+Advantages of JavaScript
+========================
+1) It is used to develop interactive web pages.
+
+2) It will display dialog boxes and popup boxes.
+
+3) It is used to perform client side form validation.
+
+4) It is a weakly/loosely typed checking language.
+
+5) It is used to add dynamic content to a web page.
+
+6) It is used to develop dynamic(responsive) web pages.
+
+7) It supports Date and Time.
+
+8) It supports Cookies.
+
+8) It supports drop down menu.
+
+and etc.
+
+
+JavaScript syntax
+=================
+To write javascript code we need to use <script> tag.
+
+ex:
+	<script type="text/javascript">
+		stmt1;
+		stmt2;
+		stmt3;
+	</script>
+
+	Here "type" attribute is optional.
+	Here simicolon is optional.
+
+
+Sublime Editor
+===============
+Download link : https://www.sublimetext.com/download
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.write("Welcome to Javascript")
+		</script>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln("Welcome to Javascript");
+
+				document.writeln("This is Niyaz sir class");
+		</script>
+</body>
+</html>
+
+In scripting language, we can't declare markup language directly.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln("Welcome to Javascript");
+				<br>	
+				document.writeln("This is Niyaz sir class");
+		</script>
+</body>
+</html>
+
+To overcome above limitation we need to use below code.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln("Welcome to Javascript");
+				document.writeln("<br>");	
+				document.writeln("This is Niyaz sir class");
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln("<h2>Welcome to Javascript</h2>");	
+				document.writeln("<p style='color:red'>This is Niyaz sir class</p>");
+		</script>
+</body>
+</html>
+
+If a program contains HTML, CSS and javascript then it is called DHTML. 
+
+DHTML stands for Dynamic Hypertext Markup language.
+
+JavaScript Engine
+==================
+JavaScript Engine allows us to execute scripting code in browser window.
+
+JavaScript engine is used to convert user understandable scripting language to machine understandable scripting language.
+
+Every browser contains javascript engine.
+
+We have following list of javascript engines as given below.
+
+ex:
+	Browser 		Engine
+	--------		-------
+	Chrome			V8 Engine 
+	Mozilla			Spider Monkey
+	Edge			Chakra 
+	and etc.
+
+
+Comments in javascript
+======================
+Comments are created for documentation purpose.
+
+Comments are used to improve readability of our code.
+
+In javascript, we have two types of comments.
+
+1) Single line comment 
+----------------------
+	It is used to comment a single line.
+	ex:
+		// comment here 
+
+
+2) Multiple line comment 
+--------------------
+	It is more convenient when compare to single line comment because it is used to comment
+	a single line and multiple lines.
+	ex:
+		/*
+			-
+			- comment here 
+			-
+		*/
+
+Note:
+-----
+	HTML :  <!--  comment here -->
+
+	CSS  :  /*    comment here  */ 
+
+
+Output statement in javascript
+===============================
+Output statement is used to display the data or custom messages.
+
+We have two types of output statements in javascript.
+
+1) document.writeln()
+
+2) console.log() 
+
+1) document.writeln()
+---------------------
+It is used to display the output on browser window.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				document.writeln("This is first output statement");
+		</script>
+</body>
+</html>
+
+
+2) console.log() 
+----------------
+It is used to display the output on browser console.
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+				console.log("this is second output statement");
+		</script>
+</body>
+</html>
+
+
+Assignment program
+==================
+1) Write a java program to display given output?
+
+input:
+	IJK
+
+output:
+	IJ
+	IK 
+	JI 
+	JK 
+	KI
+	KJ 
+
+ex:
+---
+class  Test 
+{
+	public static void main(String[] args)
+	{
+		String str="IJK";
+
+		int n=str.length();
+
+		for(int i=0;i<n;i++)
+		{
+			for(int j=0;j<n;j++)
+			{
+				if(i!=j)
+				{
+				System.out.println(str.charAt(i)+""+str.charAt(j));						}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

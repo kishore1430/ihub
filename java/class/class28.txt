@@ -1,0 +1,150 @@
+Try with Resources
+===================
+A try with resources that declares one or more resources.
+
+A try with resources ensures each resource is closed at the end of the statement.
+
+syntax:
+------
+	try( resources)
+	{
+		-
+		- //code to be execute 
+		-
+	}
+
+
+ex:
+----
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		try(Scanner sc=new Scanner(System.in);)
+		{
+			System.out.println("Enter the Name :");
+			String name=sc.next();
+
+			System.out.println("welcome :"+name);
+		}
+	}
+}
+
+
+Q) How can we handle multiple exceptions in a single catch block?
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		try
+		{
+			System.out.println(10/0);
+		}
+		catch (ArithmeticException | IllegalArgumentException | ClassCastException   e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+java.io package
+=====================
+
+File
+=======
+	File f=new File("abc.txt");
+
+File will check is there any abc.txt file already created or not.
+If it is available it simply refers to that file.If it is not created then
+it won't create any new file.
+
+ex:
+---
+import java.io.*;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		File f=new File("abc.txt");
+		System.out.println(f.exists());//false
+	}
+}
+
+
+A File object can be used to create a physical file.
+
+ex:
+import java.io.*;
+class Test 
+{
+	public static void main(String[] args)throws IOException 
+	{
+		File f=new File("abc.txt");
+		System.out.println(f.exists());//false
+
+		f.createNewFile();
+		System.out.println(f.exists());//true
+
+	}
+}
+
+A File object can be used to create a directory also.
+
+ex:
+import java.io.*;
+class Test 
+{
+	public static void main(String[] args)throws IOException 
+	{
+		File f=new File("bhaskar123");
+		System.out.println(f.exists());//false
+
+		f.mkdir();
+		System.out.println(f.exists());//true 
+
+	}
+}
+
+
+Q)Write a java program to Create a  "cricket123" folder and inside that folder create "abc.txt" file?
+
+import java.io.*;
+class Test 
+{
+	public static void main(String[] args)throws IOException 
+	{
+		File f1=new File("cricket123");
+		f1.mkdir();
+
+		File f2=new File("cricket123","abc.txt");
+		f2.createNewFile();
+
+		System.out.println("Please check the location");
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

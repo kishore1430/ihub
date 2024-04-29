@@ -1,0 +1,524 @@
+Collection
+==========
+It is an interface which is present in java.util package.
+
+It is a root interface for entire Collection Framework.
+
+If we want to represent group of individual objects in a single entity then we need to use Collection.
+
+Collection interface contains following methods.
+
+ex:
+	cmd> javap  java.util.Collection  
+
+
+List 
+======
+It is a child interface of Collection interface.
+
+If we want to represent group of individual objects where duplicate values are allowed and order is preserved then we need to use List interface.
+
+Diagram:
+
+
+ArrayList 
+---------
+The underlying data structure is resizable array or growable array.
+
+Duplicate objects are allowed.
+
+Insertion order is preserved.
+
+Hetrogeneous objects are allowed.
+
+Null insertion is possible.
+
+It implements Serializable,Cloneable and RandomAccess interface.
+
+If our frequent operation is a retrieval operation then ArrayList is best choice.
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		ArrayList al=new ArrayList();
+		al.add("one");
+		al.add("four");
+		al.add("nine");
+		al.add("six");
+		System.out.println(al);//[one,four,nine,six]
+		al.add("one");
+		System.out.println(al);//[one,four,nine,six,one]
+		al.add(10);
+		System.out.println(al);//[one,four,nine,six,one,10]
+		al.add(null);
+		System.out.println(al);//[one,four,nine,six,one,10,null]
+	}
+}
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		ArrayList<String> al=new ArrayList<String>();
+		al.add("one");
+		al.add("four");
+		al.add("nine");
+		al.add("six");
+		System.out.println(al);//[one,four,nine,six]
+		al.add("one");
+		System.out.println(al);//[one,four,nine,six,one]
+		al.add(null);
+		System.out.println(al);//[one,four,nine,six,one,null]
+	}
+}
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		ArrayList<String> al=new ArrayList<String>();
+		al.add("one");
+		al.add("two");
+		al.add("three");
+	
+		for(int i=0;i<al.size();i++)
+		{
+			String s=al.get(i);
+			System.out.println(s);
+		}
+
+		
+	
+	}
+}
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		List<String> list=new ArrayList<String>();
+		
+		System.out.println(list.isEmpty()); // true 
+
+		list.add("one");
+		list.add("two");
+		list.add("three");
+		System.out.println(list);//[one,two,three]
+		
+		list.add(2,"gogo");
+		System.out.println(list);//[one,two,gogo,three]
+
+		list.remove("gogo");
+		System.out.println(list); //[one,two,three]
+		
+		list.clear();
+		System.out.println(list); //[]
+
+	}
+}
+
+ex:
+----
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list=Arrays.asList(9,4,2,6,1,3);
+		System.out.println(list);
+	}
+}
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		List<String> list=Arrays.asList("hi","hello","bye");
+		System.out.println(list);
+	}
+}
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		List<Character> list=Arrays.asList('a','b','c','d');
+		System.out.println(list);
+	}
+}
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		ArrayList<String> al1=new ArrayList<String>();
+		al1.add("one");
+		al1.add("two");
+		al1.add("three");
+		System.out.println(al1);//[one,two,three]
+
+		ArrayList<String> al2=new ArrayList<String>();
+		al2.add("raja");
+		System.out.println(al2);//[raja]
+
+		al2.addAll(al1);
+		System.out.println(al2); // [raja,one,two,three]
+
+		System.out.println(al2.containsAll(al1));//true 
+
+		al2.removeAll(al1);
+		System.out.println(al2);//raja
+	}
+}
+
+LinkedList 
+------------
+The underlying data structure is doubly linkedlist.
+
+Duplicates are allowed.
+
+Insertion order is preserved.
+
+Hetrogeneous objects are allowed.
+
+Null insertion is possible.
+
+It implements Serializable, Cloneable and Deque interface.
+
+If our frequent operation is adding and removing in the middle then LinkedList is a best choice.
+
+LinkedList interface contains following methods.
+
+ex:
+
+	public E getFirst();
+  	public E getLast();
+  	public E removeFirst();
+  	public E removeLast();
+  	public void addFirst(E);
+  	public void addLast(E);
+
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		LinkedList<String> ll=new LinkedList<String>();
+		ll.add("one");
+		ll.add("two");
+		ll.add("three");
+		System.out.println(ll);//[one,two,three]
+
+		ll.add("one");
+		System.out.println(ll);//[one,two,three,one]
+
+		ll.add(null);
+		System.out.println(ll);//[one,two,three,one,null]
+
+	}
+}
+
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		LinkedList<String> ll=new LinkedList<String>();
+		ll.add("one");
+		ll.add("two");
+		ll.add("three");
+		System.out.println(ll);//[one,two,three]
+
+		ll.addFirst("gogo");
+		ll.addLast("jojo");
+		System.out.println(ll);//[gogo,one,two,three,jojo]
+
+		System.out.println(ll.getFirst());//gogo
+		System.out.println(ll.getLast());//jojo
+
+		ll.removeFirst();
+		ll.removeLast();
+		System.out.println(ll);//[one,two,three]
+
+
+	}
+}
+
+Vector
+--------
+The underlying data structure is resizable array or growable array.
+
+Duplicate objects are allowed.
+
+Insertion order is preserved.
+
+Hetrogeneous objects are allowed.
+
+Null insertion is possible.
+
+It implements Serializable,Cloneable and RandomAccess interface.
+
+All the methods present in Vector are synchronized.Hence we can achieve thread safety.
+
+Vector class contains following methods.
+ex:
+	addElement()
+	removeElementAt()
+	removeAllElements()
+	firstElement()
+	lastElement()
+	and etc.
+
+ex:
+---
+
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Vector<Integer> v=new Vector<Integer>();
+		
+		System.out.println(v.capacity());//10
+
+		for(int i=1;i<=10;i++)
+		{
+			v.addElement(i);
+		}
+		System.out.println(v);//[1,2,3,4,5,6,7,8,9,10]
+
+		System.out.println(v.firstElement());//1
+		System.out.println(v.lastElement());//10
+
+		v.removeElementAt(5);
+		System.out.println(v);//[1,2,3,4,5,7,8,9,10]
+
+		v.removeAllElements();
+		System.out.println(v);//[]
+
+	}
+}
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Vector<Integer> v=new Vector<Integer>();
+		
+		System.out.println(v.capacity());//10
+
+		for(int i=1;i<=10;i++)
+		{
+			v.add(i);
+		}
+		System.out.println(v);//[1,2,3,4,5,6,7,8,9,10]
+
+		System.out.println(v.get(0));//1
+		System.out.println(v.get(v.size()-1));//10
+
+		v.remove(5);
+		System.out.println(v);//[1,2,3,4,5,7,8,9,10]
+
+		v.clear();
+		System.out.println(v);//[]
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

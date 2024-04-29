@@ -1,0 +1,688 @@
+JavaScript Functions
+=====================
+Function is a block of scope which is used to perform perticular task.
+
+Functions are used to maintain the business logic.
+
+Using functions we can achieve reusability of our code.
+
+To declare a function in javascript we need to use function keyword followed by name and parenthesis i.e ().
+
+Javascipt function parenthesis contains list of arguments seperated with comma.
+
+syntax:
+	function   function_name
+	{
+		-
+		- //code to be execute 
+		-
+	}
+
+Functions are executed at the time when they have called or when event is occured.
+
+
+ex:1
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			function f1()
+			{
+				document.writeln("Hello World");
+			}
+
+			f1();
+
+		</script>
+</body>
+</html>
+
+ex:2
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+			
+			function f1()
+			{
+				document.bgColor="#FFFF00";
+			}
+
+			f1();
+
+		</script>
+</body>
+</html>
+
+
+ex:3
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<button onclick="f1()"> clickme </button>
+
+		<script>
+			function f1()
+			{
+				document.writeln("Hello JavaScript");
+			}
+		</script>
+</body>
+</html>
+
+ex:4
+------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<button onclick="f1()"> clickme </button>
+
+		<script>
+			function f1()
+			{
+				document.bgColor="#FFFF00";
+			}
+		</script>
+</body>
+</html>
+
+Javascript functions are case sensitive.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			function f1()
+			{
+				document.writeln("Hello");
+			}
+
+			F1();
+		</script>
+</body>
+</html>
+o/p:
+	Error: F1 is not defined 
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			function f1(arg1,arg2)
+			{
+				document.writeln(arg1+arg2);
+			}
+
+			f1(10,20);
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+			function f1(arg1,arg2)
+			{
+				return arg1+arg2;
+			}
+
+			document.writeln(f1(30,20));
+		</script>
+</body>
+</html>
+
+
+
+Q) What is Javascript Closure?
+
+A closure is a combination of function's bundled together along with legexical scope.
+
+Javascript closure will be created at the time when function is created.
+
+Javascript closure , allows us to access outer function scope to inner function scope.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				//lexical scope 
+				var a=10;
+				function f1()
+				{
+					var b=20;
+					function f2()
+					{
+						var c=30;
+
+						document.writeln(a+" "+b+" "+c);
+					}	
+					f2();
+				}
+				f1();
+		</script>
+</body>
+</html>
+
+
+JavaScript Object
+=================
+Javascript object is an entity having states and behaviours.
+ 
+In general, it is a collection of properties and functions.
+
+Javascript is a object based programming language because every thing present in objects.
+
+Javascript is a template based but not class based.We don't need to declare a class to create an object.We can create objects directly. 
+
+There are three ways to create objects in javascript.
+
+1) By using object literal
+
+2) By creating instance of an object i.e using new operator 
+
+3) By using object constructor i.e using new operator 
+
+
+1) By using object literal
+--------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				emp ={
+					eid:101,
+					ename:"Alan",
+					esal:10000
+				}
+				document.writeln("Employee Id :"+emp.eid+"<br>");
+				document.writeln("Employee Name :"+emp.ename+"<br>");
+				document.writeln("Employee Salary :"+emp.esal+"<br>");
+		</script>
+</body>
+</html>
+
+2) By creating instance of an object i.e using new operator 
+------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var emp=new Object();
+				emp.eid=201;
+				emp.ename="Jose";
+				emp.esal=20000;
+
+				document.writeln("Employee Id :"+emp.eid+"<br>");
+				document.writeln("Employee Name :"+emp.ename+"<br>");
+				document.writeln("Employee Salary :"+emp.esal+"<br>");
+		</script>
+</body>
+</html>
+
+
+3) By using object constructor i.e using new operator 
+----------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				function emp(eid,ename,esal)
+				{
+					this.eid=eid;
+					this.ename=ename;
+					this.esal=esal;
+				}
+				var e=new emp(301,"Kelvin",30000);
+
+				document.writeln("Employee Id :"+e.eid+"<br>");
+				document.writeln("Employee Name :"+e.ename+"<br>");
+				document.writeln("Employee Salary :"+e.esal+"<br>");
+		</script>
+</body>
+</html>
+
+
+JavaScript Arrays
+==================
+In javascript, Array is an object which contains similar elements.
+
+Array index always start with '0' because it is a logical process.
+
+There are three ways to create an array in javascript.
+
+1) Using Array Literal
+
+2) By creating instance of an Array i.e new operator 
+
+3) By using array constructor i.e new operator 
+
+1) Using Array Literal
+----------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var arr=[10,20,30];
+
+				for(var i in arr)
+				{
+					document.writeln(arr[i]);
+				}
+		</script>
+</body>
+</html>
+
+
+2) By creating instance of an Array i.e new operator 
+--------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var arr=new Array();
+				arr[0]=10;
+				arr[1]=20;
+				arr[2]=30;
+				arr[3]=40;
+
+				for(var i in arr)
+				{
+					document.writeln(arr[i]);
+				}
+		</script>
+</body>
+</html>
+
+3) By using array constructor i.e new operator
+----------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var arr=new Array(1,2,3,4,5);
+
+				for(var i in arr)
+				{
+					document.writeln(arr[i]);
+				}
+		</script>
+</body>
+</html>
+
+Q) Write a javascript program to insert  some array element and remove them?
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var arr=[];
+				arr.push(10);
+				arr.push(20);
+				arr.push(30);
+
+				arr.pop();
+				for(var i in arr)
+				{
+					document.writeln(arr[i]);
+				}
+		</script>
+</body>
+</html>
+
+JavaScript String
+================
+In javascript, String is an object which contains collection of characters.
+
+There are two ways to declare the String in javascript.
+
+1) Using string literal 
+
+2) By creating instance of a String i.e new operator 
+
+
+1) Using string literal 
+-----------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var str="hello";
+				document.writeln(str);
+		</script>
+</body>
+</html>
+
+2) By creating instance of a String i.e new operator 
+----------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var str=new String("bhaskar");
+				document.writeln(str);
+		</script>
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var str="bhaskar";
+				document.writeln(str.toUpperCase());
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var str="BHASKAR";
+				document.writeln(str.toLowerCase());
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var str1="ihub";
+				var str2="talent"
+				document.writeln(str1.concat(str2));//ihubtalent
+		</script>
+</body>
+</html>
+
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var str="bhaskar";
+				document.writeln(str.charAt(3));//s
+		</script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var str="bhaskar";
+				document.writeln(str.substring(4,7));//kar
+		</script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+
+		<script>
+				var str="ihub";
+				var carr=str.split('');
+				for(var i in carr)
+				{
+					document.writeln(carr[i]+"<br>");
+				}
+		</script>
+</body>
+</html>
+
+
+Assigment
+===========
+Q) Write a program to display below output?
+
+Input:
+	Hello5
+	Bro5
+
+Output:
+	HelloBro10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

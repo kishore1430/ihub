@@ -1,0 +1,734 @@
+The main objective of CSS are
+
+1) To set the position of an elements.
+
+2) To apply the styles on elements to describe how an element should look like.
+
+3) To perform some sorting animations.
+
+
+CSS syntax
+==========
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			-
+			-  CSS styles 		
+			- 
+		</style>
+	</head>
+	<body>
+		-
+		-
+		-
+	</body>
+</html>
+
+ex:1
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:blue;
+				background-color:cyan;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>	
+	</body>
+</html>
+
+Here style cascade from <head> to <body> tag.
+
+CSS Syntax
+===========
+CSS syntax contains selector and declaration block.
+ex:
+			declaration block 
+	  |---------------------------------|
+	h1{color:blue;background-color:cyan;}
+	|  
+	selector 	
+
+Declartion block contains set of CSS properties.
+Each CSS property contains property name and property value seperated with comma.
+Each CSS property ends with semicolon.
+
+
+Advantages of CSS
+==================
+> It is easy to learn and easy to use.
+
+> It saves lot of development time.
+
+> It supported by all major browsers.
+
+> It supports global change.
+
+> Flexibility 
+
+
+Disadvantages of CSS
+====================
+> Fragmentation 
+
+> Need to update all versions of CSS
+
+Types of CSS
+=============
+We have three types of CSS.
+
+1) Inline CSS 
+
+2) Internal CSS 
+
+3) External CSS 
+
+
+1) Inline CSS
+---------------
+If we want to peform unique style on single element then we need to use inline CSS.
+
+Using "style" attribute we can achieve inline CSS.
+
+ex:
+	
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<h1 style="color:blue;background-color:cyan;">This is Heading Tag </h1>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<h1 style="color:blue;background-color:cyan;">This is Heading Tag </h1>	
+		
+		<h1> This is second h1 tag </h1>
+		<h1> This is third h1 tag </h1>
+	</body>
+</html>
+
+2) Internal CSS
+---------------
+It is used to apply unique style on a single web page.
+
+Using <style> tag we can achieve internal CSS.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:blue;
+				background-color:cyan;
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is first h1 Tag </h1>	
+		<h1> This is second h1 tag </h1>
+		<h1> This is third h1 tag </h1>
+	</body>
+</html>
+
+3) External CSS 
+-------------------
+It is used to apply unqiue style on a website (collection of web pages).
+
+In external CSS we will maintain html code in .html file and CSS code in ".css" file.
+
+Using <link> tag we can achieve external css.
+
+
+index.html
+----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add external CSS -->
+		<link rel="stylesheet" href="mystyles.css">
+
+	</head>
+	<body>
+			<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+mystyles.css
+-----------
+body
+{
+		background-color:cyan;
+}
+h1
+{
+		text-align:center;
+		color:blue;
+}
+
+CSS background property
+=======================
+A CSS background property is used to set the background in a web page.
+
+If we set a background to the body then it will reflex to entire web page.
+
+It is possible to set the background to the elements.
+
+ex:
+	<h1>, <p> , <div> and etc.
+
+We have following list of CSS background properties.
+
+1) background-color 
+
+2) background-image 
+
+3) background-repeat
+
+4) background-size 
+
+5) background-position 
+
+6) background-attachment 
+
+7) background shorthand 
+
+8) background-blend-mode 
+
+and etc.
+
+1) background-color
+--------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:cyan;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				background-color:cyan;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+2) background-image 
+--------------------
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				background-color:#FFF;
+				background-image:url("images/bg.png");
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF;
+				background-image:url("images/bg.png");
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+3) background-repeat
+--------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF;
+				background-image:url("images/bg.png");
+				background-repeat:repeat;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF;
+				background-image:url("images/bg.png");
+				background-repeat:no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+
+4) background-size 
+------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF;
+				background-image:url("images/bg.png");
+				background-repeat:no-repeat;
+				background-size: 1580px 1200px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF;
+				background-image:url("images/bg.png");
+				background-repeat:no-repeat;
+				background-size: cover;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+5) background-position 
+-----------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF;
+				background-image:url("images/bg.png");
+				background-repeat:no-repeat;
+				background-size: 600px;
+				background-position:center 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF;
+				background-image:url("images/bg.png");
+				background-repeat:no-repeat;
+				background-size: 600px;
+				background-position:right 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF;
+				background-image:url("images/bg.png");
+				background-repeat:no-repeat;
+				background-size: 600px;
+				background-position:left 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+6) background-attachment 
+------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF;
+				background-image:url("images/bg.png");
+				background-repeat:no-repeat;
+				background-size: 600px;
+				background-position:center 0px;
+				background-attachment:scroll;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF;
+				background-image:url("images/bg.png");
+				background-repeat:no-repeat;
+				background-size: 600px;
+				background-position:center 0px;
+				background-attachment:fixed;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+7) background shorthand 
+------------------------
+background-color:#FFF;
+background-image:url("images/bg.png");
+background-repeat:no-repeat;
+background-position:center 0px;
+background-attachment:fixed;
+
+or
+
+background: #FFF url("images/bg.png") no-repeat center 0px fixed;
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background: #FFF url("images/bg.png") no-repeat center 0px fixed;
+				background-size: 600px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+		<h1>This is Heading Tag </h1>
+	</body>
+</html>
+
+
+8) background blendmode
+-------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF , #FFF;
+				background-image:url("images/bg.png"),url("images/micky.png");
+				background-size: cover, 500px;		
+				background-repeat:no-repeat, no-repeat;
+				background-position:center 0px, right 0px;
+				background-attachment:fixed, fixed;
+				background-blend-mode:darken;
+				
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			body
+			{
+				background-color:#FFF , #FFF;
+				background-image:url("images/bg.png"),url("images/micky.png");
+				background-size: cover, 500px;		
+				background-repeat:no-repeat, no-repeat;
+				background-position:center 0px, right 0px;
+				background-attachment:fixed, fixed;
+				background-blend-mode:lighten;
+				
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

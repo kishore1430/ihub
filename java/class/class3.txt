@@ -1,0 +1,160 @@
+History of Java
+===============
+In 1990 , Sun Micro System company took one project to develop a software called consumer electronice device which can be controlled by a remote like setup box.That time project was called Stealth project and later it is renamed to Green project.
+
+James Gosling, Mike Sheradin and Patrick Naughton were there to develop the project.They met in a place called Aspan/Colarado to start the work with Graphic System.Then James gosling decided to use C and C++ languages to develop the project.But the problem what they have faced is C and C++ languages are system dependent.James Gosling thought why don't we create our own programming language which is system independent.
+
+In 1991, they have developed one programming language called an OAK.OAK means strength ,itself is a coffee seed name and it is a national tree for many contries like Germany, France , USA and etc. 
+
+Later in 1995, they have renamed OAK to Java.Java is a island of an Indonasia where first coffee of seed was produced.During the development of project they were consuming lot of coffee's.Hence symbol of java is a cup of coffee with saucer.
+
+Interview Questions
+==================
+
+Q) Who is creator of java?
+
+	James Gosling 
+
+Q) Java originally known as ___?
+
+	OAK 
+
+Q) In which year java was developed?
+
+	1995
+
+Q) Java is a product of which company?
+
+	Oracle Corporation (Sun Micro System)
+
+
+Q) Which is latest version of Java?
+
+	Java 21
+
+Identifiers
+============
+A name in java is called identifier.
+
+It can be variable, method name, class name or label name.
+
+ex:
+	class  Test
+	{
+		public  static void  main(String[]  args)
+		{
+			int  x = 10;
+
+			System.out.println(x);
+		}	
+	}
+	Here Test, main , args and x are identifiers.
+
+Rules to declare identifiers
+-------------------------------
+
+Rule1:
+------
+	Identifier will accept following characters.
+	ex:
+		A-Z
+		a-z
+		0-9
+		_
+		$
+
+Rule2:
+-----
+	If we take other characters then we will get compile time error.
+	ex:
+		int emp#no; //invalid  
+
+		int stud@no; //invalid 
+
+Rule3:
+----
+	Identifier must and should starts with alphabet, underscore or dollar but not with 
+	digits.
+	ex:
+		int  a1234; //valid 
+
+		int  $=10;  // valid 
+
+		int  _abcd;  //valid 		
+
+		int  1abcd; // invalid 
+
+Rule4:
+------
+	We can't take reserved words as an identifiers.
+	ex:
+		int   if; //invalid 
+
+		int   else; //invalid 
+
+Rule5:
+-----
+	Every identifier is a case sensitive.
+	ex:
+		int number;
+		int NUMBER;
+		int NumBer; 
+
+Rule6:
+------
+	There is no length limit for an identifier but it is not recommande to take more then 
+	15 characters.
+
+
+Interview Questions
+==================
+
+Q) What is package? 
+
+A package is a collection of classes and interfaces.
+
+
+Q) What is program?
+
+Set of instructions is called program.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+

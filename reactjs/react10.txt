@@ -1,0 +1,375 @@
+React Form with validation
+==========================
+Forms are integral part of modern applications.
+
+Form allows the user to interact with the application and it gathers the information.
+
+Forms may perform different task depending upon nature of the bussiness.
+ex:
+	registration form
+	login form 
+	order form 
+	and etc.
+
+React offers statefull, reactive approach to develop forms.
+
+The components rather then DOM will handle the forms.
+
+In react, the forms are usually implemented by using controlled components.
+
+
+Project Structure
+==================
+myapp16
+|
+|---node_modules
+|
+|---public 
+|	|
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+
+|------src
+	|
+	|---index.js
+	|---index.css
+	|
+	|---App.js
+	|---App.css
+
+	|---Validation.js
+
+	|---App.test.js
+
+|-----package.json
+|-----README.md
+
+step1:
+------
+	Create a react application or project.
+	ex:
+		Reactprojects> npx  create-react-app myapp16
+
+step2:
+------
+	Open VSC Editor.
+	ex:
+		Reactprojects> code  . 
+
+step3:
+-----
+	Switch to the project.
+	ex:
+		Reactprojects> cd  myapp16
+
+
+step4:
+-----
+	Install bootstrap using below command. 
+	ex:	
+		Reactprojects/myapp16> npm install bootstrap
+
+step5:
+-----
+	Import bootstrap inside index.js file.
+	
+index.js
+--------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+step6:
+------
+	Run the react applicatin.
+	ex:
+		Reactprojects/myapp16> npm start 
+
+step7:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step8:
+------
+	Create a form inside App.js file.
+	
+App.js
+-----
+import {useState} from 'react';
+
+export default function App()
+{
+    const [userRegistration,setUserRegistration]=useState({
+      username:"",
+      password:"",
+      email:""
+    })
+
+    const handleClick=(e)=>
+    {
+        const name=e.target.name;
+        const value=e.target.value;
+        setUserRegistration({... userRegistration,[name]:value});
+    }
+
+    const handleSubmit=(e)=>
+    {
+        e.preventDefault();
+    }
+
+    return(
+        <div className='container mt-5'>
+          <div className='w-50 d-block m-auto'>
+            <h4 className='text-center'> Please Enter Details</h4>
+            <form onSubmit={handleSubmit}>
+                <label for="username" className='my-3'>UserName:</label>
+                <input type="text" name="username" id="username" className='form-control'
+                value={userRegistration.username}
+                onChange={handleClick}/>
+
+                <label for="password" className='my-3'>Password:</label>
+                <input type="text" name="password" id="password" className='form-control'
+                value={userRegistration.password}
+                onChange={handleClick}/>
+
+                <label for="email" className='my-3'>Email:</label>
+                <input type="text" name="email" id="email" className='form-control'
+                value={userRegistration.email}
+                onChange={handleClick}/>
+
+                <input type="submit" value="submit" className='btn btn-primary mt-4 w-100'/>
+            </form>
+            </div>
+        </div>
+    )
+}
+
+step9:
+------
+	Create a Validation.js file inside "src" folder.
+
+export default function Validation(value)
+{
+    const errors={}
+
+    const username_pattern=/[A-Za-z. ]{6,10}$/;
+    const password_pattern=/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{8,30}$/;
+    const email_pattern=/[A-Za-z.]{1,}@[A-Za-z]{2,15}[.][A-Za-z]{3,}$/;
+
+    if(value.username==="")
+    {
+        errors.username="Name is mandatory";
+    }
+    else if(!username_pattern.test(value.username))
+    {
+        errors.username="Name must be 6 characters & alphabets ";
+    }
+
+    if(value.password==="")
+    {
+        errors.password="Password is mandatory";
+    }
+    else if(!password_pattern.test(value.password))
+    {
+        errors.password="Password must have 1 uppercase,1 digit, 1 special symbol ";
+    }
+
+    if(value.email==="")
+    {
+        errors.email="Email is mandatory";
+    }
+    else if(!email_pattern.test(value.email))
+    {
+        errors.email="Invalid mail id";
+    }
+
+    return errors;
+}
+
+step10:
+------
+	Write validation code inside App.js file.
+
+
+import {useState} from 'react';
+import Validation from './Validation';
+
+export default function App()
+{
+    const [userRegistration,setUserRegistration]=useState({
+      username:"",
+      password:"",
+      email:""
+    })
+
+    const [errors,setErrors]=useState({});
+
+    const handleClick=(e)=>
+    {
+        const name=e.target.name;
+        const value=e.target.value;
+        setUserRegistration({... userRegistration,[name]:value});
+    }
+
+    const handleSubmit=(e)=>
+    {
+        e.preventDefault();
+        setErrors(Validation(userRegistration));
+    }
+
+    return(
+        <div className='container mt-5'>
+          <div className='w-50 d-block m-auto'>
+            <h4 className='text-center'> Please Enter Details</h4>
+            <form onSubmit={handleSubmit}>
+                <label for="username" className='my-3'>UserName:</label>
+                <input type="text" name="username" id="username" className='form-control'
+                value={userRegistration.username}
+                onChange={handleClick}/>
+
+                {<p style={{color:"red",textAlign:"center"}}>{errors.username}</p>}
+
+                <label for="password" className='my-3'>Password:</label>
+                <input type="text" name="password" id="password" className='form-control'
+                value={userRegistration.password}
+                onChange={handleClick}/>
+
+{<p style={{color:"red",textAlign:"center"}}>{errors.password}</p>}
+
+                <label for="email" className='my-3'>Email:</label>
+                <input type="text" name="email" id="email" className='form-control'
+                value={userRegistration.email}
+                onChange={handleClick}/>
+
+{<p style={{color:"red",textAlign:"center"}}>{errors.email}</p>}
+
+                <input type="submit" value="submit" className='btn btn-primary mt-4 w-100'/>
+            </form>
+            </div>
+        </div>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

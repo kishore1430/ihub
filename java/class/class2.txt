@@ -1,0 +1,236 @@
+Naming conventions in java
+==========================
+In java, uppercase letters will consider as different and lowercase letters will consider as difference.Hence we consider java is a case sensitive programming language.
+	
+As java is a case sensitive we must and should follow naming conventions for following things.
+
+ex:
+	classes 
+	interfaces 
+	variables
+	methods
+	packages
+	keywords and 
+	constants 
+
+
+classes
+--------
+In java, a class name must and should starts with uppercase letter and if it contains multiple words then each inner word must starts with initcap.
+ex:
+	predefined classes		userdefined classes
+	------------------		------------------
+	System 				Test
+	StringBuffer 			DemoApp 
+	StringTokenizer			StudentExample
+	FileWriter 			Example1
+	and etc				and etc
+
+interfaces
+----------
+In java, an interface must and should starts with uppercase letter and if it contains multiple words then each inner word must starts with initcap.
+ex:
+	predefined interfaces		userdefined interfaces
+	--------------------		---------------------
+	Runnable 			ITest 
+	ListIterator 			IDemoApp
+	Comparator 			IExampleApp
+	Enumeration 			IStudentInfo 
+	and etc.			and etc.
+
+variables
+---------
+In java, a variable name must and should starts with lowercase letter and if it contains multiple words then each inner word must starts with initcap.
+ex:
+	predefined variables		userdefined variables
+	--------------------		---------------------
+	out				empId
+	err				studName
+	in				deptNo
+	length 				rollNo
+	and etc.			and etc.
+
+methods
+--------
+In java, a method name must and should starts with lowercase letter and if it contains multiple words then each inner word must starts with initcap.
+ex:
+	predefined methods		userdefined methods
+	----------------		------------------
+	getClass()			getDetails()
+	hashCode()			calculateBillAmt()
+	toString()			getStudentDetails()
+	getPriority()			setInfo()
+	setName()			generateBill()
+	and etc.			and etc
+
+packages
+--------
+In java, all packages must be in lowercase letters only.
+ex:
+	predefined packages		userdefined packages
+	--------------------		----------------------
+	java.lang (default pkg)		com.ihub.www
+	java.io				com.google.www
+	java.util			com.qt.www
+	java.util.stream		and etc.
+	java.text
+	java.time 
+	and etc.
+
+keywords
+--------
+In java, all keywords must be in lowercase letters only.
+ex:
+	predefined keywords
+	-------------------
+	if, else, public , static, void and etc.
+
+constants
+---------
+In java, all constants must be in uppercase letters only.
+ex:
+	predefined constants		userdefined constants
+	-------------------		--------------------
+	MAX_PRIORITY			LIMIT=10;
+	NORM_PRIORITY			N=10;
+	MIN_PRIORITY
+	MAX_VALUE
+	MIN_VALUE
+	and etc.	
+
+Assignment
+===========
+1) Class	:	QualityThought 
+
+2) Interface 	:	IQualityThought 
+
+3) Variable 	:	qualityThought 
+
+4) Method 	:	qualityThought()
+
+5) Package	:	com.qualitythought.www
+
+6) Constant 	:	QUALITYTHOUGHT/ QUALITY_THOUGHT
+
+
+Interview Questions
+===================
+
+Q) Which package is a default package in java?
+
+	java.lang  package 
+
+
+Q) How many classes are there in java?
+
+	Java 7	----	4024 classes 
+
+	Java 8	----	4240 classes
+
+	Java 9	----	6005 classes 
+
+	Java 10	----	6002 classes  	
+
+
+Q) What is Java?
+
+ Java is a object oriented , platform independent, case sensitive, strongly typed checking , high level , open source programming language developed by James Gosling in the year of 1995.
+
+
+Q) Who is the responsible to destroy the objects in java?
+
+	Garbage collector 
+
+
+Q) In how many ways we can call garbage collector in java?
+
+   There are two ways to call garbage collector in java.
+   
+   1) System.gc();	
+   2) Runtime.getRuntime().gc();	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

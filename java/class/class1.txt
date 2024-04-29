@@ -1,0 +1,100 @@
+Duration	:	4 Months 
+
+Mode		:	Online/Offline 
+
+Course Name	:	Full stack Java	Development
+
+Batch No	:	IH-JAVA-030
+
+
+Job Portal -- Naukri , Shine , Linkedin and etc.
+
+JD - Job Description 
+
+	Full stack developers 
+
+			Full Stack Development Course 
+					|
+|---------------------------------------|--------------------------------------------------|
+FrontEnd Technologies		Middle Layer Technologies		BackEnd Technologies
+
+ReactJS 				Java				Oracle 
+
+Angular					Python				MySQL
+
+VueJS 					.Net				SQL Server
+
+and etc.				Nodejs				MongoDB
+					
+					ExpressJs			NoSQL
+ 
+					and etc				and etc
+
+Q)What is the difference between  Python and Java?
+
+Python						Java
+----------					--------
+It is developed by Guido Van Rossum.		It is developed by James Gosling.
+
+It is a product of Microsoft.			It is a product of Oracle Corporation.
+
+It is a scripting language.			It is a object oriented programming language.
+
+It is a interpreted language.			It is a compiled language.
+
+It contains PVM.				It contains JVM.
+
+It is a dynamically typed language.		It is a statically typed language.
+
+It contains less security.			It is higly secured.
+
+Performance is low.				Performance is high.
+
+It contains less code.				It contains more code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

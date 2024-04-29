@@ -1,0 +1,747 @@
+CSS transition property
+=======================
+CSS transition property allows us to change property value smoothly , over a given duration.
+
+To see the effects on an element ,we need to use mouse over to the element.
+
+We have following properties in CSS transition.
+ex:
+	transition-delay
+	transition-duration
+	transition-property
+	transition-timing-function
+	or 
+	transition
+
+ex:
+----
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				background-color:red;
+				box-sizing:border-box;
+				transition-property:width,height;
+			}
+			div:hover
+			{
+				width:400px;
+				height:400px;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+			</div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				background-color:red;
+				box-sizing:border-box;
+				transition-property:all;
+			}
+			div:hover
+			{
+				width:400px;
+				height:400px;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+			</div>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				background-color:red;
+				box-sizing:border-box;
+				transition-property:all;
+				transition-duration:3s;
+			}
+			div:hover
+			{
+				width:400px;
+				height:400px;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+			</div>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				background-color:red;
+				box-sizing:border-box;
+				transition-property:all;
+				transition-duration:3s;
+				transition-timing-function:linear;
+			}
+			div:hover
+			{
+				width:400px;
+				height:400px;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+			</div>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				background-color:red;
+				box-sizing:border-box;
+				transition-property:all;
+				transition-duration:3s;
+				transition-timing-function:ease-in;
+			}
+			div:hover
+			{
+				width:400px;
+				height:400px;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+			</div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				background-color:red;
+				box-sizing:border-box;
+				transition-property:all;
+				transition-duration:3s;
+				transition-timing-function:ease-out;
+			}
+			div:hover
+			{
+				width:400px;
+				height:400px;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+			</div>
+	</body>
+</html>
+ex:
+---
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				background-color:red;
+				box-sizing:border-box;
+				transition-property:all;
+				transition-duration:3s;
+				transition-timing-function:ease-in-out;
+			}
+			div:hover
+			{
+				width:400px;
+				height:400px;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+			</div>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				background-color:red;
+				box-sizing:border-box;
+				transition-property:all;
+				transition-duration:3s;
+				transition-timing-function:ease-in-out;
+				transition-delay:5s;
+			}
+			div:hover
+			{
+				width:400px;
+				height:400px;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+			</div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				background-color:red;
+				box-sizing:border-box;
+				transition:all 2s linear 3s; 
+			}
+			div:hover
+			{
+				width:400px;
+				height:400px;
+				background-color:blue;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+			</div>
+	</body>
+</html>
+
+CSS Design 1
+=============
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				width:200px;
+				height:200px;
+				display:block;
+				margin:100px auto;
+				transition:2s all linear; 
+			}
+			img:hover
+			{
+				transform:rotate(360deg);
+			}
+		</style>
+	</head>
+	<body>
+			<img src="images/rock.jpg"/>
+	</body>
+</html>
+
+CSS Design 2
+=============
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				margin: 100px 150px;
+			}
+			img
+			{
+				width:300px;
+				height:300px;
+				margin:0px 20px;
+				filter: grayscale(100%);
+				transition:all 1s linear;
+				
+			}
+			img:hover
+			{
+				transform: scale(1.2);
+				filter:grayscale(0%);
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+				<img src="images/girl1.jpeg"/>
+				<img src="images/girl2.jpg"/>
+				<img src="images/girl3.jpg"/>
+			</div>
+	</body>
+</html>
+
+
+CSS position property 
+======================
+The position property specifies the type of positioning method used for an element (static, relative, absolute, fixed, or sticky).
+
+The following are the list of values to position property.
+
+static 
+---------------
+It is default value. Elements render in order, as they appear in the document flow. 	
+
+absolute 
+--------------
+The element is positioned relative to its first positioned (not static) ancestor element. 	
+
+fixed 	
+-----------
+The element is positioned relative to the browser window. 	
+
+relative 
+-------------
+The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position.
+ 	
+sticky 	
+-----------
+The element is positioned based on the user's scroll position 
+
+
+css position property mandatory should have following properties.
+i)left
+ii)right
+iii)top
+iv)bottom
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				width:200px;
+				height:200px;
+				border:2px solid black;
+				position:static;
+				top:0;
+				left:0;
+			}
+		</style>
+	</head>
+	<body> 
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<img src="images/rock.png"/>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+	</body>
+</html>
+
+ex:
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				width:200px;
+				height:200px;
+				border:2px solid black;
+				position:absolute;
+				top:100px;
+				left:100px;
+			}
+		</style>
+	</head>
+	<body> 
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<img src="images/rock.png"/>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				width:200px;
+				height:200px;
+				border:2px solid black;
+				position:relative;
+				top:100px;
+				left:100px;
+			}
+		</style>
+	</head>
+	<body> 
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<img src="images/rock.png"/>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				width:200px;
+				height:200px;
+				border:2px solid black;
+				position:fixed;
+				top:100px;
+				left:100px;
+			}
+		</style>
+	</head>
+	<body> 
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<img src="images/rock.png"/>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			img
+			{
+				width:200px;
+				height:200px;
+				border:2px solid black;
+				position:sticky;
+				top:100px;
+				left:100px;
+			}
+		</style>
+	</head>
+	<body> 
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<img src="images/rock.png"/>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+			<p>
+				Web technology refers to the means by which computers communicate with each other using markup languages and multimedia packages. It gives us a way to interact with hosted information, like websites. Web technology involves the use of hypertext markup language (HTML) and cascading style sheets (CSS).
+			</p>
+	</body>
+</html>
+
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage</title>
+		<style>
+			
+			.myClass1
+			{
+				width:200px;
+				height:200px;
+				position:relative;
+				left:420px;
+				
+			}
+			.myClass2
+			{
+				width:200px;
+				height:200px;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<img src="images/girl3.jpg" class="myClass1"/>	
+		<img src="images/girl2.jpg" class="myClass2"/>	
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

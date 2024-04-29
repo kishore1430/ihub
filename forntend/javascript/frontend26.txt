@@ -1,0 +1,643 @@
+JavaScript Interview Questions
+=================================
+
+
+Q)What is the difference between var , let and const ?
+
+var 				let			const
+-------				-----			--------
+It is a functional scope.	It is a block scope.	It is a block scope.
+
+We can declare without 		We can declare without	We can't declare without 
+initialization.			initialization.		initialization.
+
+It can be updated.		It can be updated.	It can't be updated.
+
+It can be redeclared.		It can't be redeclared.	It can't be redeclared.
+
+It can be accessible without	It can't be accessible 	It can't be accessible 
+declaration and default value	without declaration.	without declaration.
+is undefined.	
+
+
+initialization
+--------------
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+                var i;
+                document.writeln(i); //undefined         
+        </script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+                let i;
+                document.writeln(i); //undefined      
+        </script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+                const i;
+                document.writeln(i); //invalid      
+        </script>
+</body>
+</html>
+
+update
+--------
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            var i=10;
+            i=20;
+            document.writeln(i); //20    
+        </script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            let i=10;
+            i=20;
+            document.writeln(i); //20    
+        </script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            const i=10;
+            i=20;
+            document.writeln(i); //invalid  
+        </script>
+</body>
+</html>
+
+Redeclared
+-------------
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            var i=10;
+
+            var i=20;
+
+            document.writeln(i); //20 
+        </script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            let i=10;
+
+            let i=20;
+
+            document.writeln(i); //invalid 
+        </script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            const i=10;
+
+            const i=20;
+
+            document.writeln(i); //invalid 
+        </script>
+</body>
+</html>
+
+
+
+
+
+Accessible
+---------
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            document.writeln(i); //undefined 
+            var i=10; 
+        </script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            document.writeln(i); //invalid 
+            let i=10; 
+        </script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            document.writeln(i); //invalid 
+            const i=10; 
+        </script>
+</body>
+</html>
+
+
+
+Q) Synchronous and Asynchronous in JavaScript?
+
+Synchronous JavaScript:
+-----------------------
+As the name suggests synchronous means to be in a sequence, i.e. every statement of the code gets executed one by one. So, basically a statement has to wait for the earlier statement to get executed.
+
+ex:
+
+<script>
+    document.write("Hi"); // First
+    document.write("<br>");
+  
+    document.write("IHUB TALENT") ;// Second
+    document.write("<br>");
+      
+    document.write("How are you"); // Third
+</script>
+
+
+Asynchronous JavaScript:
+-----------------------
+Asynchronous code allows the program to be executed immediately where the synchronous code will block further execution of the remaining code until it finishes the current one. This may not look like a big problem but when you see it in a bigger picture you realize that it may lead to delaying the User Interface.
+
+ex:
+
+<script>
+    document.write("Hi");
+    document.write("<br>");
+  
+    setTimeout(function() {
+        document.write("Let us see what happens");
+    }, 2000);
+  
+    document.write("<br>");
+    document.write("End");
+    document.write("<br>");
+</script>
+
+
+Javascript promises
+=======================
+Promises are used to handle asynchronous operations in JavaScript. 
+
+They can handle multiple asynchronous operations easily and provide better 
+error handling than callbacks and events. 
+
+
+A Promise has four states: 
+
+1)fulfilled: Action related to the promise succeeded
+2)rejected: Action related to the promise failed
+3)pending: Promise is still pending i.e. not fulfilled or rejected yet
+4)settled: Promise has fulfilled or rejected
+
+A promise can be created using Promise constructor.
+
+Syntax:
+
+	var promise = new Promise(function(resolve, reject){
+     		//do something
+	});
+
+ex:1
+--------
+<script>
+var promise = new Promise(function(resolve, reject) {
+	resolve('IHub Talent');
+})
+
+promise
+	.then(function(successMessage) {
+	//success handler function is invoked
+		console.log(successMessage);
+	}, function(errorMessage) {
+		console.log(errorMessage);
+	})
+
+
+</script>
+
+ex:2
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<script>
+				var promise= new Promise(function(resolve,reject){
+						reject("Reject");	
+				})
+
+				promise
+				.then(function(successMessage){
+					document.writeln(successMessage);
+
+				},function(errorMessage)
+				{
+					document.writeln(errorMessage);
+				})
+
+
+			</script>
+	</body>
+</html>
+
+
+
+
+Q)What is javascript hoisting?
+
+Hoisting is the default behavior of JavaScript where all the variable and function
+declarations are moved on top.
+
+This means that irrespective of where the variables and functions are declared, they are
+moved on top of the scope.
+
+ex:1
+----
+	    i=10;			var i;
+            document.writeln(i); ==> 	i=10;
+            var i;			document.writeln(i);
+
+
+ex:2
+-----
+	    f1();					function f1()
+            						{
+            function f1()				    document.writeln("Hello");
+            {						}
+                  document.writeln("Hello");  ==>	
+            }						f1();
+
+
+
+Q) What is spread operator in JavaScript?
+
+The spread operator is used to spreading an array.
+Ex:
+	
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            
+            var sum=0;
+            function f1(num1,num2,num3,num4)
+            {
+                sum=sum+num1+num2+num3+num4;
+                document.writeln(sum);
+            }            
+
+            let arr=[10,20,30,40];
+
+            f1(...arr);
+
+
+        </script>
+</body>
+</html>
+
+
+Q)What is javascript recursion?
+
+A function which call itself for many number of times is called recursion.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            
+            function f1(i)
+            {
+                    if(i<=10)
+                    {
+                        document.writeln(i);// 1 2 3 4 5 6 7 8 9 10
+                        f1(i+1);
+                    }
+            }
+
+            f1(1);                
+        </script>
+</body>
+</html>
+
+
+Q)What is map() method in javascript?
+
+A map() creates a new array from calling a function for every array element.
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            var arr=[10,20,30];
+
+            var newArr=arr.map(f1);
+
+            function f1(ele)
+            {
+                return ele;
+            }
+
+            document.writeln(newArr);
+        </script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<script>
+				var arr=[10,20,30];
+
+				var newArr=arr.map(f1);
+
+
+				function f1(ele)
+				{
+					return ele+100;
+				}
+
+				document.writeln(newArr);	
+			</script>
+		
+	</body>
+</html>
+
+
+
+
+
+Q)What is reduce function in javascript?
+
+The reduce() method executes a reducer function for array element.
+
+The reduce() method returns a single value.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            var arr=[100,20,30];
+
+            var res=arr.reduce(f1);
+
+            function f1(total,ele)
+            {
+                  return total-ele; 
+            }
+
+            document.writeln(res);
+        </script>
+</body>
+</html>
+
+
+
+Q) Write a javascript program to display fibonacci series of a given number?
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+
+					var n=5,a=0,b=1,c;
+					document.writeln(a);
+					document.writeln(b);
+
+					for(var i=2;i<=n;i++)
+					{
+						c=a+b;
+						document.writeln(c);
+						a=b;
+						b=c;
+					}
+					
+		</script>
+</body>
+</html>
+
+Q) Write javascript program to display reverse of a given number?
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+
+					var n=123,rem,rev=0;
+					while(n>0)
+					{
+						rem=n%10;
+						rev=rev*10+rem;
+						n=parseInt(n/10);
+					}
+					document.writeln(rev);
+					
+		</script>
+</body>
+</html>
+
+
+Q) Write a javascript program to check given string is palindrome or not?
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+</head>
+<body>
+		<script>
+
+					let original = "madam";
+					let reversed = original.split('').reverse().join('');
+					if(original===reversed)
+						document.writeln("It is palindrome string");
+					else
+						document.writeln("It is not palindrome string");
+	
+		</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

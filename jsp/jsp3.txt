@@ -1,0 +1,366 @@
+iii) Declaration tag
+======================
+Declaration tag is used to declare fields and methods.
+
+syntax:
+	<%!  code  %>
+
+
+Deployment Directory structure
+------------------------------
+JspApp4
+|
+|---Java Resources
+|
+|---Web Content
+	|
+	|---index1.jsp
+	|---index2.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+index1.jsp
+---------
+
+<%!
+	int i=100;
+%>
+<center>
+	<h1>
+		<%= "The value is ="+i %>
+	</h1>
+</center>
+
+index2.jsp
+-----------
+
+<%!
+	int cube(int n)
+	{
+		return n*n*n;	
+	}
+%>
+<center>
+	<h1>
+		<%="Cube of a given number is ="+cube(5) %>
+	</h1>
+</center>
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  
+</web-app>
+
+Request url
+---------
+	http://localhost:2525/JspApp4/index1.jsp
+	http://localhost:2525/JspApp4/index2.jsp 
+
+
+
+Exception Handling in JSP
+==========================
+Runtime errors are called exceptions.
+
+Handling exception is a safer side for the programmer because we don't know in which situation excpetion may raise.
+
+There are two ways to handle the exceptions in JSP.
+
+1) Using errorPage and isErrorPage attribute of page directive tag.
+
+2) Using <error-page> element in web.xml file.
+
+
+1) Using errorPage and isErrorPage attribute of page directive tag
+------------------------------------------------------------------
+
+Deployment Directory strucure 
+---------------------------
+JspApp5
+|
+|---Java Resources
+|
+|---Web Content
+	|
+	|---form.html
+	|---process.jsp
+	|---error.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+form.html
+----------
+
+<form action="process.jsp">
+	
+	No1: <input type="text" name="t1"/> <br>
+	
+	No2: <input type="text" name="t2"/> <br>
+	
+	<input type="submit" value="divide"/>
+
+</form>
+
+
+process.jsp
+-----------
+<%@page errorPage="error.jsp" %>
+<%
+	String sno1=request.getParameter("t1");
+	String sno2=request.getParameter("t2");
+	int a=Integer.parseInt(sno1);
+	int b=Integer.parseInt(sno2);
+	int c=a/b;
+%>
+<%= "Division of two numbers is ="+c %>
+
+error.jsp
+----------
+<%@page  isErrorPage="true" %>
+
+<b>
+	Sorry! Exception occured
+</b>
+<br>
+<%= exception %>
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+----------
+	http://localhost:2525/JspApp5/
+
+
+2) Using <error-page> element in web.xml file
+----------------------------------------------
+This approach is recommanded to use because we don't need to declare errorPage attribute in each JSP page.Defining single entry in web.xml file will hadle all types of exceptions.
+
+
+Deployment Directory strucure 
+---------------------------
+
+JspApp5
+|
+|---Java Resources
+|
+|---Web Content
+	|
+	|---form.html
+	|---process.jsp
+	|---error.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+form.html
+----------
+
+<form action="process.jsp">
+	
+	No1: <input type="text" name="t1"/> <br>
+	
+	No2: <input type="text" name="t2"/> <br>
+	
+	<input type="submit" value="divide"/>
+
+</form>
+
+
+process.jsp
+-----------
+<%
+	String sno1=request.getParameter("t1");
+	String sno2=request.getParameter("t2");
+	int a=Integer.parseInt(sno1);
+	int b=Integer.parseInt(sno2);
+	int c=a/b;
+%>
+<%= "Division of two numbers is ="+c %>
+
+error.jsp
+----------
+<%@page  isErrorPage="true" %>
+
+<b>
+	Sorry! Exception occured
+</b>
+<br>
+<%= exception %>
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <error-page>
+ 	<exception-type>java.lang.Exception</exception-type>
+  	<location>/error.jsp</location>
+  </error-page>
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+----------
+	http://localhost:2525/JspApp5/
+
+JSP to Database Communication
+==============================
+
+Deployment Directory strucure 
+---------------------------
+JspApp6
+|
+|---Java Resources
+|
+|---Web Content
+	|
+	|---form.html
+	|---process.jsp
+	|
+	|---WEB-INF
+		|
+		|---web.xml 
+		|
+		|-----lib
+			|
+			|---ojdbc14.jar
+Note:
+-----
+In above application we need to add "servlet-api.jar" and "ojdbc14.jar" file in project build path.
+
+Copy and paste "ojdbc14.jar" file inside "WEB-INF/lib" folder seperately.
+
+form.html
+-----------
+
+<form action="process.jsp">
+	
+	No: <input type="text" name="t1"/> <br>
+	
+	Name: <input type="text" name="t2"/> <br>
+	
+	Address: <input type="text" name="t3"/> <br>
+	
+	<input type="submit" value="submit"/>
+
+</form>
+
+process.jsp
+----------
+<%@page import="java.sql.*" %>
+<%
+	String sno=request.getParameter("t1");
+	int no=Integer.parseInt(sno);
+	String name=request.getParameter("t2");
+	String add=request.getParameter("t3");
+	
+	//insert the data into database
+	Connection con=null;
+	PreparedStatement ps=null;
+	int result=0;
+	String qry=null;
+	try
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		qry="insert into student values(?,?,?)";
+		ps=con.prepareStatement(qry);
+		//set the values
+		ps.setInt(1,no);
+		ps.setString(2,name);
+		ps.setString(3,add);
+		//execute
+		result=ps.executeUpdate();
+		if(result==0)
+			out.println("No Record Inserted");
+		else
+			out.println("Record Inserted");
+		
+		ps.close();
+		con.close();
+	}
+	catch(Exception e)
+	{
+		out.println(e);
+	}
+%>
+
+web.xml
+------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  
+  
+</web-app>
+
+
+request url
+----------
+	http://localhost:2525/JspApp6/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,473 @@
+Bootstrap5
+==========
+It is a most popular HTML,CSS and JavaScript framework developed by Twitter for developing web applications.
+
+It is absolute free to download and use.
+
+It is developed by Mark Otto and Jacob Thornton at Twitter.
+
+It is release as an open source product on GITHUB in 2011.
+
+Bootstrap contains HTML and CSS based design templates for typography(fonts), forms, tables and etc.
+
+It also contains javascript plugins.
+
+Bootstrap4 was released in the month of Augest 18, 2018.
+
+Bootstrap5 which is a extension of Bootstrap4 was release in May 5, 2021. 
+
+
+Advantages of Bootstrap
+========================
+1) It is used to learn and easy to use.
+
+2) It is used to create responsive designs.
+
+3) It saves lot of development time.
+
+4) It is a consistent framework.
+
+5) Good documentation and community support.
+
+6) It supports greate grid system.
+
+7) It supports javascript plugin's along with JQuery.
+
+Bootstrap color
+==============
+By using utility classes change the color of a text.
+
+
+ex:1
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mypage!</title>
+	<!-- bootstrap cdn link -->
+	<meta charset="utf-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
+
+</head>
+<body>
+	<h1 class="text-primary"> text primary </h1>	
+	<h1 class="text-secondary"> text secondary </h1>	
+	<h1 class="text-info"> text info </h1>	
+	<h1 class="text-warning"> text warning </h1>	
+	<h1 class="text-success"> text success </h1>	
+	<h1 class="text-danger"> text danger </h1>	
+	<h1 class="text-light"> text light </h1>
+	<h1 class="text-dark"> text dark </h1>	
+</body>
+</html>
+
+ex:2
+-----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mypage!</title>
+	<!-- bootstrap cdn link -->
+	<meta charset="utf-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
+
+    <style type="text/css">
+    	.text-brown
+    	{
+    		color:#B33771;
+    	}
+    </style>
+
+</head>
+<body>
+	<h1 class="text-primary"> text primary </h1>	
+	<h1 class="text-secondary"> text secondary </h1>	
+	<h1 class="text-info"> text info </h1>	
+	<h1 class="text-warning"> text warning </h1>	
+	<h1 class="text-success"> text success </h1>	
+	<h1 class="text-danger"> text danger </h1>	
+	<h1 class="text-light"> text light </h1>
+	<h1 class="text-dark"> text dark </h1>	
+	<h1 class="text-brown"> text Brown </h1>	
+</body>
+</html>
+
+
+Bootstrap background
+====================
+In bootstrap background color can be applied to any element/tag.
+
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mypage!</title>
+	<!-- bootstrap cdn link -->
+	<meta charset="utf-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
+
+    <style type="text/css">
+    	.bg-brown
+    	{
+    		background-color:#B33771;
+    	}
+    </style>
+
+</head>
+<body>
+	<h1 class="bg-primary"> text primary </h1>	
+	<h1 class="bg-secondary"> text secondary </h1>	
+	<h1 class="bg-info"> text info </h1>	
+	<h1 class="bg-warning"> text warning </h1>	
+	<h1 class="bg-success"> text success </h1>	
+	<h1 class="bg-danger"> text danger </h1>	
+	<h1 class="bg-light"> text light </h1>
+	<h1 class="bg-dark"> text dark </h1>	
+	<h1 class="bg-brown"> text Brown </h1>	
+</body>
+</html>
+
+Boostrap border
+===============
+Border utility is used to change quickly the border-style and border-radius
+of an element.
+
+It is mainly used for images, buttons  and etc.
+
+we can use border classes to an element to remove all borders or 
+add some borders.
+
+Add classes to an element to easily rounds its corners.
+
+ex:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mypage!</title>
+	<!-- bootstrap cdn link -->
+	<meta charset="utf-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
+
+ 
+</head>
+<body>
+	<span class="border"> span1 tag</span>	
+	<span class="border-top"> span2 tag </span>	
+	<span class="border-start"> span3 tag </span>	
+	<span class="border-bottom"> span4 tag </span>
+	<span class="border-end"> span5 tag </span>		
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mypage!</title>
+	<!-- bootstrap cdn link -->
+	<meta charset="utf-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
+
+ 
+</head>
+<body>
+	<span class="border border-primary"> span1 tag</span>	
+	<span class="border-top border-info"> span2 tag </span>	
+	<span class="border-start border-danger"> span3 tag </span>	
+	<span class="border-bottom border-success"> span4 tag </span>
+	<span class="border-end border-dark"> span5 tag </span>		
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mypage!</title>
+	<!-- bootstrap cdn link -->
+	<meta charset="utf-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
+
+ 
+</head>
+<body>
+		<img src="images/rock.png" 
+				width="200px" 
+					height="200px" 
+						class="border border-dark rounded"/>	
+
+		<img src="images/rock.png" 
+				width="200px" 
+					height="200px" 
+						class="border border-dark rounded-top"/>
+
+		<img src="images/rock.png" 
+				width="200px" 
+					height="200px" 
+						class="border border-dark rounded-start"/>
+
+		<img src="images/rock.png" 
+				width="200px" 
+					height="200px" 
+						class="border border-dark rounded-bottom"/>
+
+		<img src="images/rock.png" 
+				width="200px" 
+					height="200px" 
+						class="border border-dark rounded-end"/>	
+
+</body>
+</html>
+
+
+Boostrap sizing
+==================
+IT is used to size the element by using sizing utility classes.
+
+we can easily make an element wide or a toll with our width and height utility.
+
+It suports for 25%,50%,75% and 100% bydefault.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+   
+    <!-- add bootstrap plugins -->
+
+    <meta charset="utf-8">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .w-60
+        {
+            width:60%;
+        }
+    </style>
+
+</head>
+<body>
+        <br>
+
+        <div class="bg-primary w-25">Div1</div>  
+        <div class="bg-info w-50">Div2</div>  
+        <div class="bg-warning w-75">Div3</div>  
+        <div class="bg-success w-100">Div4</div> 
+        <div class="bg-danger w-60">Div5</div>      
+</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mypage!</title>
+	<!-- bootstrap cdn link -->
+	<meta charset="utf-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
+
+ 
+</head>
+<body>
+		<img src="images/rock.png" 
+				class="border border-dark rounded w-25 h-25"/>	
+		<br>
+		<img src="images/rock.png" 
+				class="border border-dark rounded w-50 h-50"/>	
+		<br>
+		<img src="images/rock.png" 
+				class="border border-dark rounded w-75 h-75"/>
+		<br>
+		<img src="images/rock.png" 
+				class="border border-dark rounded w-100 h-100"/>		
+	
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mypage!</title>
+	<!-- bootstrap cdn link -->
+	<meta charset="utf-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
+
+ 	<style type="text/css">
+ 		.w-60
+ 		{
+ 			width:60%;
+ 		}
+ 		.h-60
+ 		{
+ 			height:60%;
+ 		}
+ 	</style>
+</head>
+<body>
+		<img src="images/rock.png" 
+				class="border border-dark rounded w-25 h-25"/>	
+		<br>
+		<img src="images/rock.png" 
+				class="border border-dark rounded w-50 h-50"/>	
+		<br>
+		<img src="images/rock.png" 
+				class="border border-dark rounded w-60 h-60"/>	
+		<br>
+		<img src="images/rock.png" 
+				class="border border-dark rounded w-75 h-75"/>
+		<br>
+		<img src="images/rock.png" 
+				class="border border-dark rounded w-100 h-100"/>		
+	
+</body>
+</html>
+
+
+Boostrap containers
+====================
+Containers are used to pad the content inside of them.
+
+In boostrap there are two containers classes available.
+
+1)container-fluid
+
+2)container 
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mypage!</title>
+	<!-- bootstrap cdn link -->
+	<meta charset="utf-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
+
+</head>
+<body>
+		
+		<div class="container-fluid bg-info">
+			<h1>Heading Tag</h1>
+			<p>Paragraph Tag</p>
+		</div>				
+	
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mypage!</title>
+	<!-- bootstrap cdn link -->
+	<meta charset="utf-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
+
+</head>
+<body>
+		
+		<div class="container bg-warning">
+			<h1>Heading Tag</h1>
+			<p>Paragraph Tag</p>
+		</div>				
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

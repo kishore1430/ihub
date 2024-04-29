@@ -1,0 +1,644 @@
+React Components 
+=================
+Components are building block of react applications.
+
+Components allows us to split our UI into independent reusable pieces.
+ex:
+	<Header>, <Footer> , <Form> , <Button> and etc. 
+ 
+Components are like javascript functions because they accept arbitary inputs like props and return react element describing what should appear on the screen.
+
+React component name always starts with uppercase letter.
+
+There are two ways to declare react components.
+
+1) Function Component / Functional Component 
+
+2) Class Component 
+
+
+1) Function Component
+=====================
+Function component is a javascript function which takes props as a argument along with inputs.
+
+Function component is also known stateless component because it does not hold state.
+
+
+syntax:1
+-------
+function App()
+{
+	return
+	(
+		<h1> Named Function </h1>
+	)
+}	
+export default App;
+
+syntax:2
+-------
+var App=function()
+{
+	return
+	(
+		<h1> Anonymous Function </h1>
+	)
+}	
+export default App;
+
+syntax:3
+-------
+var App=()=>
+{
+	return
+	(
+		<h1> Arrow Function </h1>
+	)
+}	
+export default App;
+
+
+Project structure
+-----------------
+myapp3
+|
+|---node_modules
+|
+|-----public
+	|
+	|---manifest.json
+	|---index.html
+	|---favicon.ico
+|
+|------src
+	|	
+	|---index.js
+	|
+	|---App.js 
+
+|------package.json
+|------README.md
+
+step1:
+------
+	create a react application i.e myapp3.
+	ex:
+		Reactprojects> npx  create-react-app myapp3
+
+
+step2:
+-------
+	Open VSC editor from Reactprojects folder.
+	ex:
+		Reactprojects> code  . 
+
+step3:
+------
+	Jump/Switch to myapp3 project.
+	ex:
+		Reactprojects> cd   myapp3
+
+step4:
+------
+	Run the react application.
+	ex:
+		Reactprojects/myapp3> npm start
+
+step5:
+-----
+	Test the react application by using below request url.
+	ex:
+		http://localhost:3000
+
+step6:
+------
+	Declare below code inside App.js file.
+
+	App.js
+	-------
+	var App=()=>{
+  	return (
+    		<h1>Arrow Function component</h1>
+  	)
+	}
+	export default App
+
+
+Function component with props
+---------------------------------
+In order to use props in a component We need to perform following changes in react "myapp3" project.
+
+index.js
+---------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App name="Alan" rollno="101"/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+App.js 
+------
+var App=(props)=>{
+  return (
+    <>
+    <h1>Name : {props.name}</h1>
+    <h1>RollNo : {props.rollno}</h1>
+    </>
+  )
+}
+export default App
+
+
+2) Class component
+----------------------
+A class Component requires to extends from React Component.
+
+The class must implements a render() method function which returns A react
+Element to be render.This is Similar to return value of a functional 
+component.
+
+In a class based component props are accessible via this.props.
+
+The class component is also known as a stateful component because they can hold or manage local state.
+
+
+Project structure
+-----------------
+myapp4
+|
+|---node_modules
+|
+|-----public
+	|
+	|---manifest.json
+	|---index.html
+	|---favicon.ico
+|
+|------src
+	|	
+	|---index.js
+	|
+	|---App.js 
+
+|------package.json
+|------README.md
+
+step1:
+------
+	create a react application i.e myapp4.
+	ex:
+		Reactprojects> npx  create-react-app myapp4
+
+
+step2:
+-------
+	Open VSC editor from Reactprojects folder.
+	ex:
+		Reactprojects> code  . 
+
+step3:
+------
+	Jump/Switch to myapp4 project.
+	ex:
+		Reactprojects> cd   myapp4
+
+step4:
+------
+	Run the react application.
+	ex:
+		Reactprojects/myapp4> npm start
+
+step5:
+-----
+	Test the react application by using below request url.
+	ex:
+		http://localhost:3000
+
+step6:
+------
+	Declare below code inside App.js file.
+	ex:
+	App.js
+	------
+	import {Component} from 'react';
+	class App extends Component
+	{
+    		render()
+    		{
+        		return(
+          		<h1>Class Component</h1>
+        		)
+    		}
+	}
+	export default App
+
+
+Class component with props
+------------------------------
+index.js
+-------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App name="Jose" rollno="501"/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+App.js
+--------
+import {Component} from 'react';
+class App extends Component
+{
+    render()
+    {
+        return(
+          <>
+            <h1>Name :{this.props.name}</h1>
+            <h1>RollNo :{this.props.rollno}</h1>
+          </>
+        )
+    }
+}
+export default App
+
+
+
+
+
+Composing Components in React
+==============================
+A component can refer to other components in their output is called composing component.
+
+Let us use some component abstraction for any level of details.
+
+
+Project structure
+-----------------
+myapp5
+|
+|-----node_modules
+|
+|-----public
+|	|
+	|---index.html (main template)
+	|---favicon.ico (favicon)
+	|---manifest.json (metadata)
+|
+|-----src
+|	|
+	|---index.js (entry point)
+	|
+	|
+	|---App.js  (parent component)
+	|
+	|---Student.js (custom component)
+
+|
+|-----package.json
+|-----README.md
+
+
+step1:
+------
+	Create a React Application.
+	ex:
+		ReactProjects>npx create-react-app  myapp5
+
+
+step2:
+	Start Visual Studio Code (VSC) Editor.
+	ex:
+		ReactProjects> code   .  
+
+
+step3:
+	Delete all the files from "src" folder.
+
+
+step4:
+	Create "index.js" file inside "src" folder.
+
+index.js
+----------
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+
+const root=ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+    <React.StrictMode>
+        <App/>
+    </React.StrictMode>
+)
+
+
+step5:
+	Create App.js file inside "src" folder.
+
+App.js
+--------
+import Student from './Student';
+
+function App()
+{
+    return (
+        <Student/>
+    )
+}
+export default App;
+
+
+step6:
+	Create Student.js file inside "src" folder.
+
+Student.js
+----------
+
+function Student()
+{
+    return (
+        <h1>Student Component</h1>
+    )
+}
+export default Student;
+
+
+step7:
+	Move to myapp5.
+	ex:
+		ReactProjects> cd  myapp5
+
+step8:
+	Run the react application.
+	ex:
+		ReactProjects/myapp5> npm start
+
+step9:
+	Check the output by using below url.
+	ex:
+		http://localhost:3000
+
+
+
+
+
+composing components using props
+================================
+index.js
+--------
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+
+const root=ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+    <React.StrictMode>
+        <App course="React"/>
+    </React.StrictMode>
+)
+
+App.js
+--------
+import Student from './Student';
+
+function App(props)
+{
+    return (
+       <Student crs={props.course}/>
+    )
+}
+export default App;
+
+
+Student.js
+----------
+
+function Student(props)
+{
+    return (
+        <h1>My Course Name : {props.crs}</h1>
+    )
+}
+export default Student;
+
+
+
+React CSS
+==============
+CSS in React is used to style the React App or Component.
+
+There are two ways available to add styling to your React App or Component with CSS.
+
+1) Inline Styling
+2) CSS Stylesheet
+
+1)Inline CSS
+===============
+Inline CSS represent by "style" attribute in React application.
+
+The inline styles are specified with a JavaScript object in camelCase version of the style name.
+
+ex:
+
+App.js
+----------
+import Student from "./Student";
+
+function App()
+{
+  return <>
+         <h1 style={{color:"green"}}>React Inline CSS</h1>
+         <h1 style={{backgroundColor:"yellow"}}>React Inline CSS</h1>
+          </>
+}
+export default App;
+
+
+The inline styling also allows us to create an object with styling information and 
+refer it in the style attribute.
+
+App.js
+---------
+import Student from "./Student";
+
+function App()
+{
+  const mystyle = {
+    color: "white",
+    backgroundColor: "DodgerBlue",
+    padding: "10px",
+    fontFamily: "Arial"
+  };
+  return <>
+         <h1 style={mystyle}>React Inline CSS</h1>
+         <h1 style={{backgroundColor:"yellow"}}>React Inline CSS</h1>
+          </>
+}
+export default App;
+
+
+
+2) CSS Stylesheet
+===================
+We can write styling in a separate file for your React application, and save the file with a .css extension. 
+
+Later we can import .css file in our required application.
+
+ex:1
+----------
+
+App.js
+--------
+import Student from "./Student";
+import './App.css';
+function App()
+{
+  
+  return <>
+         <h1>React CSS styles</h1>
+         <h1>React CSS styles</h1>
+          </>
+}
+export default App;
+
+
+App.css
+------------
+body{
+  background-color: yellow;
+}
+h1
+{
+  color:blue;
+}
+
+
+
+ex:2
+----------
+
+App.js
+--------
+import Student from "./Student";
+import './App.css';
+function App()
+{
+  
+  return <>
+         <h1 id="myId">React CSS styles</h1>
+         <h1 className="myClass">React CSS styles</h1>
+          </>
+}
+export default App;
+
+App.css
+---------
+body{
+  background-color: yellow;
+}
+#myId
+{
+  color:blue;
+}
+.myClass
+{
+  color:red;
+}
+
+
+
+Interview Question
+=================
+
+Q) Write a java program to encoding the given string?
+
+Input:
+	1106
+
+Output:
+	AAJF
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String input="1106";
+		System.out.println("Encoding String :"+ encodingString(input));
+	}
+	//static method
+	public static String encodingString(String input)
+	{
+		StringBuffer sb=new StringBuffer();
+
+		for(int i=0;i<input.length();i++)
+		{
+			String str=Character.toString(input.charAt(i));  
+			int n=Integer.parseInt(str);
+
+			if(n!=0)
+			{
+				sb.append((char)('A'+n-1));
+			}
+			else
+			{
+				String newstr=input.substring(i-1,i+1);
+				int digit=Integer.parseInt(newstr);
+
+				sb.append((char)('A'+digit-1));
+			}
+		}
+
+		return sb.toString();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,207 @@
+React Redux
+============
+Redux itself is a standalone library that can be used with any frontend frameworks like ReactJS, AngularJS, VueJs and etc.
+
+components of react redux
+-------------------------
+We have mainly three components for react redux.
+
+1) Store  : 
+-----------
+Redux store is used to store entire state of our application.
+
+2) Action :
+-----------
+It is only the way our application interact with redux store.
+It carry some information from our application to redux store.
+
+3) Reducer : 
+----------
+Reducer read the payloads from the actions and then updates the store. 
+It is a pure function to return a new state from the initial state.
+
+
+Diagram: react12.1
+
+
+step1:
+------
+	Create a react application or project.
+	ex:
+		npx create-react-app my-redux-app
+
+step2:
+------
+	Switch to the project.
+	ex:
+		cd  my-redux-app
+
+step3:
+-----
+	Install react, react-redux and redux library.
+	ex:
+		npm install react react-dom react-redux redux
+  
+
+step4:
+-----
+	Run the react application.
+	ex:
+		npm start 
+
+step5:
+------
+	Create a actions.js file inside "src" folder.
+
+actions.js
+----------
+export const ADD_TODO = 'ADD_TODO';
+
+export const addTodo = (text) => ({
+  type: ADD_TODO,
+  payload: {
+    text,
+  },
+});
+
+
+step6:
+-----
+	Create a reducers.js file inside "src" folder.
+
+reducers.js
+------------
+import { ADD_TODO } from './actions';
+
+const initialState = {
+  todos: [],
+};
+
+const todoReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_TODO:
+      return {
+        ...state,
+        todos: [...state.todos, action.payload],
+      };
+    default:
+      return state;
+  }
+};
+
+export default todoReducer;
+
+
+step7:
+-----
+	Create a store.js file inside "src" folder.
+
+store.js
+--------
+import { createStore } from 'redux';
+import todoReducer from './reducers';
+
+const store = createStore(todoReducer);
+
+export default store;
+
+	
+
+step8:
+-----
+	Create a App.js file inside "src" folder to dispatch the action.
+
+App.js
+------
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addTodo } from './actions';
+
+function App() {
+  const todos = useSelector(state => state.todos);
+  const dispatch = useDispatch();
+  const [inputValue, setInputValue] = React.useState('');
+
+  const handleAddTodo = () => {
+    dispatch(addTodo(inputValue));
+    setInputValue('');
+  };
+
+  return (
+    <div>
+      <h1>Todo List</h1>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <button onClick={handleAddTodo}>Add Todo</button>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>{todo.text}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+step9:
+-----
+	Create a index.js file and provide the store to App.js file.
+
+index.js
+---------
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import App from './App';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  	                                                                                                                                                                                                                                     

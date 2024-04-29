@@ -1,0 +1,590 @@
+Implicit objects in JSP
+=======================
+Object which can be used directly without any configuration is called implicit object.
+
+Implicit objects created by the web containers which are available to every JSP page.
+
+JSP provides 9 implicit objects.
+
+ex:
+		Object			Type
+		------			-----
+		out			JspWriter 
+		request			HttpServletRequest 
+		response		HttpServletResponse 
+		config			ServletConfig
+		application		ServletContext
+		session			HttpSession
+		pageContext 		pageContext
+		page			Object
+		exception		Throwable 
+
+response object
+================
+In jsp, response is a implicit object of type HttpServletResponse.
+
+It can be used to add or manipulate response such as redirect response or another resources,send error and etc.
+
+
+
+Deployment Directory Structure
+-----------------------------
+JspApp12
+|
+|---Java Resources
+|
+|---Web Content
+	|
+	|----index.html
+	|----process.jsp
+	|
+	|----WEB-INF
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+index.html
+----------
+
+<center>
+	<h1>
+		<a href="process.jsp"> Facebook Page </a>
+	</h1>
+</center>
+
+process.jsp
+-----------
+
+<%
+		response.sendRedirect("http://www.facebook.com/login");
+%>
+
+web.xml
+--------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+ 
+ 	<welcome-file-list>
+ 		<welcome-file>index.html</welcome-file>
+ 	</welcome-file-list>
+ 
+</web-app>
+
+Request url
+----------
+	http://localhost:2525/JspApp12/
+
+
+
+config object
+=============
+It is an implicit object of type ServletConfig.
+
+The config object is created by web container for each jsp page.
+
+This object is used to read initialized parameters for a perticular jsp page.
+
+
+
+Deployment Directory Structure
+-----------------------------
+JspApp13
+|
+|---Java Resources
+|
+|---Web Content
+	|
+	|----index.html
+	|----process.jsp
+	|
+	|----WEB-INF
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+index.html
+----------
+<center>
+	<h1>
+	
+		<a href="test"> Click Here </a>
+	
+	</h1>
+</center>
+
+web.xml
+---------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>ABC</servlet-name>
+  	<jsp-file>/process.jsp</jsp-file>
+  	<init-param>
+  		<param-name>driver</param-name>
+  		<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ABC</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+process.jsp
+------------
+
+<%
+		String value=config.getInitParameter("driver");
+		out.println(value);
+%>
+
+Request url
+---------
+	http://localhost:2525/JspApp13/
+
+
+application object
+====================
+In jsp, application is an implicit object of type ServletContext.
+
+This instance of ServletContext is created only once by the web container.
+
+This object is used to read initialized parameters from configuration file web.xml file.
+
+
+Deployment Directory Structure
+-----------------------------
+JspApp14
+|
+|---Java Resources
+|
+|---Web Content
+	|
+	|----index.html
+	|----process.jsp
+	|
+	|----WEB-INF
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+
+index.html
+----------
+<center>
+	<h1>
+	
+		<a href="test"> Click Here </a>
+	
+	</h1>
+</center>
+
+web.xml
+---------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <servlet>
+  	<servlet-name>ABC</servlet-name>
+  	<jsp-file>/process.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ABC</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+
+  <context-param>
+  		<param-name>driver</param-name>
+  		<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  </context-param>
+  
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+process.jsp
+------------
+
+<%
+		String value=application.getInitParameter("driver");
+		out.println("The value is ="+value);
+%>
+
+Request url
+---------
+	http://localhost:2525/JspApp14/
+
+
+
+
+
+session	 object
+===============
+In JSP, session is an implicit object of type HttpSession.
+
+It is used to get or set the session formation.
+
+
+Deployment Directory Structure
+-----------------------------
+JspApp15
+|
+|---Java Resources
+|
+|---Web Content
+	|
+	|----form.html
+	|----first.jsp
+	|----second.jsp
+	|
+	|----WEB-INF
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+form.html
+----------
+
+<form action="first.jsp">
+	
+	Name: <input type="text" name="t1"/> <br>
+
+	<input type="submit" value="submit"/>
+	
+</form>
+
+first.jsp
+---------
+
+<%
+		String name = request.getParameter("t1");
+
+		session.setAttribute("pname",name);
+		
+		out.println("Welcome  = "+name);
+%>
+<br><br>
+
+<a href="second.jsp"> click for second.jsp page </a>
+
+
+second.jsp
+-----------
+<%
+	String name=(String)session.getAttribute("pname");
+	out.println("Hello ="+name);
+%>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+	<welcome-file-list>
+		<welcome-file>form.html</welcome-file>
+	</welcome-file-list>
+
+</web-app>
+
+Request url
+-----------
+	http://localhost:2525/JspApp15/
+
+
+pageContext object
+====================
+In jsp, pageContext is an implicit object of type pageContext class.
+
+The pageContext object can be used to set ,get ,remove attributes from one the following scopes.
+
+page
+
+request
+
+session
+
+application
+
+In JSP, page scope is a default scope.
+
+
+Deployment Directory Structure
+-----------------------------
+JspApp16
+|
+|---Java Resources
+|
+|---Web Content
+	|
+	|----form.html
+	|----first.jsp
+	|----second.jsp
+	|
+	|----WEB-INF
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+form.html
+----------
+
+<form action="first.jsp">
+	
+	Name: <input type="text" name="t1"/> <br>
+
+	<input type="submit" value="submit"/>
+	
+</form>
+
+first.jsp
+---------
+
+
+<%
+		String name = request.getParameter("t1");
+
+		pageContext.setAttribute("pname",name,pageContext.SESSION_SCOPE);
+		
+		out.println("Welcome  = "+name);
+%>
+<br><br>
+
+<a href="second.jsp"> click for second.jsp page </a>
+
+
+
+
+second.jsp
+-----------
+<%
+	String name=(String)pageContext.getAttribute("pname",pageContext.SESSION_SCOPE);
+	out.println("Hello ="+name);
+%>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+	<welcome-file-list>
+		<welcome-file>form.html</welcome-file>
+	</welcome-file-list>
+
+</web-app>
+
+Request url
+-----------
+	http://localhost:2525/JspApp16/
+
+
+Junit
+=======
+Junit is a testing framework which is used to perform unit testing.
+
+Unit testing is a process to test small piece of code working as per the requirement or not.
+
+As a part of TDD(Test Driven Development) , It is highly recommanded to perform unit testing by the web developers.
+
+To perform  unit testing we need to create test cases or test suit.
+
+
+Steps to perform unit testing
+--------------------------------
+step1:
+------
+	Launch eclipse IDE by choosing workspace location.
+
+step2:
+------
+	Create a java project i.e JunitProj.
+	ex:
+		File --> new --> project --> java project --> Next -->
+		project Name : JunitProj --> Next --> Finish.
+
+step3:
+-----
+	Create "com.ihub.www" package inside "src" folder.
+	ex:
+		Right click to src folder --> new --> package -->
+		Name : com.ihub.www --> finish.
+
+step4:
+------
+	Create "DemoApp.java" file inside "com.ihub.www" package.
+	ex:
+		right click to com.ihub.www package --> new --> class -->
+		Name: DemoApp --> Finish.
+
+	DemoApp.java
+	-----------
+	package com.ihub.www;
+
+	public class DemoApp 
+	{
+		public String concatination(String str1,String str2)
+		{
+			return str1+str2;
+		}
+	
+		public int sum(int a,int b)
+		{
+			return a+b;
+		}
+	}
+	
+step5:
+-----
+	Create a Junit test cases for java methods.
+	ex:
+		right click to DemoApp.java file --> new --> others -->
+		Junit --> Junit Test case --> Next --> select the methods 
+		to whome we want to apply the test cases --> Finish. 
+
+step6:
+------
+	Write the logic to test the test cases inside "DemoAppTest.java" file.
+	ex:
+
+	DemoAppTest.java
+	---------------
+	package com.ihub.www;
+
+	import junit.framework.TestCase;
+
+	public class DemoAppTest extends TestCase {
+
+		public void testConcatination() {
+			DemoApp da=new DemoApp();
+			String result=da.concatination("ihub", "talent");
+			assertEquals("ihubtalent",result );
+		}
+
+		public void testSum() {
+		
+			DemoApp da=new DemoApp();
+			int result=da.sum(10, 20);
+			assertEquals(30, result);
+		
+		}
+
+	}
+
+step7:
+------
+	Run the Junit test cases.
+	ex:
+		Right click to the DemoAppTest.java --> run as -->
+		Junit test case.
+
+Note:
+-----
+	Green color indicates test case is passed.
+	Brown color indicates test case is failed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

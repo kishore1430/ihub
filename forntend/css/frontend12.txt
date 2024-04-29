@@ -1,0 +1,594 @@
+CSS Design 1
+=============
+Task1
+|
+|-----css
+	|
+	|----mystyles.css
+|----images
+	|
+	|----rock.png
+|
+|----index.html 
+
+index.html
+-----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add external CSS-->
+		<link rel="stylesheet" href="css/mystyles.css">
+		
+	</head>
+	<body>
+		<div class="container"> 		
+			<div class="box1">
+				<img src="images/rock.png">
+			</div>
+			<div class="box2">
+				<h3>Hollywood Actor</h3>
+				<p>
+					Dwayne Douglas Johnson (born May 2, 1972), also known by his ring name The
+					Rock, is an American actor, businessman, and professional wrestler.
+					He is currently signed to WWE performing on the SmackDown brand as 
+					a member of The Bloodline. Widely regarded as one of the greatest 
+					professional wrestlers of all time,[6][7] he was integral to the 
+					development and success of the World Wrestling Federation 
+					(WWF, now WWE) during the Attitude Era, an industry boom period in 
+					the late 1990s and early 2000s. Johnson wrestled for the WWF for
+					eight years before pursuing an acting career. His films have grossed
+					over $3.5 billion in North America and over $10.5 billion worldwide,
+					[8] making him one of the world's highest-grossing and highest-paid
+					actors.[9][10][11] He is a co-owner of the United Football League, 
+					a professional American football league.
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
+
+mystyles.css
+--------------
+*
+{
+	margin:0;
+	padding:0;
+}
+body
+{
+	background-image:url("../images/bg.jpg");
+    background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center 0px;
+	background-attachment:fixed;
+}
+.container 
+{
+		width:800px;
+		height:400px;
+		background-color:transparent !important;
+		
+		margin:150px auto;
+		box-sizing:border-box;
+}
+.box1
+{
+	width:400px;
+	height:400px;
+	float:left;
+	box-shadow: 2px 2px 16px 5px #FFF;
+}
+.box1  img
+{
+	width:100%;
+	height:100%;
+	
+}
+
+.box2
+{
+	width:400px;
+	height:400px;
+	float:right;
+	box-shadow: 2px 2px 16px 5px #FFF;
+}
+
+.box2 h3
+{
+		text-align:center;
+		padding:20px;
+		text-transform:uppercase;
+		color:#FFF;
+		font-family:cursive;
+}
+
+.box2 p
+{
+	padding:15px;
+	text-align:justify;
+	color:#FFF;
+	font-weight:bold;
+}
+
+
+CSS Design 2
+=============
+Task1
+|
+|-----css
+	|
+	|----mystyles.css
+|
+|----index.html 
+
+index.html
+-----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		
+		<!-- add external CSS-->
+		<link rel="stylesheet" href="css/mystyles.css">
+		
+	</head>
+	<body>
+			<header class="header">
+				<h3>IHUBTALENT</h3>
+				<ul>
+					<li><a href="">Home</a></li>
+					<li><a href="">About</a></li>
+					<li><a href="">Service</a></li>
+					<li><a href="">Portfolio</a></li>
+					<li><a href="">Contact</a></li>		
+				</ul>
+			</header>
+	</body>
+</html>
+
+
+mystyles.css
+-------------
+*
+{
+	margin:0;
+	padding:0;
+}
+
+.header
+{
+	width:100%;
+	height:30px;
+	background-color:cyan;
+}
+.header h3
+{
+	float:left;
+	padding:10px 50px;
+}
+.header ul
+{
+	float:right;
+	list-style-type:none;
+}
+
+.header ul li
+{
+	display:inline-block;
+	width:100px;
+}
+.header ul li a
+{
+	font-size:15px;
+	text-decoration:none;
+	color:#000;
+	font-style:italic;
+	line-height:45px;
+}
+.header ul li a:hover
+{
+	color:blue;
+	font-weight:bold;
+}
+
+
+
+CSS transform property 
+======================
+
+CSS tranform property allows use to move ,rotate  or skew elements.
+
+CSS tranform property contains following transformation methods.
+
+ex:
+	translate()
+	rotate()
+	scaleX()
+	scaleY()
+	skewX()
+	skewY()
+	skew()
+
+
+transform: translate()
+-----------------------
+The translate() method moves  an element from its current position to the parameters given by the X-axis and the Y-axis.
+ex:
+
+ex:1
+-----
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				border:2px solid black;
+				box-sizing:border-box;
+				transform:translate(200px,100px);
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+				CSS is used to apply the styles on elements to describe how an 
+				element should look like and to perform some sort of animations.
+			</div>
+	</body>
+</html>
+
+transform: scaleX()
+-----------------------
+The scaleX() method increases and decreases the width of the element.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB TALENT</title>
+		<style>
+			div
+			{
+					width:300px;
+					height:200px;
+					border:2px solid black;
+					margin:100px auto;
+					transform:scaleX(2);
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div>
+			HTML is widely used language on web to develop web pages and web applications 
+		</div>
+		
+	</body>
+</html>
+
+
+
+transform: scaleY()
+--------------------
+The scaleX() method increases and decreases the height of the element.
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB TALENT</title>
+		<style>
+			div
+			{
+					width:300px;
+					height:200px;
+					border:2px solid black;
+					margin:100px auto;
+					transform:scaleY(2);
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div>
+			HTML is widely used language on web to develop web pages and web applications 
+		</div>
+		
+	</body>
+</html>
+
+
+
+transform : scale()
+-------------------
+The scaleX() method increases and decreases the width and height of the element.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB TALENT</title>
+		<style>
+			div
+			{
+					width:300px;
+					height:200px;
+					border:2px solid black;
+					margin:100px auto;
+					transform:scale(2);
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div>
+			HTML is widely used language on web to develop web pages and web applications 
+		</div>
+		
+	</body>
+</html>
+
+
+transform: skewX()
+---------------------
+The skewX() method skews an element along the X-axis by the given angle.
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB TALENT</title>
+		<style>
+			div
+			{
+					width:300px;
+					height:200px;
+					border:2px solid black;
+					margin:100px auto;
+					transform:skewX(30deg);
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div>
+			HTML is widely used language on web to develop web pages and web applications 
+		</div>
+		
+	</body>
+</html>
+
+
+
+transform: skewY()
+---------------------
+The skewY() method skews an element along the Y-axis by the given angle.
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB TALENT</title>
+		<style>
+			div
+			{
+					width:300px;
+					height:200px;
+					border:2px solid black;
+					margin:100px auto;
+					transform:skewY(30deg);
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div>
+			HTML is widely used language on web to develop web pages and web applications 
+		</div>
+		
+	</body>
+</html>
+
+
+
+transform: skew()
+-------------------
+
+The skew() method skews an element along the X-axis and Y-axis by the given angle.
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IHUB TALENT</title>
+		<style>
+			div
+			{
+					width:300px;
+					height:200px;
+					border:2px solid black;
+					margin:100px auto;
+					transform:skew(30deg);
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div>
+			HTML is widely used language on web to develop web pages and web applications 
+		</div>
+		
+	</body>
+</html>
+
+transform: rotate()
+------------------
+The rotate() method rotates an element clockwise or counter-clockwise according to a given degree.
+
+
+ex:8
+-----
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				border:2px solid black;
+				box-sizing:border-box;
+				margin:50px auto;
+				transform:rotate(30deg);
+			
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+				CSS is used to apply the styles on elements to describe how an 
+				element should look like and to perform some sort of animations.
+			</div>
+	</body>
+</html>
+
+ex:9
+-----
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:200px;
+				height:200px;
+				border:2px solid black;
+				box-sizing:border-box;
+				margin:50px auto;
+				transform:rotate(-30deg);
+			
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+				CSS is used to apply the styles on elements to describe how an 
+				element should look like and to perform some sort of animations.
+			</div>
+	</body>
+</html>
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

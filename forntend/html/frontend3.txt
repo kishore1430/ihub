@@ -1,0 +1,346 @@
+Phrase Tags in HTML
+===================
+Phrase tags are special purpose tags because they defined structure meaning to block of text or code.
+
+We have following list of phrase tags in html.
+
+1) Abbreviation  - <abr>
+
+2) short quote   - <q>
+
+3) keyboard	 - <kbd>
+
+4) strike 	 - <strike> or <s> 
+
+5) address	 - <address>
+
+6) code		 - <code> 
+
+and etc.
+
+1) Abbreviation  - <abr>
+--------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<abr title="Hypertext Markup Language">HTML</abr> 
+		is a widely used language on web
+	</body>
+</html>
+
+2) short quote   - <q>
+-----------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<q>HTML is a tag based language to develop static web pages</q>
+	</body>
+</html>
+
+3) keyboard	 - <kbd>
+------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		To copy the text press CTRL+C
+		<br>
+		To copy the text press <kbd>CTRL+C</kbd>
+	</body>
+</html>
+
+4) strike 	 - <strike>
+----------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<strike>This is Java class</strike>
+	</body>
+</html>
+
+5) address	 - <address>
+------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<address>
+			1-4.613/9, Nilgiri Block ,Ameerpet, Hyderabad-500036.
+		</address>
+	</body>
+</html>
+
+6) code		 - <code>
+---------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<code>
+			void main()
+			{
+				clrscr();
+				printf("Hello World");
+				getch();	
+			}
+		</code>
+	</body>
+</html>
+
+HTML images
+============
+A <img> tag is used to display the images in HTML.
+
+Image tag is a opening tag with attributes and does not have any closing tag.
+
+We have following list attributes present in <img> tag.
+
+1) src		:	It is used to locate a file.
+
+2) alt 		:	It will display alternate message if image is not found.
+
+3) width 	: 	It is used to set width of an image.
+
+4) height 	:	It is used to set height of an image.
+
+
+ex:
+	Format		Abbreviation 
+	------		------------
+	JPEG		Joint Photographic Expert Group.
+
+	PNG		Portable Network Graphics
+
+	SVG		Scalable Vector Graphics
+
+	GIF		Graphic Interchange Format	
+
+	and etc.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<img src="images/rock.jpg"  />
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<img src="images/rock.jpg"  width="300px" height="300px"/>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<img src="images/rocky.jpg"  
+				alt="No Image Found"
+				width="300px" height="300px"/>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/The_Rock_2023.jpg/250px-The_Rock_2023.jpg"  
+				alt="No Image Found"
+				width="300px" height="300px"/>
+	</body>
+</html>
+
+Anchor tag in html
+===================
+A <a> anchor tag is used to display the hyperlink in html.
+
+Anchor tag contains href attribute to navigate to other resources.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<a href="http://www.facebook.com/login">Facebook</a>
+	</body>
+</html>
+
+A target attribute describe a resource must open in a current window or new window.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<a href="http://www.facebook.com/login"
+			target="_self">
+				Facebook
+		</a>
+	</body>
+</html> 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<a href="http://www.facebook.com/login"
+			target="_blank">
+				Facebook
+		</a>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>
+			<a href="https://en.wikipedia.org/wiki/Dwayne_Johnson"
+					target="_blank">
+
+			<img src="images/rock.jpg" alt="No Image"
+				width="300px" height="300px"/>
+
+			</a>
+		</center>
+	</body>
+</html>
+
+Interview Questions
+===================
+
+Q) What is HTML Entity ?
+
+HTML entity is a group of characters starts with '&' symbol and ends with semicolon(;).
+
+HTML entities are used to display the reserved characters and Hidden characters in HTML.
+
+We have following list of HTML Entities.
+
+ex:
+	Entity		Symbol
+	-------		-------
+	&gt;		>
+	&lt;		<
+	&laquo;		<<
+	&raquo;		>>
+	&nbsp;		non block space 
+	&copy;		
+	and etc.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<h1> &gt; </h1>
+		<h1> &lt; </h1>
+		<h1> &laquo; </h1>
+		<h1> &raquo; </h1>
+		<h1> &nbsp; </h1>
+		<h1> &copy; </h1>	
+	</body>
+</html>
+
+
+Q) What is the difference between tag and element?
+
+Tag
+====
+Tag starts with '<' symbol and ends with '>' symbol.
+ex:
+	<h1>, <p>, <i>, <b> and etc. 
+
+Element
+========
+Element defines opening tag , some content and closing tag.
+ex:
+	<h1>This is heading tag </h1>
+	<p>This is paragraph tag</p>
+	<i>This is italic tag </i>
+		
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

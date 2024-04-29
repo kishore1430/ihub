@@ -1,0 +1,618 @@
+Q)Write a java program to display the given string in below format?
+
+Input:
+	A1B2C3D4
+
+Output:
+	ABBCCCDDDD
+
+ex:
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="A1B2C3D4";
+
+		for(int i=0;i<str.length();i++)
+		{
+			if(Character.isAlphabetic(str.charAt(i)))
+			{
+				System.out.print(str.charAt(i));
+			}
+			else
+			{
+				int j=Character.getNumericValue(str.charAt(i));
+				for(int k=1;k<j;k++)
+				{
+					System.out.print(str.charAt(i-1));
+				}
+
+			}
+		}
+	}
+}
+
+Q) Write a java program to display most repeating character in a given string?
+
+input:
+	ihubtalentinstitute
+
+output:
+	t is repeating for 5 times 
+
+ex:
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="ihubtalentinstitute";
+
+		char character=' ';
+		int maxCount=0;
+
+		for(int i=0;i<str.length();i++)
+		{
+			int cnt=0;
+
+			for(int j=0;j<str.length();j++)
+			{
+				if(str.charAt(i)==str.charAt(j))
+				{
+					cnt++;
+				}
+			}
+			if(maxCount<cnt)
+			{
+				maxCount=cnt;
+				character=str.charAt(i);
+			}
+		}
+		System.out.println(character+" is repeating for "+maxCount+" times");
+	}
+}
+
+Q) Write a java program to check given string is anagram or not?
+
+Input:
+	silent 
+	listen 
+
+outptu:
+	It is a anagram string 
+
+ex:
+---
+import java.util.Arrays;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str1="silent"; 
+		String str2="listen";
+		
+		char[] carr1=str1.toCharArray();
+		char[] carr2=str2.toCharArray();
+
+		Arrays.sort(carr1); // e i l n s t 
+		Arrays.sort(carr2); // e i l n s t 
+
+		boolean flag=true;
+		for(int i=0;i<carr1.length && i<carr2.length;i++)
+		{
+			if(carr1[i] != carr2[i])
+			{
+				flag=false;
+				break;
+			}
+		}
+		if(flag==true)
+			System.out.println("It is anagram string");
+		else
+			System.out.println("It is not anagram string");
+	}
+}
+
+Q) Write a java program to display permutation of given string?
+
+input:
+	ABC
+
+output:
+	ABC
+	ACB
+	BAC
+	BCA
+	CBA
+	CAB 
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="ABC";
+		permutation(str.toCharArray(),0);
+	}
+	public static void permutation(char[] arr,int fi)
+	{
+		if(fi == arr.length-1)
+		{
+			System.out.println(arr);
+			return;
+		}
+	
+		for(int i=fi;i<arr.length;i++)
+		{
+			swap(arr,i,fi);
+			permutation(arr,fi+1);
+			swap(arr,i,fi);
+		}
+	}
+	public static void swap(char[] arr,int i, int fi)
+	{
+		char temp=arr[i];
+		arr[i]=arr[fi];
+		arr[fi]=temp;
+	}
+}
+
+StringBuffer
+============
+If our content change frequently then it is never recommaned to use String object because for 
+every change a new object will be created.
+
+To overcome this limitation Sun Micro System introduced StringBuffer concept.
+
+In StringBuffer all the changes will be done or reflected in a single object only.
+
+constructor
+-----------
+
+1) StringBuffer sb=new StringBuffer()
+------------------------------------
+It will create empty StringBuffer object with default initial capacity of 16.
+
+If capacity reaches to maximum capacity then new capacity will be created with below formulea.
+
+ex:
+	new capacity = current+capacity+1*2;
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb=new StringBuffer();
+		System.out.println(sb.capacity());//16
+
+		sb.append("abcdefghijklmnop");
+		System.out.println(sb.capacity());//16
+
+		sb.append("qr");
+		System.out.println(sb.capacity());//16+1*2=34
+
+	}
+
+}
+
+2) StringBuffer sb=new StringBuffer(int capacity)
+-----------------------------------------------
+It will create StringBuffer object with specified given capacity.
+
+ex:
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb=new StringBuffer(19);
+		System.out.println(sb.capacity());//19
+
+	}
+
+}
+
+
+3) StringBuffer sb=new StringBuffer(String str)
+-----------------------------------------------
+It will create StringBuffer object which is equivalent to String.
+
+It will create a capacity with below formulea.
+ex:
+	capacity = s.length()+16;
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb=new StringBuffer("bhaskar");
+		System.out.println(sb.capacity());//7+16=23
+
+	}
+
+}
+
+Q) Write a java program to display reverse of a string?
+
+input:
+	hello
+
+output:
+	olleh 
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="hello";
+		
+		String rev="";
+
+		StringBuffer sb=new StringBuffer(str);
+
+		rev=sb.reverse().toString();
+
+		System.out.println(rev);
+	}
+
+}
+
+Q) Write a java program to check given string is palindrome or not?
+
+Input:
+	madam
+
+output:
+	It is a palindrome string 
+
+ex:
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="madam";
+		
+		String rev="";
+
+		StringBuffer sb=new StringBuffer(str);
+
+		rev=sb.reverse().toString();
+
+		if(str.equals(rev))
+			System.out.println("It is a palindrome string");
+		else
+			System.out.println("It is not a palindrome string");
+	}
+
+}
+
+Q) Write a java program to multiply two arrays?
+
+input:
+	arr1 = 4 2 1 
+	arr2 = 2 5
+
+output:
+	10525 (421*25)
+	
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[] arr1 ={4,2,1}; 
+		int[] arr2 ={2,5};
+
+		String str1=arrayToString(arr1);
+		String str2=arrayToString(arr2);
+
+		int a=Integer.parseInt(str1);
+		int b=Integer.parseInt(str2);
+		System.out.println(a*b);
+	}
+	public static String arrayToString(int[] arr) //4  2  1 
+	{
+		StringBuffer sb=new StringBuffer();
+		for(int i:arr)
+		{
+			sb.append(i);
+		}
+
+		return sb.toString();
+	}
+
+}
+
+Q) Write a java program to display the string in given format?
+
+input:
+	ABBCCCDDDD
+output:
+	A1B2C3D4
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="ABBCCCDDDD";
+
+		StringBuffer sb=new StringBuffer();
+
+		int count=1;
+
+		for(int i=0;i<str.length();i++)
+		{
+			if(i<str.length()-1 && str.charAt(i) == str.charAt(i+1))
+			{
+				count++;
+			}
+			else
+			{
+				sb.append(str.charAt(i)).append(count);
+				count=1;
+			}
+		}
+		System.out.println(sb.toString());
+	}
+	
+}
+
+StringBuilder
+==============
+StringBuilder is exactly same as StringBuffer with following differences.
+
+StringBuffer					StringBuilder
+----------					--------------
+All methods present in StringBuffer are 	No method present in StringBuilder is synchronized.
+synchronized.
+
+At a time only one thread is allowed to execute.At a time multiple thread are allowed to execute.
+Hence we can achieve thread safety.		Hence we can't achieve thread safety.
+
+Waiting time of a thread will increase		There is no waiting time of a thread effectively 
+effectively performance is low.			performance is high.
+
+It is introduced in 1.0v.			It is introduced in 1.5v.
+
+
+Note:
+----
+If our content not change frequently then it is recommanded to use String.
+
+If our content change frequently where thread safety is required then we need to use StringBuffer.
+
+If our content change frequently where thread safety is not required then we need to use StringBuilder.
+
+
+StringTokenizer 
+================
+StringTokenizer class present in java.util package.
+
+It is used to tokenize the string irrespective of regular expression.
+
+We can create StringTokenizer object as follow.
+
+ex:
+	StringTokenizer st=new StringTokenizer(String str,RegEx reg);
+
+StringTokenizer class contains following five methods.
+
+ex:
+	public boolean hasMoreTokens()
+	public String nextToken()
+	public boolean hasMoreElements()
+	public Object nextElement()
+	public void countTokens() 
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		StringTokenizer st=new StringTokenizer("This is java class");
+
+		System.out.println(st.countTokens());//4
+	}
+}
+Note:
+-----
+	Here default regular expression is space.
+
+ex:2
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		StringTokenizer st=new StringTokenizer("This is java class"," ");
+
+		while(st.hasMoreTokens())
+		{
+			String str=st.nextToken();
+			System.out.println(str);
+		}
+	}
+}
+
+ex:3
+----
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		StringTokenizer st=new StringTokenizer("This is java class"," ");
+
+		while(st.hasMoreElements())
+		{
+			String str=(String)st.nextElement();
+			System.out.println(str);
+		}
+	}
+}
+ex:4
+----
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		StringTokenizer st=new StringTokenizer("9,99,999",",");
+
+		while(st.hasMoreElements())
+		{
+			String str=(String)st.nextElement();
+			System.out.println(str);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

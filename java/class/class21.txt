@@ -1,0 +1,680 @@
+Double Dimensional Array
+=======================
+Double Dimensional Array is a combination of rows and columns.
+
+Double Dimensional Array is implemented based on array or arrays approach but not in matrix form.
+
+The main objective of Double dimensional array is memory utilization.
+
+Double Dimensional Array we need to use to develop business oriented applications, gaming applications, matrix type of applications.
+
+We can declare double dimensional array as follow.
+
+syntax:
+	datatype[][] variable=new datatype[rows][cols];
+
+ex:
+	int[][] arr=new int[3][3]; 
+
+	Here we can store 9 elements.
+
+
+Q) Write a java program to display array elements in matrix form?
+
+ex:
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the row :");
+		int rows=sc.nextInt();
+		
+		System.out.println("Enter the column :");
+		int cols=sc.nextInt();
+		
+		int[][] arr=new int[rows][cols];
+
+		//insert the elements 
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				System.out.println("Enter the element :");
+				arr[i][j]=sc.nextInt();
+			}
+		}
+
+		//display the elements 
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				System.out.print(arr[i][j]+" ");
+			}
+			//new line 
+			System.out.println();
+		}
+
+	}
+}
+
+
+Q) Write a java program to find out square of a matrix?
+
+input:
+	int[][] arr={
+			{1,2,3},
+			{4,5,6},
+			{7,8,9}
+		};
+
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[][] arr={
+						{1,2,3},
+						{4,5,6},
+						{7,8,9}
+					};		
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[0].length;j++)
+			{
+				System.out.print(arr[i][j] * arr[i][j] +" ");
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+
+Q) Write a java program to find out sum of diagonal elements?
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[][] arr={
+						{1,2,3},
+						{4,5,6},
+						{7,8,9}
+					};		
+		
+		int sum=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[0].length;j++)
+			{
+				if(i==j)
+				{
+					sum+=arr[i][j];
+				}
+			}
+		}
+
+		System.out.println(sum);
+	}
+}
+
+Q) Write a java program to find out sum of upper triangle elements?
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[][] arr={
+						{1,2,3},
+						{4,5,6},
+						{7,8,9}
+					};		
+		
+		int sum=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[0].length;j++)
+			{
+				if(i<j)
+				{
+					sum+=arr[i][j];
+				}
+			}
+		}
+
+		System.out.println("sum of upper triangle elements :"+sum);
+	}
+}
+
+
+Q) Write a java program to perform sum of lower triangle elements?
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[][] arr={
+						{1,2,3},
+						{4,5,6},
+						{7,8,9}
+					};		
+		
+		int sum=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[0].length;j++)
+			{
+				if(i>j)
+				{
+					sum+=arr[i][j];
+				}
+			}
+		}
+
+		System.out.println("sum of lower triangle elements :"+sum);
+	}
+}
+
+Q) Write a java program to find out spiral form of a matrix?
+
+input:
+	1 2 3 
+	4 5 6
+        7 8 9 
+
+output:
+	1 2 3 6 9 8 7 4 5 
+
+ex:
+---
+	
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[][] matrix={
+						{1,2,3},
+						{4,5,6},
+						{7,8,9}
+					};		
+		
+		int rows=matrix.length;
+		int cols=matrix[0].length;
+
+
+		int top = 0;
+        int bottom = rows - 1;
+        int left = 0;
+        int right = cols - 1;
+
+        while (true) 
+		{
+            if (left > right) 
+			{
+                break;
+            }
+
+            // Print top row
+            for (int i = left; i <= right; i++) 
+			{
+                System.out.print(matrix[top][i] + " ");
+            }
+            top++;
+
+            if (top > bottom) 
+			{
+                break;
+            }
+
+            // Print right column
+            for (int i = top; i <= bottom; i++) {
+                System.out.print(matrix[i][right] + " ");
+            }
+            right--;
+
+
+            if (left > right) {
+                break;
+            }
+
+            // Print bottom row
+            for (int i = right; i >= left; i--) 
+			{
+                System.out.print(matrix[bottom][i] + " ");
+            }
+            bottom--;
+   
+            if (top > bottom) {
+                break;
+            }
+
+            // Print left column
+            for (int i = bottom; i >= top; i--) 
+			{
+                System.out.print(matrix[i][left] + " ");
+            }
+            left++; 
+	    }//while loop 
+	}
+}
+
+Anonymous Array
+================
+Sometimes we will declare an array without name such type of nameless array is called anonymous array.
+
+The main objective of anonymous array is just for instance use.
+
+We can declare anonymous array as follow.
+
+ex:
+	new int[]{10,20,30};
+	new int[][]{{10,20,30},{40,50,60}};
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//caller method
+		sum(new int[]{10,20,30});
+	}
+	//callie method
+	public static void sum(int[] arr)
+	{
+		int sum=0;
+		for(int i:arr)
+		{
+			sum+=i;
+		}
+		System.out.println(sum);
+	}
+}
+
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		//caller method
+		System.out.println(sum(new int[]{10,20,30}));
+	}
+	//callie method
+	public static int sum(int[] arr)
+	{
+		int sum=0;
+		for(int i:arr)
+		{
+			sum+=i;
+		}
+		return sum;
+	}
+}
+
+OOPS
+======
+OOPS stands for Object Oriented Programming System/Structure.
+
+object oriented technology
+--------------------------
+A technology which provides very good environment to represent our data in the form of objects
+is called object oriented technology.
+
+A technology said to be object oriented if it supports following features.
+
+ex:
+	class 
+	object 
+	Abstraction
+	Encapsulation 
+	Inheritance 
+	and 
+	Polymorhpism
+
+
+class 
+========
+A class is a collection of data members and behaviours.
+
+Data member means variables or properties or fields.
+
+Behaviour means methods or actions or characteristics.
+
+In general, a class is a collection of variables and methods.
+
+A class is also known as blue print of an object.
+
+A class will accept following modifiers.
+ex:
+	default 
+	public
+	final
+	abstract 
+
+We can declare a class as follow.
+ex:
+	optional 
+	|
+	modifier class class_Name <extends> Parent_className
+				  <implements> Interface_Name
+	{
+		-
+		- // variables and methods 
+		-
+	}
+
+Q) What is the difference between default class and public class?
+
+default class
+---------------
+If we declare any class as default then we can access that class within the package.
+ex:
+	class A 
+	{
+		-
+		- // variables and methods 
+		-	
+	}
+
+public class
+------------
+If we declare any class as public then we can access that class within the package and outside the package.
+ex:
+	public class A 
+	{
+		-
+		- // variables and methods 
+		-
+	}
+
+
+Q) What is final class?
+
+If we declare any class as final then creating child class is not possible.
+ex:
+	final class A 
+	{
+	}
+	class B  extends A  --> invalid 
+	{
+	}
+
+
+Q) What is abstract class?
+
+If we declare any class abstract then creating object for that class is not possible.
+ex:
+	abstract class A 
+	{
+		-
+		- // variables and methods
+		-
+	}
+	A a=new A(); ---> invalid 
+
+
+object
+========
+It is a outcome of a blue print.
+
+It is a instance of a class.
+
+Here instance means allocating memory for our data members.
+
+Memory space will be created when we create object.
+
+It is possible to create more then one object in a single class.
+
+We can declare object as follow.
+
+ex:		operator 
+		  |
+	Test t = new  Test();
+	|    |		|
+ classname  reference  constructor 
+            variable 
+
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Test t1=new Test();
+		Test t2=new Test();
+		Test t3=new Test();
+
+		System.out.println(t1.hashCode());
+		System.out.println(t2.hashCode());
+		System.out.println(t3.hashCode());
+
+		System.out.println(t1);//Test@Hexavalue 
+		System.out.println(t2.toString());
+		System.out.println(t3.toString());
+	}
+}
+
+hashCode()
+========
+It is a method present in Object class.
+
+Whenever we create object , for every object JVM will create a unique identifier number i.e hash code .In order to read hash code of an object we will use hashCode() method.
+
+Diagram: class21.1
+
+
+toString()
+===========
+It is a method present in Object class.
+
+Whenever we are trying to display any object reference directly or indirectly toString() method will be executed.
+
+
+Q) What is Object class?
+
+Object class present in java.lang package.
+
+It is a parent class for every java class.
+
+Object class contains following methods.
+
+ex:
+	cmd> javap  java.lang.Object  
+
+	ex:
+		getClass()
+		hashCode()
+		toString()
+		notify()
+		notifyAll()
+		wait()
+		equals()
+		and etc.
+
+Data Hiding
+============
+The process of hiding the data from outside world is called data hiding.
+
+The main objective of data hiding is to provide security.
+
+Using private modifier we can implements data hiding concept.
+
+ex:
+	class Account 
+	{
+		private double balance;
+		-
+		-
+	}
+
+Abstraction
+============
+Hiding internal implementation and highlighting the set of services is called abstraction.
+
+Using interface and abstract class we can implements abstraction. 
+
+ex:
+
+The best example of abstract is GUI ATM machine. Where bank people will hide internal implementation and highlights the set of services like banking, withdrawl,mini statement and etc.
+
+The main advantages of abstraction are
+
+1) It gives security because it will hide internal implementation from the outsider.
+
+2) Enhancement becomes more easy because without effecting enduser they can perform any changes 
+   in our internal system. 
+
+3) It provides flexibility to the enduser to use the system.
+
+4) It improves maintainability of an application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

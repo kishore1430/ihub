@@ -1,0 +1,289 @@
+Q) Explain @SpringBootApplication annotation?
+
+It is a combination of three annotations.
+
+1) @EnableAutoconfiguration 
+-----------------------------
+ It enables auto configuration mechanism in spring boot.
+
+2) @ComponentScan
+-----------------
+ It scans on package in which our project is located.
+
+3) @Configuration 
+-----------------
+ It is used to register extra beans on context.
+
+
+Spring Boot starters
+=====================
+Spring boot provides number of starters to add jar files in the classpath.
+
+Spring boot contains built-in starters to develop applications easily or rapidly. 
+
+Spring boot starts are known as dependency descriptors.
+
+In spring boot framework , every built-in spring boot starter follow same naming pattern.
+
+ex:
+	spring-boot-starter-*
+
+	Here '*' means perticular name of the application.
+
+ex:
+	spring-boot-starter-web 
+	spring-boot-starter-data-jpa
+	spring-boot-starter-security
+	spring-boot-starter-validation 
+	and etc. 
+
+In spring framework, we can enable third party starters also.
+
+Third party starter's follow below naming pattern.
+
+ex:
+	
+	*-spring-boot-starter
+
+
+Spring boot web dependency 
+===========================
+There are two important features of spring-boot-starter-web.
+
+>It is compatible for web development
+>AutoConfiguration
+
+If we want to develop a web application,we need to add the following dependency in pom.xml file.
+ex:
+	<dependency>  
+		<groupId>org.springframework.boot</groupId>  
+		<artifactId>spring-boot-starter-web</artifactId>  
+		<version>2.2.2.RELEASE</version>  
+	</dependency>  
+
+Spring web starter uses Spring MVC, REST and Tomcat as a default embedded server.
+
+The single spring-boot-starter-web dependency transitively pulls in all dependencies related to web development. 
+
+
+By default, the spring-boot-starter-web contains the following tomcat server dependency:
+ex:
+	<dependency>  
+		<groupId>org.springframework.boot</groupId>  
+		<artifactId>spring-boot-starter-tomcat</artifactId>  
+		<version>2.0.0.RELEASE</version>  
+		<scope>compile</scope>  
+	</dependency>  
+
+The spring-boot-starter-web ,auto-configures the following things that are required for the web development:
+
+1)Dispatcher Servlet
+2)Error Page
+3)Web JARs for managing the static dependencies
+4)Embedded servlet container
+
+
+Diagram: sb2.1
+
+Project structure 
+------------------
+SecondSB
+|
+|----src/main/java
+	|
+	|---com.ihub.www (base package)
+		|
+		|--SecondSBApplication.java
+		|--HomeController.java
+|
+|----src/main/resources
+	|
+	|---application.properites
+|
+|-----src
+	|
+	|-----main 
+		|
+		|---webapp 
+			|
+			|----pages
+				|
+				|---index.jsp
+
+|----pom.xml 
+
+
+HomeController.java
+---------------------
+package com.ihub.www;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController {
+
+	@RequestMapping("home")
+	public String home()
+	{
+		return "index";
+	}
+}
+	 
+step4:
+-----
+	create a "webapp" and "pages" folder inside "src/main" folder for adding JSP files.
+	ex:
+		|-----src
+			|
+			|----main
+				|
+				|----webapp	
+					|
+					|-----pages
+
+
+step5:
+---------
+	create "index.jsp" file inside "src/main/webapp/pages/" folder.
+	ex:
+		Right click to pages folder--> new --> file ---> 
+		File Name: index.jsp --> finish.
+
+index.jsp
+----------
+<center>
+	<h1>
+		I love Spring Boot Programming
+	</h1>
+</center>
+
+
+
+step6:
+------
+	Add "Tomcat Embed Jasper" dependency to read the jsp file.
+	
+
+	ex:
+		<dependency>
+    			<groupId>org.apache.tomcat.embed</groupId>
+    			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>		
+
+Note:
+------
+	Embedded Tomcat server does not have Jasper. So we need to add above dependency.
+
+step7:
+-------
+	Configure tomcat server port number and jsp file.
+
+application.properties
+------------------------
+server.port=9090
+
+spring.mvc.view.prefix=/pages/
+spring.mvc.view.suffix=.jsp
+
+
+step8:
+-------
+	Run Spring Boot application.
+	ex:
+		Right click to MVCApp2 --> run as --> spring boot application.
+
+
+step9:
+------
+	Test the application with below request url.
+	ex:
+		http://localhost:9191/home
+
+
+Note:- 
+-------
+If you are not getting output please add tomcat dependency in pom.xml file seperately.
+
+ex:
+	<dependency>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-tomcat</artifactId>
+    		<version>3.1.1</version>
+	</dependency>
+
+
+
+
+Interview question
+===============
+
+Q)To create a spring mvc based web application we need to add which starter?
+	
+	spring-boot-stater-web
+
+
+Q)In spring boot mvc based web application who will pass HTTP request to controller?
+
+ans)	DispatcherServlet
+
+
+Q)Tomcat embedded server by default runs under which port no?
+	
+	8080
+
+Q)How to change tomcat embedded server port no?
+ans)
+	application.properties
+	-----------------------------
+	server.port = 9090
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

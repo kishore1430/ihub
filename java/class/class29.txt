@@ -1,0 +1,610 @@
+FileWriter
+==========
+FileWriter is used to write character oriented data into a file.
+
+constructor
+--------------
+FileWriter fw=new FileWriter(String s);
+FileWriter fw=new FileWriter(File f);
+
+ex:
+	FileWriter fw=new FileWriter("aaa.txt");
+	or
+
+	File f=new File("aaa.txt");
+	FileWriter fw=new FileWriter(f);
+
+If file does not exist then FileWriter will create a physical file.
+
+
+Methods
+-----------
+
+1)write(int ch)
+-----------------
+	It will insert single character into a file.
+
+2)write(char[] ch)
+-----------------
+	It will insert array of characters into a file.
+
+3)write(String s)
+-------------------
+	It will insert String into a file.
+
+4)flush()
+----------
+	It gives guaranttee that last character of a file is also inserted.
+
+5)close()
+-----------
+	It is used to close the FileWriter object.
+
+
+ex:
+-----
+import java.io.*;
+class Test 
+{
+	public static void main(String[] args)throws IOException
+	{
+		FileWriter fw=new FileWriter("aaa.txt");
+
+		fw.write(98);// b 
+		fw.write("\n");
+
+		char[] ch={'a','b','c'};
+		fw.write(ch);
+		fw.write("\n");
+
+		fw.write("bhaskar\nsolution");
+		fw.flush();
+		fw.close();
+		System.out.println("Please check the location");
+	}
+}
+
+
+FileReader
+==================
+It is used to read character oriented data from a file.
+
+constructor
+--------------
+FileReader fr=new FileReader(String s);
+FileReader fr=new FileReader(File f);
+
+ex:
+	FileReader fr=new FileReader("aaa.txt");
+	or
+	File f=new File("aaa.txt");
+	FileReader fr=new FileReader(f);
+
+Methods
+----------
+1)read()
+--------
+	It will read next character from a file and return unicode value.
+	If next character is not available then it will return -1.
+
+2)read(char[] ch)
+----------------
+	It will read collection of characters from a file.
+
+3)close() 
+---------
+	It is used to close FileReader object.
+
+ex:1
+-------
+import java.io.*;
+class Test 
+{
+	public static void main(String[] args)throws IOException
+	{
+		FileReader fr=new FileReader("aaa.txt");
+
+		int i=fr.read();
+		while(i!=-1)
+		{
+			System.out.print((char)i);
+			i=fr.read();
+		}
+		fr.close();
+	}
+}
+
+ex:2
+----
+ex:
+----
+import java.io.*;
+class  Test
+{
+	public static void main(String[] args)throws IOException 
+	{
+		FileReader fr=new FileReader("aaa.txt");
+
+		char[] ch=new char[255];
+
+		fr.read(ch);
+
+		//for each loop
+		for(char c:ch)
+		{
+			System.out.print(c);
+		}
+
+		fr.close();
+	}
+}
+
+
+
+
+Usage of FileWriter and FileReader is not recommanded to use
+==============================================================
+While inserting the data by using FileWriter ,we need to insert line 
+seperator(\n) which is very headache for the programmer.
+
+While reading the data by using FileReader object ,we need to read character
+by character which is not convenient to the programmer.
+
+To overcome this limitation Sun micro system introduced BufferedWriter and BufferedReader.
+
+
+BufferedWriter
+=================
+It is used to insert character oriented data into a file.
+
+constructor
+-----------
+BufferedWriter bw=new BufferedWriter(Writer w);
+BufferedWriter bw=new BufferedWriter(Writer w,int buffersize);
+
+BufferedWriter object does not communicate with files directly.
+It will take the support of some writer objects.
+
+ex:
+	FileWriter fw=new FileWriter("bbb.txt");
+	BufferedWriter bw=new BufferedWriter(fw);
+
+	or
+
+	BufferedWriter bw=new BufferedWriter(new FileWriter("bbb.txt"));	
+	
+
+Methods
+---------
+1)write(int ch)
+-----------------
+	It will insert single character into a file.
+
+2)write(char[] ch)
+-----------------
+	It will insert array of characters into a file.
+
+3)write(String s)
+-------------------
+	It will insert String into a file.
+
+4)flush()
+----------
+	It gives guaranttee that last character of a file is also inserted.
+
+5)close()
+-----------
+	It is used to close the BufferedWriter object.
+
+6)newLine()
+----------
+	It will insert new line into a file.
+
+ex:
+
+import java.io.*;
+class Test 
+{
+	public static void main(String[] args)throws IOException
+	{
+		
+	BufferedWriter bw=new BufferedWriter(new FileWriter("bbb.txt"));
+		bw.write(98);//b
+		bw.newLine();
+
+		char[] ch={'a','b','c'};
+		bw.write(ch);
+		bw.newLine();
+
+		bw.write("bhaskar");
+		bw.newLine();
+
+		bw.flush();
+		bw.close();
+		System.out.println("Please check the location");	
+	}
+}
+
+BufferedReader
+=================
+It is enhanced reader to read character oriented data from a file.
+
+constructor
+------------
+BufferedReader br=new BufferedReader(Reader r);
+BufferedReader br=new BufferedReader(Reader r,int buffersize);
+
+BufferedReader object can't communicate with files directly.IT will take
+support of some reader objects.
+
+ex:
+	FileReader fr=new FileReader("bbb.txt");
+	BufferedReader br=new BufferedReader(fr);
+
+	or
+
+	BufferedReader br=new BufferedReader(new FileReader("bbb.txt"));
+	
+The main advantage of BufferedReader over FileReader is we can read 
+character line by line instead of character by character.
+
+
+methods
+---------
+1)read()
+--------
+	It will read next character from a file and return unicode value.
+	If next character is not available then it will return -1.
+
+2)read(char[] ch)
+----------------
+	It will read collection of characters from a file.
+
+3)close() 
+---------
+	It is used to close BufferedReader object.
+
+4)nextLine()
+------------
+	It is used to read next line from the file.If next line is 
+	not available then it will return null.
+
+ex:
+
+import java.io.*;
+class Test 
+{
+	public static void main(String[] args)throws IOException
+	{
+		BufferedReader br=new BufferedReader(new FileReader("bbb.txt"));
+		
+		String line=br.readLine();
+		while(line!=null)
+		{
+			System.out.println(line);
+			line=br.readLine();
+		}
+
+		br.close();
+
+	}
+}
+
+
+PrintWriter
+===============
+It is enhanced write to write character oriented data into a file.
+
+constructor
+-----------
+PrintWriter pw=new PrintWriter(String s);
+PrintWriter pw=new PrintWriter(File f);
+PrintWriter pw=new PrintWriter(Writer w);
+
+PrintWriter can communicate with files directly and it will take the support of some writer objects.
+
+ex:
+	PrintWriter pw=new PrintWriter("ccc.txt");
+
+	or 
+
+	PrintWriter pw=new PrintWriter(new File("ccc.txt"));
+
+	or
+
+	PrintWriter pw=new PrintWriter(new FileWriter("ccc.txt"));
+
+
+The main advantage of PrintWriter over FileWriter and BufferedWriter is we can insert any type of data.
+
+Assume if we want insert primitive values then PrintWriter is best choice.
+
+
+methods
+------------
+write(int ch)
+write(char[] ch)
+write(String s)
+flush()
+close()
+
+writeln(int i)
+writeln(float f)
+writeln(double d)
+writeln(String s)
+writeln(char c)
+writeln(boolean b)
+
+
+
+write(int i)
+write(float f)
+write(double d)
+write(String s)
+write(char c)
+write(boolean b)
+
+ex:
+------
+
+import java.io.*;
+class Test 
+{
+	public static void main(String[] args)throws IOException
+	{
+		PrintWriter pw=new PrintWriter("ccc.txt");
+
+		pw.write(100);// d
+		pw.println(100);// 100
+		pw.print('a');
+		pw.println(true);
+		pw.println("hi");
+		pw.println(10.5d);
+
+		pw.flush();
+		pw.close();
+		System.out.println("Please check the location");
+	}
+}
+
+
+
+Various ways to provide input values from keyboard
+==================================================
+There are many ways to provide input values from keyboard.
+
+1) command line argument 
+
+2) Console class
+
+3) BufferedReader class
+
+4) Scanner class 
+
+1) command line argument 
+-------------------------
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String name=args[0];
+
+		System.out.println("Welcome :"+name);
+	}
+}
+o/p:
+	javac   Test.java
+	
+	java    Test   DennisRitchie 
+
+
+2) Console class
+-----------------
+import java.io.*;
+class Test 
+{
+	public static void main(String[] args)throws IOException 
+	{
+		Console c=System.console();
+
+		System.out.println("Enter the name :");
+
+		String name=c.readLine();
+
+		System.out.println("Welcome :"+name);
+	}
+}
+
+3) BufferedReader class
+------------------------
+import java.io.*;
+class Test 
+{
+	public static void main(String[] args)throws IOException 
+	{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+
+		System.out.println("Enter the name :");
+
+		String name=br.readLine();
+
+		System.out.println("Welcome :"+name);
+	}
+}
+
+4) Scanner class 
+------------------
+import java.util.*;
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the employee id :");
+		int id=sc.nextInt();
+
+		System.out.println("Enter the employee name :");
+		String name=sc.next();
+
+		System.out.println("Enter the employee salary :");
+		float sal=sc.nextFloat();
+
+		System.out.println(id+" "+name+" "+sal);
+	}
+}
+
+
+
+Try with Resources
+===================
+In Java, the try-with-resources statement is, a try statement that declares one or more resources. 
+
+The try-with-resources statement ensures that each resource is closed at the end of the statement execution.Hence we don't need to use finally block to close the objects.
+
+ex:
+
+import java.io.*;
+class Test  
+{
+	public static void main(String[] args)
+	{
+		try(FileWriter fw=new FileWriter("xyz.txt");)
+		{		
+			fw.write(98);//b
+			fw.write("\n");
+			char[] ch={'a','b','c'};
+			fw.write(ch);
+			fw.write("\n");
+			fw.write("bhaskar\nsolution");
+			fw.flush();
+			System.out.println("Please check the location....");
+		}
+		catch (IOException ioe)
+		{
+			ioe.printStackTrace();
+		}
+		
+	}
+}
+
+
+Generics
+=========
+Arrays are typesafe.
+
+We can provide guarantee that what type of elements are present in array.
+
+If requirement is there to store String values then it is recommanded to use String[] array.
+ex:
+	String[] sarr=new String[100];
+	sarr[0]="hi";
+	sarr[1]="hello";
+	sarr[2]="bye";
+	sarr[3]=10; //invalid 
+
+At the time of retrieving the data from array we don't need to perform typecasting.
+
+ex:
+	String[] sarr=new String[100];
+	sarr[0]="hi";
+	sarr[1]="hello";
+	sarr[2]="bye";
+	-
+	-
+	String value=sarr[0];
+
+Collections are not typesafe.
+
+We can't provide guarantee that what type of elements are present in Collections.
+
+If requirement is there to store String values then it is never recommanded to use ArrayList.Here we won't get any compile time error or runtime error but sometimes our program get failure.
+
+ex:
+	ArrayList al=new ArrayList();
+	al.add("hi");
+	al.add("hello");
+	al.add("bye");
+	al.add(10);
+
+At the time of retrieving the data from Collections compulsary we need to perform typecasting.
+
+ex:
+	
+	ArrayList al=new ArrayList();
+	al.add("hi");
+	al.add("hello");
+	al.add("bye");
+	al.add(10);
+	-
+	-
+	String val=(String)al.get(0);
+	
+To overcome this limitations , Sun Micro system introduced Generics concepts in 1.5v.
+
+The main objective of Generics are .
+
+1) To make Collections as typesafe.
+
+2) To avoid typecasting problem. 
+
+
+java.util package
+==================
+
+Q)What is difference between Arrays and Collections?
+
+Arrays						Collections
+-----------					-----------
+It is a collection of homogeneous data 		It is a collection of homogeneous and 
+element.					hetrogeneous data elements.
+
+It is fixed in size.				It is growable in nature.
+
+Performance point of view arrays are 		Memory point of view Collections are recommanded 
+recommanded to use.				to use.
+
+Arrays are not implemented based on data 	Collections are implemented based on data structure
+structure concept.Hence we can't expect 	concept.Hence we can expect readymade methods.
+any readymade method.
+
+It supports primitive types and object types.	It supports only object types.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<httml>
+    <head>
+        <title> my page </title>
+    </head>
+    <body>
+        <table align="center">
+            <tr>
+                <td>feet</td>
+                <td>&nbsp;</td>
+                <td>centemeter</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="feet"/></td>
+                <td><big>=</big></td>
+                <td><input type="text" id="centemeter"/></td>
+            </tr>
+        </table>
+        <script>
+            var feet=document.getElementById('feet');
+            var centemeter=document.getElementById('centemeter');
+
+            feet.addEventListener('input',function(){
+                var f=this.value;
+                var i=f*30.4;
+                centemeter.value=i;
+            })
+            
+            centemeter.addEventListener('input',function(){
+                var f=this.value;
+                var i=f/30.4;
+                if(f=!Number.isInteger(i))
+                {
+                    f=f.tofixed(2);
+                }
+                feet.value=i;
+            })
+        </script>
+    </body>
+</httml>

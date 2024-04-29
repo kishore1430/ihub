@@ -1,0 +1,530 @@
+Q) Types of tags in html ?
+
+We have two types of tags in HTML.
+
+1) Paired tags  / Container tags 
+-------------------------------
+Paired tags contain opening tag and closing tag.
+ex:
+	<h1>, <body> , <head> , <title>, <p> and etc.
+
+2) Unpaired tags / Empty tags 
+------------------------------
+Unpaired tags contain opening tag but do not have any closing tag.
+ex:
+	<br>, <hr> , <meta> , <link> , <img> and etc.
+
+Q) Types of elements in HTML? 
+
+We have two types of elements in HTML.
+
+1) Block Elements 
+-----------------
+Block elements always start with new line.
+
+They will occupy 100% of width.
+
+ex:
+	<h1>, <p> , <div> and etc.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<h1>This is heading tag </h1>
+		<p>This is paragraph tag</p>
+		<div>This is division tag</div>
+	</body>
+</html>
+
+
+
+
+2) Inline Elements 
+-------------------
+Inline elements start with same line.
+
+They will occupy the width as much as required.
+
+ex:
+	<b>,<i>,<span>,<u> and etc.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<i>It is italic tag</i>
+		<b>It is bold tag</b>
+		<span>It is span tag</span>
+	</body>
+</html>	
+
+
+Q) Types of list in HTML?
+
+We have three types of list in HTML.
+
+1) Ordered list 
+
+2) Unordered list 
+
+3) Description list 
+
+1) Ordered list
+----------------
+A <ol> tag is used to represent ordered list with numerics and alphabets.
+
+An ordered list contains list of items.
+
+Each list of item we need to represent by using <li> tag.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Courses:
+			<ol>
+				<li>MangoDB</li>
+				<li>ExpreessJS</li>
+				<li>ReactJS</li>
+				<li>NodeJS</li>
+			</ol>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Courses:
+			<ol start="101">
+				<li>MangoDB</li>
+				<li>ExpreessJS</li>
+				<li>ReactJS</li>
+				<li>NodeJS</li>
+			</ol>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Courses:
+			<ol type="i">
+				<li>MangoDB</li>
+				<li>ExpreessJS</li>
+				<li>ReactJS</li>
+				<li>NodeJS</li>
+			</ol>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Courses:
+			<ol type="a">
+				<li>MangoDB</li>
+				<li>ExpreessJS</li>
+				<li>ReactJS</li>
+				<li>NodeJS</li>
+			</ol>
+	</body>
+</html>
+
+2) Unordered list 
+-------------------
+A <ul> tag is used to represent unorderlist with bullets.
+
+An unordered list contains list of items.
+
+Each list of item we need to represent by using <li> tag.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Course:
+			<ul>
+				<li>MongoDB</li>
+				<li>ExpressJS</li>
+				<li>AngularJS</li>
+				<li>NodeJS </li>
+			</ul>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Course:
+			<ul type="circle">
+				<li>MongoDB</li>
+				<li>ExpressJS</li>
+				<li>AngularJS</li>
+				<li>NodeJS </li>
+			</ul>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Course:
+			<ul type="square">
+				<li>MongoDB</li>
+				<li>ExpressJS</li>
+				<li>AngularJS</li>
+				<li>NodeJS </li>
+			</ul>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		Course:
+			<ul type="disc">
+				<li>MongoDB</li>
+				<li>ExpressJS</li>
+				<li>AngularJS</li>
+				<li>NodeJS </li>
+			</ul>
+	</body>
+</html>
+
+3) Description list 
+--------------------
+A <dl> tag is used to represent description list.
+
+A description list contains description term and description definition.
+
+A <dt> tag is used to represent description term.
+
+A <dd> tag is used to represent description defintion.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<dl>
+			<dt>HTML</dt>
+			<dd>It is a widely used language on web</dd>
+		</dl>
+
+		<dl>
+			<dt>CSS</dt>
+			<dd>CSS stands for Cascading Styles Sheet</dd>
+		</dl>
+	</body>
+</html>
+
+HTML forms
+===========
+A form is used to accept the data from enduser.
+
+It will send the data to server or database for processing.
+
+To declare a form in html we need to use <form> tag.
+
+We have following list of form components.
+
+ex:
+	
+	Label
+	TextField
+	PasswordField 
+	Radio button 
+	Checkbox 
+	Select box 
+	buttons 
+	textarea
+	and etc.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<form>
+			UserName: <input type="text" name="t1"/> <br>
+			Password: <input type="password" name="t2"/> <br>
+			Age: <input type="number" name="t3"/> <br> 
+			Gender:
+			<input type="radio" name="t4" value="male"/>MALE
+			<input type="radio" name="t4" value="female"/>FEMALE
+			<br>
+			Maritial status:
+			<input type="checkbox" name="t5" value="married"/> MARRIED
+			<input type="checkbox" name="t5" value="single"/> SINGLE
+			<br>
+			Qualification:
+			<select name="t6">
+				<option value="">none</option>
+				<option value="btech">B.TEC</option>
+				<option value="bsc">B.SC</option>
+				<option value="bcom">B.COM</option>
+			</select>
+			<br>
+			Address: <textarea rows="5" cols="10"> </textarea>
+			<br>
+			<input type="submit" value="submit"/>
+			<input type="reset" value="reset"/>
+
+		</form>
+	</body>
+</html>
+
+ex:
+----
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<form>
+			UserName: <input type="text" name="t1" autocomplete="off" required/> <br>
+			Password: <input type="password" name="t2" required/> <br>
+			Age: <input type="number" name="t3" required/> <br> 
+			Gender:
+			<input type="radio" name="t4" value="male"/>MALE
+			<input type="radio" name="t4" value="female"/>FEMALE
+			<br>
+			Maritial status:
+			<input type="checkbox" name="t5" value="married"/> MARRIED
+			<input type="checkbox" name="t5" value="single"/> SINGLE
+			<br>
+			Qualification:
+			<select name="t6">
+				<option value="">none</option>
+				<option value="btech">B.TEC</option>
+				<option value="bsc">B.SC</option>
+				<option value="bcom">B.COM</option>
+			</select>
+			<br>
+			Address: <textarea rows="5" cols="10"> </textarea>
+			<br>
+			<input type="submit" value="submit"/>
+			<input type="reset" value="reset"/>
+
+		</form>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>
+		<form>
+			<input type="text" name="t1" placeholder="enter email" 
+			autocomplete="off" required/> <br>
+			<input type="password" name="t2" placeholder="enter password" required/> <br> 
+			<input type="submit" value="Login"/> <br> 
+		</form>	
+		</center>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

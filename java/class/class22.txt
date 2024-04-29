@@ -1,0 +1,753 @@
+Encapsulation
+=============
+The process of encapsulating or grouping variables and it's associate methods in a single entity is called encapsulation.
+
+Abstraction is used to hide the data and encapsulation is used to protect the data.
+
+Diagram: class22.1
+
+A class is said to be encapsulated class if it supports data hiding and abstraction.
+
+In encapsulation for every variable we need to write setter and getter method.
+
+Diagram: class22.2
+
+The main advantages of encapsulation are 
+
+1) It gives security. 
+
+2) Enhancement becomes more easy.
+
+3) It provides flexibility to the enduser.
+
+4) It improves maintainability of an application.
+
+The main disadvantage of encapsulation is , it will increase the length of our code and slow down the execution process.
+
+approach1
+----------
+class Student 
+{
+	//current class variables 
+	private int studId;
+	private String studName;
+	private double studFee;
+
+	//setter methods
+	public void setStudId(int studId)
+	{
+		this.studId=studId;
+	}
+	public void setStudName(String studName)
+	{
+		this.studName=studName;
+	}
+	public void setStudFee(double studFee)
+	{
+		this.studFee=studFee;
+	}
+	
+	//getter methods
+	public int getStudId()
+	{
+		return studId;
+	}
+	public String getStudName()
+	{
+		return studName;
+	}
+	public double getStudFee()
+	{
+		return studFee;
+	}
+
+	//main method 
+	public static void main(String[] args)
+	{
+		Student s=new Student();
+		s.setStudId(101);
+		s.setStudName("Alan");
+		s.setStudFee(1000d);
+
+		System.out.println("Student Id :"+s.getStudId());
+		System.out.println("Student Name :"+s.getStudName());
+		System.out.println("Student Fee :"+s.getStudFee());
+	}
+}
+
+approach2
+---------
+class Student 
+{
+	//current class variables 
+	private int studId;
+	private String studName;
+	private double studFee;
+
+	//setter methods
+	public void setStudId(int studId)
+	{
+		this.studId=studId;
+	}
+	public void setStudName(String studName)
+	{
+		this.studName=studName;
+	}
+	public void setStudFee(double studFee)
+	{
+		this.studFee=studFee;
+	}
+	
+	//getter methods
+	public int getStudId()
+	{
+		return studId;
+	}
+	public String getStudName()
+	{
+		return studName;
+	}
+	public double getStudFee()
+	{
+		return studFee;
+	}
+
+	
+}
+class Test 
+{
+	//main method 
+	public static void main(String[] args)
+	{
+		Student s=new Student();
+		s.setStudId(101);
+		s.setStudName("Alan");
+		s.setStudFee(1000d);
+
+		System.out.println("Student Id :"+s.getStudId());
+		System.out.println("Student Name :"+s.getStudName());
+		System.out.println("Student Fee :"+s.getStudFee());
+	}
+}
+
+
+
+Q) What is tightly encapsulated class?
+
+A class is said to be tightly encapsulated if and only if all the variables of that class must be private.Here we don't need to check these variables having setter and getter methods.
+
+ex:
+	class A 
+	{
+		private int i;
+		private int j;
+	}
+
+ex:
+	class A 
+	{
+		private int i;
+	}
+	class B extends A 
+	{
+		private int j;
+	}
+
+Q) What is difference between POJO class and Java Bean class?
+
+POJO
+=====
+POJO stands for Plain Old Java Object.
+
+A class is said to be pojo class if it supports following two properties.
+
+1) All variables must be private.
+
+2) All variables must have setter and getter methods.
+
+Java Bean
+=========
+A class is said to be java bean class if it supports following four properties.
+
+1) A class should be public.
+
+2) A class should have atleast zero argument constructor.
+
+3) All variables must be private.
+
+4) All variables must have setter and getter methods.
+
+
+
+Is-A relationship
+=================
+Is-A relationship is also known as inheritance.
+
+Using extends keyword we can implements Is-A relationship.
+
+The main objective of Is-A relationship is to provide reusability.
+
+ex:
+---
+class Parent 
+{
+	public void m1()
+	{
+		System.out.println("M1-Method");
+	}
+}
+class Child extends Parent 
+{
+	public void m2()
+	{
+		System.out.println("M2-Method");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Parent p=new Parent();
+		p.m1();
+
+		Child c=new Child();
+		c.m1();
+		c.m2();
+
+		Parent p1=new Child();
+		p1.m1();
+
+		//Child c1=new Parent(); // C.T.E 
+	}
+}
+
+conclusion
+----------
+Whatever parent contains properties bydefault they goes to child.But whatever child contains properties they never go back to parent.
+
+A parent reference can hold child object.But child reference can't hold parent object.
+
+Inheritance
+===========
+Inheritance is a mechanism where one class will inherit the properties of another class.
+or
+Inheritance is a mechanism where we will derive a class in the presence of existing class. 
+
+The main objective of inheritance is to achieve reusability.
+
+Diagram: class22.3
+
+We have following types of inheritance in java.
+
+1) Single Level Inheritance 
+
+2) Multi Level Inheritance 
+
+3) Multiple Inheritance 
+
+4) Hierarchical Inheritance 
+
+5) Hybrid Inheritance 
+
+1) Single Level Inheritance 
+---------------------------
+If we derived a class in the presence of one base class is called single level inheritance.
+
+Diagram:
+		A (parent/ super / base class)
+		|
+		|
+		|
+		B (child / sub / derived class)
+
+ex:
+---
+class A
+{
+	public void m1()
+	{
+		System.out.println("M1-Method");
+	}
+}
+class B extends A
+{
+	public void m2()
+	{
+		System.out.println("M2-Method");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		A a=new A();
+		a.m1();
+		
+		B b=new B();
+		b.m1();
+		b.m2();
+	}
+}
+
+2) Multi Level Inheritance
+-----------------------
+If we derived a class in the presence of one base class and that class is derived from another base class is called multi level inheritance.
+
+Diagram:
+		A
+		|
+		|
+		B
+		|
+		|
+		C
+
+ex:
+---
+class A
+{
+	public void m1()
+	{
+		System.out.println("M1-Method");
+	}
+}
+class B extends A
+{
+	public void m2()
+	{
+		System.out.println("M2-Method");
+	}
+}
+class C extends B 
+{
+	public void m3()
+	{
+		System.out.println("M3-Method");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		A a=new A();
+		a.m1();
+		
+		B b=new B();
+		b.m1();
+		b.m2();
+
+		C c=new C();
+		c.m1();
+		c.m2();
+		c.m3();
+	}
+}
+
+3) Multiple inheritance
+-----------------------
+
+In java, we can't extends more then one class simultenously because java does not support multiple inheritance.
+ex:
+	class A 
+	{}
+	class B 
+	{}
+	class C extends A,B  --> invalid 
+	{	
+	}
+
+But interface can extends more then one interface so we can achieve multiple inheritance concept through interfaces.
+ex:
+	interface A 
+	{
+	}
+	interface B
+	{	
+	}
+	interface C extends A,B --> valid 
+	{
+	}
+	
+If our class does not extends any other class then it is a direct child class of Object class.
+
+ex:				diag:
+	class A				Object 
+	{				|
+					|
+	}				A 
+
+If our class extends some other class then our class is a indirect child class of Object class.
+
+ex:				diag:
+	class A				Object
+	{				|
+	}				|
+	class B extends A 		A	
+	{				|
+	}				|
+					B
+
+Java does not support cyclic inheritance.
+ex:
+	class A extends B 
+	{	
+	}
+	class B extends A 
+	{	
+	}
+
+Q) Why java does not support multiple inheritance?
+
+There is a chance of raising ambiguity problem that's why java does not support multiple inheritance.
+
+ex:
+		p1.m1()				p2.m1()
+		   |				  |
+		   --------------------------------
+				|
+				c.m1()	
+
+
+
+4) Hierarchical Inheritance
+---------------------------
+If multiple classes are derived from one base class is called hierarchical inheritance.
+
+Diag:
+			A
+			|
+	|-------------------------------|
+	B				C
+
+ex:
+---
+class A
+{
+	public void m1()
+	{
+		System.out.println("M1-Method");
+	}
+}
+class B extends A
+{
+	public void m2()
+	{
+		System.out.println("M2-Method");
+	}
+}
+class C extends A 
+{
+	public void m3()
+	{
+		System.out.println("M3-Method");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		A a=new A();
+		a.m1();
+		
+		B b=new B();
+		b.m1();b.m2();
+		
+
+		C c=new C();
+		c.m1();
+		c.m3();
+	}
+}
+
+5) Hybrid inheritance
+---------------------
+It is a combination of more then one inheritance.
+
+Java does not support hybrid inheritance.
+
+Diagram:
+			A
+			|
+	|-------------------------------|
+	B				C
+	|-------------------------------|
+			|
+			D
+	
+
+Has-A relationship
+===================
+Has-A relationship is also known as composition and aggregation.
+
+There is no specific keyword to implements Has-A relationship but mostly we will use new operator.
+
+The main objective of Has-A relationship is to provide reusability.
+
+Has-A relationship will increase dependency between two components.
+
+ex:
+	class Engine 
+	{
+		-
+		- //engine specific functionality
+		-
+	}
+	class Car 
+	{
+		Engine e=new Engine();
+			
+	}
+
+
+ex:
+---
+class Ihub
+{
+	public String courseName()
+	{
+		return "Full Stack Java With AWS";
+	}
+	public double courseFee()
+	{
+		return 25000d;
+	}
+	public String trainerName()
+	{
+		return "Niyaz Sir";
+	}
+}
+class Usha 
+{
+	public void getCourseDetails()
+	{
+		Ihub i=new Ihub();
+		System.out.println("Course Name :"+i.courseName());
+		System.out.println("Course Fee :"+i.courseFee());
+		System.out.println("Trainer Name :"+i.trainerName());
+	}
+}
+class Student
+{
+	public static void main(String[] args)
+	{
+		Usha u=new Usha();
+		u.getCourseDetails();
+	}
+}
+
+composition
+===========
+Without existing container object there is no chance of having contained object then the relationship between container and contained object is called composition which is strongly association.
+
+Diagram: class22.4
+
+
+aggregation
+===========
+Without existing container object there is a chance of having contained object then the relationship between container and contained object is called aggregation which is loosely association.
+
+Diagram: class22.5
+
+Method overloading
+==================
+Having same method name with different parameters in a single class is method overloading.
+
+All the methods present in a class are called overloaded methods.
+
+Method overloading will reduce complexity of the programming.
+
+ex:
+---
+class MeeSeva
+{
+	//overloaded methods 
+	public void search(int voterId)
+	{
+		System.out.println("Details Found via voterId");
+	}
+	public void search(String houseNo)
+	{
+		System.out.println("Details Found via houseNo");
+	}
+	public void search(long aadharNo)
+	{
+		System.out.println("Details Found via aadharNo");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		MeeSeva ms=new MeeSeva();
+		ms.search(101);
+		ms.search("1-4-76");
+		ms.search(10001L);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

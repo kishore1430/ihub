@@ -1,0 +1,709 @@
+CSS float property
+==================
+It is widely used property on a web page.
+
+The float property specifies how an element should float.
+
+value		Description
+-----------	-----------------
+none		The element does not float.
+
+left		the element floats to the left of its container.
+
+right		The element floats to the right of its container.
+
+ex:1
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:300px;
+				height:300px;
+				border:2px solid blue;
+				float:none;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+				
+			</div>
+			<div>
+				
+			</div>
+	</body>
+</html>
+
+ex:2
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:300px;
+				height:300px;
+				border:2px solid blue;
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+				
+			</div>
+			<div>
+				
+			</div>
+	</body>
+</html>
+
+ex:3
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:300px;
+				height:300px;
+				border:2px solid blue;
+				float:right;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+				
+			</div>
+			<div>
+				
+			</div>
+	</body>
+</html>
+
+ex:4
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:300px;
+				height:300px;
+				border:2px solid blue;
+				float:left;
+				margin:50px 140px;
+			}
+		</style>
+	</head>
+	<body>
+			<div>
+				
+			</div>
+			<div>
+				
+			</div>
+	</body>
+</html>
+
+
+> Types of selectors in CSS
+===========================
+We have five selectors in CSS.
+
+1)Element selector 
+------------------
+The element selector selects HTML elements based on element name.
+
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				color:blue;
+				background-color:cyan;
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+			<h1> Heading Tag </h1>
+			<h1> Heading Tag </h1>
+	</body>
+</html>
+
+
+2)Id selector 
+---------------
+The id selector uses the id attribute of an HTML element to select a specific element.
+
+The id of an element is unique within a page, so the id selector is used to select one unique element.
+
+To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+
+
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			#id1
+			{
+				color:blue;
+				background-color:cyan;
+			}
+			#id2
+			{
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+			<h1 id="id1"> Heading Tag </h1>
+			<h1 id="id2"> Heading Tag </h1>
+	</body>
+</html>
+
+Once element can accept only one ID at a time.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			#id1
+			{
+				color:blue;
+				background-color:cyan;
+			}
+			#id2
+			{
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+			<h1 id="id1"> Heading Tag </h1>
+			<h1 id="id2"> Heading Tag </h1>
+			<h1 id="id1 id2"> Heading Tag</h1>
+	</body>
+</html>
+
+3)Class selector 
+----------------
+The class selector selects HTML elements with a specific class attribute.
+
+To select elements with a specific class, write a period (.) character,
+followed by the class name.
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.myClass1
+			{
+				color:blue;
+				background-color:cyan;
+			}
+			.myClass2
+			{
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+			<h1 class="myClass1"> Heading Tag </h1>
+			<h1 class="myClass2"> Heading Tag </h1>
+	</body>
+</html>
+
+We can declare multiple classes in a single element.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			.myClass1
+			{
+				color:blue;
+				background-color:cyan;
+			}
+			.myClass2
+			{
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+			<h1 class="myClass1"> Heading Tag </h1>
+			<h1 class="myClass2"> Heading Tag </h1>
+			<h1 class="myClass1 myClass2"> Heading Tag</h1>
+	</body>
+</html>
+
+4)Group selector
+-----------------
+The grouping selector selects all the HTML elements with the same style
+definitions
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1,p,div
+			{
+				color:red;
+				background-color:rgb(255, 255, 0);
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>Heading Tag</h1>
+			<p>Paragraph Tag</p>
+			<div>Division T ag</div>
+	</body>
+</html>
+
+5)Universal selector
+-------------------
+The universal selector (*) selects all HTML elements on the page.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			*
+			{
+				color:red;
+				background-color:rgb(255, 255, 0);
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>Heading Tag</h1>
+			<p>Paragraph Tag</p>
+			<div>Division T ag</div>
+	</body>
+</html>
+
+
+CSS clear property 
+==================
+The clear property controls the flow next to floated elements. 
+
+
+ex:1
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			#box1
+			{
+				width:200px;
+				height:200px;
+				background-color:rgb(255,0,0);
+				float:left;
+			}
+			#box2
+			{
+				width:200px;
+				height:200px;
+				background-color:hsl(60, 100%, 50%);
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+			<div id="box1"></div>
+			<div id="box2"></div>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			#box1
+			{
+				width:200px;
+				height:200px;
+				background-color:rgb(255,0,0);
+				float:left;
+			}
+			#box2
+			{
+				width:200px;
+				height:200px;
+				background-color:hsl(60, 100%, 50%);
+				float:right;
+			}
+		</style>
+	</head>
+	<body>
+			<div id="box1"></div>
+			<div id="box2"></div>
+	</body>
+</html>
+
+ex:3
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			#box1
+			{
+				width:200px;
+				height:200px;
+				background-color:rgb(255,0,0);
+				float:left;
+			}
+			#box2
+			{
+				width:200px;
+				height:200px;
+				background-color:hsl(60, 100%, 50%);
+				float:right;
+			}
+			#box3
+			{
+				width:100%;
+				height:200px;
+				background-color:#00ff00;
+				clear:none;
+			}
+		</style>
+	</head>
+	<body>
+			<div id="box1"></div>
+			<div id="box2"></div>
+			<div id="box3"></div>
+	</body>
+</html>
+
+ex:4
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			#box1
+			{
+				width:200px;
+				height:200px;
+				background-color:rgb(255,0,0);
+				float:left;
+			}
+			#box2
+			{
+				width:200px;
+				height:200px;
+				background-color:hsl(60, 100%, 50%);
+				float:right;
+			}
+			#box3
+			{
+				width:100%;
+				height:200px;
+				background-color:#00ff00;
+				clear:both;
+			}
+		</style>
+	</head>
+	<body>
+			<div id="box1"></div>
+			<div id="box2"></div>
+			<div id="box3"></div>
+	</body>
+</html>
+
+ex:5
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			#box1
+			{
+				width:200px;
+				height:300px;
+				background-color:rgb(255,0,0);
+				float:left;
+			}
+			#box2
+			{
+				width:200px;
+				height:200px;
+				background-color:hsl(60, 100%, 50%);
+				float:right;
+			}
+			#box3
+			{
+				width:100%;
+				height:200px;
+				background-color:#00ff00;
+				clear:left;
+			}
+		</style>
+	</head>
+	<body>
+			<div id="box1"></div>
+			<div id="box2"></div>
+			<div id="box3"></div>
+	</body>
+</html>
+
+ex:6
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			#box1
+			{
+				width:200px;
+				height:300px;
+				background-color:rgb(255,0,0);
+				float:left;
+			}
+			#box2
+			{
+				width:200px;
+				height:200px;
+				background-color:hsl(60, 100%, 50%);
+				float:right;
+			}
+			#box3
+			{
+				width:100%;
+				height:200px;
+				background-color:#00ff00;
+				clear:right;
+			}
+		</style>
+	</head>
+	<body>
+			<div id="box1"></div>
+			<div id="box2"></div>
+			<div id="box3"></div>
+	</body>
+</html>
+
+
+
+CSS Display property
+======================
+The display property spcifies the display behaviour of an element.
+
+syntax
+--------
+	display: value;
+
+value		description
+---------	-------------------
+none		The element is completely removed.
+
+inline 		displays an element as on inline element.
+		Any height and width properties will not effect.
+
+block		Displays an element as block element.
+		IT starts on a new line and takes up the whole width.
+
+inline-block	displays an element as an inline-level container.
+		The element itself is formatting  as an inline element.
+		but we can apply height and width values.
+
+inherit		Inherits this property from its parent element.
+
+
+
+ex:1
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			h1
+			{
+				display:none;
+			}
+			p
+			{
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>Heading Tag</h1>
+			<p>Paragraph Tag</p>
+	</body>
+</html>
+
+ex:2
+-----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				display:inline;
+			}
+		</style>
+	</head>
+	<body>
+			<div>Division Tag</div>
+			<div>Division Tag</div>
+			<div>Division Tag</div>
+	</body>
+</html>
+
+ex:3
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			span
+			{
+				display:block;
+				border:2px solid black;
+				width:50%;
+			}
+		</style>
+	</head>
+	<body>
+			<span>Span Tag</span>
+			<span>Span Tag</span>
+			<span>Span Tag</span>
+	</body>
+</html>
+
+ex:4
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			span
+			{
+				display:inline-block;
+				border:2px solid black;
+				width:200px;
+			}
+		</style>
+	</head>
+	<body>
+			<span>Span Tag</span>
+			<span>Span Tag</span>
+			<span>Span Tag</span>
+	</body>
+</html>
+
+box-sizing  property
+=====================
+The box-sizing property defines how the width and height of an element are calculated: should they include padding and borders, or not.
+
+
+box-sizing:content-box
+----------------------------
+It will take seperate width,border and padding.But it will not take  margin.
+ex:1
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:300px;
+				height:300px;
+				background-color:yellow;
+				border:2px solid red;
+				padding:10px;
+				box-sizing:content-box;
+			}
+		</style>
+	</head>
+	<body>
+			<div></div>
+	</body>
+</html>
+
+box-sizing:border-box
+---------------------------
+It includes width,border and padding.But it will not include marging.
+
+ex:2
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+		<style>
+			div
+			{
+				width:300px;
+				height:300px;
+				background-color:yellow;
+				border:2px solid red;
+				padding:10px;
+				box-sizing:border-box;
+			}
+		</style>
+	</head>
+	<body>
+			<div></div>
+	</body>
+</html>
+
+
+
+

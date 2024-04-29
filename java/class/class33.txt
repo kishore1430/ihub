@@ -1,0 +1,415 @@
+Stack
+======
+Stack is a child class of Vector class.
+
+If we depends upon Last In First Out order then we need to use Stack.
+
+constructor
+-----------
+	Stack s=new Stack();
+
+Methods
+--------
+1) push(Object o)
+----------------
+	It is used to insert the element to stack.
+2) pop() 
+--------
+	It is used to remove the element from stack.
+
+3) peek()
+--------
+	It will return toppest element of a stack.
+
+4) isEmpty()
+----------
+	It is used to check stack is empty or not.
+
+5) search(Object o)
+--------------------
+	It will search an element and return offset value.If element is 
+	not found then it will return -1.
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Stack<String> s=new Stack<String>();
+		s.push("A");
+		s.push("B");
+		s.push("C");
+		System.out.println(s); // [A,B,C]
+		s.pop();
+		System.out.println(s); // [A,B]
+
+		System.out.println(s.peek());//B 
+
+		System.out.println(s.isEmpty());// false 
+
+		System.out.println(s.search("A")); //2
+		
+		System.out.println(s.search("Z")); //-1
+
+	}
+}
+
+Q) Write a java program to check given string is balanced or not?
+
+Input:
+	{[()]}
+
+Output:
+	It is a balanced string 
+
+ex:
+
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="{[()]}";
+		//caller method 
+		if(isBalanced(str.toCharArray()))
+			System.out.println("It is balanced string");
+		else
+			System.out.println("It is not balanced string");
+	}
+	public static boolean isBalanced(char[] carr)
+	{
+		Stack<Character> s=new Stack<Character>();
+		//for each loop
+		for(char ch:carr)
+		{
+			if(ch=='{' || ch=='[' || ch=='(')
+			{
+				s.push(ch);
+			}
+			else if(ch=='}' && !s.isEmpty() && s.peek()=='{')
+			{
+				s.pop();
+			}
+			else if(ch==']' && !s.isEmpty() && s.peek()=='[')
+			{
+				s.pop();
+			}
+			else if(ch==')' && !s.isEmpty() && s.peek()=='(')
+			{
+				s.pop();
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		return s.isEmpty();
+	}
+}
+
+Set 
+=====
+It is a child interface of Collection interface.
+
+If we want to represent group of individual objects in a single entity where duplicate objects are not allowed and order is not preserved then we need to use Set interface.
+
+Diagram: class33.1
+
+HashSet
+========
+The underlying data structure is Hashtable.
+
+Duplicate objects are not allowed.
+
+Order is not preserved because it will take hashcode of an object.
+
+Hetrogeneous objects are allowed.
+
+Null insertion is possible.
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		HashSet hs=new HashSet();
+		hs.add("one");
+		hs.add("six");
+		hs.add("nine");
+		hs.add("four");
+		System.out.println(hs);//[nine, six, four, one]
+		hs.add("one");
+		System.out.println(hs);//[nine,six,four,one]
+		hs.add(10);
+		System.out.println(hs);//[nine, six, four, one, 10]
+		hs.add(null);
+		System.out.println(hs);//[null, nine, six, four, one, 10]
+
+	}
+	
+}
+
+LinkedHashSet
+=============
+It is a child class of HashSet class.
+
+LinkedHashSet is same as HashSet class with following differences.
+
+HashSet					LinkedHashSet
+------------				--------------
+The underlying data structure is 	The underlying data structure is Hashtable
+Hashtable.				and LinkedList.
+
+Insertion order is not preserved.	Insertion order is preserved.
+
+It is introduced in 1.2v.		It is introduced in 1.4v.
+
+ex:
+---
+
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		LinkedHashSet lhs=new LinkedHashSet();
+		lhs.add("one");
+		lhs.add("six");
+		lhs.add("nine");
+		lhs.add("four");
+		System.out.println(lhs);//[one,six,nine,four]
+		lhs.add("one");
+		System.out.println(lhs);//[one,six,nine,four]
+		lhs.add(10);
+		System.out.println(lhs);//[one,six,nine,four,10]
+		lhs.add(null);
+		System.out.println(lhs);//[one,six,nine,four,10,null]
+
+	}
+	
+}
+
+
+Q) Write a java program to display distinct elements from given array?
+
+input:
+	1 2 2 3 3 3 4 4 4 4
+
+output:
+	1 2 3 4 
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[] arr={1,2,2,3,3,3,4,4,4,4};
+		
+		Set<Integer> s=new LinkedHashSet<Integer>();
+
+		for(int i:arr)
+		{
+			s.add(i);
+		}
+
+		s.forEach(element -> System.out.print(element+" "));
+	}
+	
+}
+
+TreeSet
+========
+The underlying data structure is Balanced Tree.
+
+Duplicate objects are not allowed.
+
+Order is not preserved because it will take sorting order of an object.
+
+Hetrogeneous objects are not allowed.If we insert hetrogeneous object then we will get runtime exception called ClassCastException.
+
+Null insertion it not possible.If we insert null then we will get runtime exception called NullPointerException.
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		TreeSet ts=new TreeSet();
+		ts.add(10);
+		ts.add(5);
+		ts.add(2);
+		ts.add(9);
+		ts.add(1);
+		System.out.println(ts);//[1,2,5,9,10]
+		ts.add(10);
+		System.out.println(ts);//[1,2,5,9,10]
+		//ts.add(null); 
+		//System.out.println(ts);//NullPointerException
+		//ts.add("hi");
+		//System.out.println(ts);//ClassCastException
+	}
+	
+}
+
+Q) Write a java program to display duplicate and unique elements from given array?
+
+input:
+	3 6 2 1 4 9 9 4 3 
+
+output:
+	uniques : 3 6 2 1 4 9
+	duplicates : 9 4 3 
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[] arr={3,6,2,1,4,9,9,4,3};
+
+		Set<Integer> uniques=new LinkedHashSet<Integer>();
+		Set<Integer> duplicates=new LinkedHashSet<Integer>();
+
+		for(int i:arr)
+		{
+			if(uniques.contains(i))
+			{
+				if(!duplicates.contains(i))
+				{
+					duplicates.add(i);
+				}
+			}
+			uniques.add(i);
+		}
+		uniques.forEach(element -> System.out.print(element+" "));
+		System.out.println();
+		duplicates.forEach(element -> System.out.print(element+" "));
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

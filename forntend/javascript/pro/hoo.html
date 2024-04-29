@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My page </title>
+
+		<!-- fontawesome icon cdn link -->
+   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+   	<style type="text/css">
+   		.myClass
+   		{
+   			padding-right:25px;
+   		}
+   		#myId
+   		{
+   			position: relative;
+   			right:25px;
+   		}
+   	</style>
+
+	</head>
+	<body>
+		<center>
+			Password: <input type="password" id="t1" class="myClass"/>
+
+	<span class="fa fa-eye" id="myId" onclick="f1()"></span>
+
+			<script>
+				function f1()
+				{
+					var x=document.getElementById('t1');
+					if(x.type=="password")
+					{
+						x.type="text";
+					}
+					else
+					{
+						x.type="password";
+					}
+				}
+			</script>
+		</center>
+	</body>
+</html>

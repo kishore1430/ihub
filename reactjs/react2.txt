@@ -1,0 +1,307 @@
+JSX
+====
+JSX stands for JavaScript XML.
+
+JSX allows us to write HTML code in javascript.
+
+JSX elements contain tags, attributes and childrens.
+
+JSX is not neccessity to develop react applications instead we can use Babel.
+
+JSX makes our program simple and elegant.
+
+JSX ultimately transpile to pure javascript.
+
+
+JSX elements
+============
+JSX elements allows us to write html code without using createElement() method and appendChild() method.
+
+ex:1
+----
+	JSX
+	----
+		<h1> Heading Tag </h1>
+
+	Babel
+	-----
+		React.createElement("h1",null,"Heading Tag");	
+
+		Here "h1" is a tag name 
+		Here "null" is a optional attribute 
+		Here "Heading" Tag is a children
+
+ex:2
+----
+	JSX
+	---
+		<div>
+			<h1> Heading Tag </h1>
+		</div>
+
+	Babel
+	----
+		React.createElement("div",null,
+				React.createElement("h1",null,"Heading Tag"));
+
+ex:3
+-----
+	JSX
+	----
+		<h1 id="myId"> Heading Tag </h1>
+
+	Babel
+	----
+		React.createElement("h1",{id:"myId"},"Heading Tag");
+
+ex:4
+----
+	JSX
+	----
+		<h1 className="myClass"> Heading Tag </h1>
+
+	Babel
+	----
+		React.createElement("h1",{className:"myClass"},"Heading Tag");
+
+
+ex:5
+----
+	JSX
+	----
+		<h1 id="myId" className="myClass"> Heading Tag </h1>
+
+	Babel
+	-----
+		React.createElement("h1",{id:"myId",className:"myClass"},"Heading Tag");
+
+JSX Expression
+==============
+JSX expression is used to represent expression in a curly braces i.e {}.
+
+JSX expression can be a variables, constants or any valid javascript expression.
+
+ex:
+	var a=10;
+	{a}
+
+ex:
+	{10 + 20}
+
+ex:
+	{Math.random()}
+
+
+NPM
+====
+A npm stands for Node Package Manager.
+
+It is a integrated tool for NodeJs.
+
+A npm is used to install node modules or packages or dependencies.
+
+We will use following command to install node module or packages or dependencies.
+
+ex:
+	npm install -g  node_module_name/dependency_name/ package_name
+
+All node modules will install inside "node_modules" folder.
+
+
+Steps to work with npm
+==========================
+step1:
+-----
+	Download and Install nodejs software.
+	ex:
+		https://nodejs.org/en
+
+step2:
+------
+	Copy nodejs directory.
+	ex:
+		C:\Program Files\nodejs
+
+step3:
+-----
+	Paste nodejs directory in environmental variables.
+	ex:
+		right click to my pc --> properties --> advanced system settings
+		---> environmental variables 
+		
+		user variables --> click to new button -->
+
+		variable name : path 
+		variable value : 
+		C:\Program Files\nodejs;C:\Users\Dell\AppData\Roaming\npm;
+			
+step4:
+----
+	Check the environmental setup done perfectly or not.
+	ex:
+		cmd> node  -v
+		cmd> npm -v 
+
+step5:
+-------
+	Install npm by using below command.
+	ex:
+		
+		cmd> npm install -g create-react-app
+
+
+Steps to develop First React application
+==========================================
+step1:
+-----
+	Make sure Nodejs setup is done perfectly.
+
+step2:
+-----
+	Download and Install VSC (Visual Code Editor) editor.
+	ex:
+		https://code.visualstudio.com/	
+
+step3:
+-----
+	Create a "ReactProjects" folder inside "E" drive.
+ 
+
+step4:
+-----
+	Open the command prompt from "Reactprojects" folder.
+
+step5:
+------
+	Open VSC editor from "Reactprojects" folder.
+	ex:
+		Reactprojects> code  . 
+
+step6:
+-----
+	Create a react application/project i.e myapp1.
+	ex:
+	
+		Reactprojects>npx create-react-app  myapp1
+
+step7:
+------
+	Switch to the react project.
+	ex:
+		Reactprojects> cd  myapp1
+
+step8:
+------
+	Run the react project by using below command.
+	ex:
+		Reactprojects/myapp1> npm start 
+
+step9:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+Note:
+------
+React application runs in a light weight development server with default 
+3000 port no. 
+
+
+Action Labs
+===========
+
+Q) Write a java program to display lucky number from given array?
+
+Input:
+	1 2 2 3 3 3 
+
+Output:
+	3
+
+Input:
+	1 1 2 2 2 3 3 3 3 
+
+Output:
+	-1 		
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int[] arr={1,2,2,3,3,3};
+
+		System.out.println(luckyNumber(arr));
+	}
+	public static int luckyNumber(int[] arr)
+	{
+		HashMap<Integer,Integer> hm=new HashMap<Integer,Integer>();
+
+		for(int i:arr)
+		{
+			if(hm.containsKey(i))
+			{
+				hm.put(i,hm.get(i)+1);
+			}
+			else
+			{
+				hm.put(i,1);
+			}
+		}
+		int x=0;
+		int max=-1;
+
+		for(Map.Entry<Integer,Integer> entry: hm.entrySet())
+		{
+			if(entry.getKey()==entry.getValue())
+			{
+				x=entry.getValue();
+				max=Math.max(x,max);
+			}
+		}
+		return max;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

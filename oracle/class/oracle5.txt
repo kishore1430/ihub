@@ -1,0 +1,370 @@
+2)Scalar Functions
+===================
+We have following list of scalar functions.
+
+1) Character Functions 
+
+2) Number Functions 
+
+3) Date Functions 
+
+4) Convertion Functions 
+
+
+1) Character Functions 
+-----------------------
+upper()
+------
+	It will convert lowercase to uppercase.
+	ex:
+		select upper('oracle') from dual; //ORACLE 
+
+lower()
+------
+	It will convert uppercase to lowercase.
+	ex:
+		select upper('ORACLE') from dual; //oracle
+
+initcap()
+---------
+	It will display initial letter capital.
+	ex:
+		select initcap('This is oracle') from dual; // This Is Oracle
+
+lpad()
+------
+	It is used to pad the characaters left side.
+	ex:
+		select lpad('oracle',10,'z') from dual; //zzzzoracle
+
+rpad()
+-------
+	It is used to pad the characaters right side.
+	ex:
+		select rpad('oracle',10,'z') from dual; //oraclezzzz
+
+ltrim()
+-------
+	It is used to trim the characters from left side
+	ex:
+		select ltrim('zzoraclezz','z') from dual; //oraclezz
+
+rtrim()
+-------
+	It is used to trim the characters from right side
+	ex:
+		select rtrim('zzoraclezz','z') from dual; //zzoracle
+
+trim()
+-----
+	It is used to trim the charactres from both the sides.
+	ex:
+		select trim('z' from 'zzoraclezz') from dual;
+
+replace()
+---------
+	It is used to replace the character.
+	ex:
+		select replace('google','o','O') from dual; //gOOgle
+
+concat() 
+------
+	It is used to concat the string.
+	ex:
+		select concat('mega','star') from dual;
+		select concat(concat('mega','star'),'chiru') from dual;//megastarchiru
+
+
+2) Number Functions 
+---------------------
+abs()
+-----
+	It will return absoluate value.
+	ex:
+		select abs(-40) from dual; //40
+		select abs(-10.98) from dual; // 10.98
+		select abs(50) from dual; // 50
+
+sqrt()
+-----
+	It will return square root.
+	ex:
+		select sqrt(25) from dual;//5
+		select sqrt(81) from dual;//9
+		select sqrt(26) from dual;//5.09
+
+power(A,B)
+---------
+	It will return power value.
+	ex:
+		select power(2,5) from dual; // 2*2*2*2*2=32
+		select power(5,2) from dual; // 5*5=25
+
+ceil()
+----
+	It will return ceil value.
+	ex:
+		select ceil(10.1) from dual; //11
+		select ceil(10.9) from dual; //11
+			
+
+floor()
+-------
+	It will return floor value.
+	ex:
+		select floor(10.1) from dual; //10
+		select floor(10.9) from dual; //10
+
+round()
+----
+	It will return nearest value.
+	ex:
+		select round(10.5) from dual;//11
+		select round(10.4) from dual;//10
+
+trunc()
+-----
+	It will remove decimals.
+	ex:
+		select trunc(10.56) from dual; // 10
+		select trunc(98.786) from dual; // 98
+
+greatest()
+--------
+	It will return highest value.
+	ex:
+		select greatest(101,103,106) from dual; //106
+
+least() 
+--------
+	It will return least value.
+	ex:
+		select least(101,106,103) from dual;//101
+
+
+Working with Date values
+========================
+It is never recommanded to store date values in the form of varchar2.
+Every database support different date patterns.
+ex:
+	oracle ---> dd-MMM-yy
+	mysql  ---> yyyy-MM-dd  
+	and etc.
+
+emp1 table
+===========
+drop table emp1;
+create table emp1(eid number(3),ename varchar2(10),edoj date);
+insert into emp1 values(101,'Alan','01-JAN-23');
+insert into emp1 values(102,'Kelvin','01-JAN-23');
+insert into emp1 values(103,'Jose',sysdate);
+commit;
+
+
+3) Date functions 
+-----------------
+We have following list of Date functions.
+
+i) ADD_MONTHS()
+-------------
+	It is used to add the months in a given date.
+	ex:
+		select ADD_MONTHS(sysdate,4) from dual;
+
+		select ADD_MONTHS('15-JAN-24',4) from dual;
+
+ii) MONTHS_BETWEEN()
+-------------------
+	It is used to return number of months between two given dates.
+	ex:
+		select MONTHS_BETWEEN('01-JAN-24','01-DEC-24') from dual;
+
+		select ABS(MONTHS_BETWEEN('01-JAN-24','01-DEC-24')) from dual;
+
+		select MONTHS_BETWEEN('01-JAN-24','31-DEC-24') from dual;
+
+iii) NEXT_DAY()
+------------
+	It will return the date of a given day in a week.
+	ex:
+		select NEXT_DAY(sysdate,'sunday') from dual;
+
+		select NEXT_DAY(sysdate,'saturday') from dual;
+
+iv) LAST_DAY()
+------------
+	It will return last date of a month.
+	ex:
+		select LAST_DAY(sysdate) from dual;
+
+		select LAST_DAY('05-FEB-24') from dual;
+
+
+4) Convertion Function
+----------------------
+Convertion functions are used to convert from one type to another type.
+ex:
+	TO_CHAR() 
+
+We have two pseudo for TO_CHAR().
+
+i) Number TO_CHAR() 
+----------------
+	It will take '9' in digits and $ and euro's symbol.
+	ex:
+		select eid,ename,esal from emp;
+		select eid,ename,TO_CHAR(esal,'9,999') from emp;
+		select eid,ename,TO_CHAR(esal,'99,999') from emp;
+		select eid,ename,TO_CHAR(esal,'$99,999') from emp;	
+
+ii) Date TO_CHAR() 
+---------------
+	ex:
+		select TO_CHAR(sysdate,'dd-MM-yyyy') from dual;
+		select TO_CHAR(sysdate,'yyyy-MM-dd') from dual;
+		select TO_CHAR(sysdate,'DAY') from dual;
+		select TO_CHAR(sysdate,'MONTH') from dual;
+		select TO_CHAR(sysdate,'MON') from dual;	
+		select TO_CHAR(sysdate,'YEAR') from dual;
+		select TO_CHAR(sysdate,'YYYY') from dual;
+		select TO_CHAR(sysdate,'MM') from dual;
+		select TO_CHAR(sysdate,'DD') from dual;
+		select TO_CHAR(sysdate,'HH:MI:SS') from dual;
+		select TO_CHAR(sysdate,'dd-MM-yyyy  HH:MI:SS') from dual;	
+
+
+Group by clause 
+================
+It is used to divide the rows into multiple groups so that we can apply group functions.
+
+A column which we used in group by clause then same column we must used in select clause.
+
+ex:
+
+Q) Write a query to display sum of salary of each department?
+
+	select sum(esal),deptno from emp group by deptno;
+
+
+Q) Write a query to display average salary of each job?
+
+	select avg(esal),job from emp group by job;
+
+Q) Write a query to display maximum salary of each department?
+
+	select max(esal),deptno from emp group by deptno;
+
+
+Having clause 
+==============
+Having clause is used to filter the rows from group by clause.
+
+Having clause we can use after group by clause.
+
+ex:
+
+Q) Write a query to display sum of salary of each department whose sum of salary is greater then 40000? 
+
+	select sum(esal),deptno from emp group by deptno having sum(esal)>40000;
+
+
+Q) Write a query to display minium salary of each job whose minum salary is less then 25000?
+
+	select min(esal),job from emp group by job having min(esal)<25000;
+
+
+Order by clause 
+================
+Order by clause is used arrange the rows in a table.
+
+By default it will arrange in ascending order.
+
+ex:
+	select * from student order by sno;
+	select * from student order by sno desc;
+
+	select * from student order by sname;
+	select * from student order by sname desc;
+
+	select * from emp order by deptno;
+	select * from emp order by deptno desc;
+
+	select * from emp order by esal;
+	select * from emp order by esal desc;
+
+
+Interview Question
+=================
+Q) Given an integer array nums, find the contiguous subarray which
+has largest sum 6.
+
+Input:
+	nums = [-2,1,-3,4,-1,2,1,-5,4]
+Output:
+	6 
+
+Explaination: [4,-1,2,1] has the largest contiguous subarray.
+
+ex:
+----
+class Test   
+{
+	public static void main(String[] args) 
+	{
+		int[] arr={-2,1,-3,4,-1,2,1,-5,4};
+
+		int maxCount=arr[0];
+		int sum=arr[0];
+
+		for(int i=1;i<arr.length;i++)
+		{
+			if(sum>=0)
+			{
+				sum+=arr[i];
+			}
+			else
+			{
+				sum=arr[i];
+			}
+
+			if(sum>maxCount)
+			{
+				maxCount=sum;
+			}
+		}
+		System.out.println(maxCount);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
